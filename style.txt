@@ -1,0 +1,37 @@
+white
+
+background padrao
+e6e6e6
+outro lightblue
+contraste d9d9d9
+
+border
+bfbfbf
+
+font
+333333
+
+black
+
+background padrao
+262626
+outro 246175
+contraste 333
+
+border
+666666
+
+font
+cccccc
+
+Momozinho
+backgroud padrao
+e699cc
+outro f5d6eb
+contraste f2f2f2
+
+border
+7a1f5c
+
+font
+333333

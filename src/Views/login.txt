@@ -1,0 +1,21 @@
+<Image style={styles.logo} source={logo}></Image>
+            <Text style={styles.Title}>GoDex Pro</Text>
+                <TextInput 
+                    placeholder="Digite aqui seu usuário"
+                    placeholderTextColor="#999"
+                    style={styles.input_login}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    value={user}
+                    onChangeText={setUser}
+                />
+                <TextInput 
+                    placeholder="Digite aqui sua senha"
+                    placeholderTextColor="#999"
+                    style={styles.input_pass}
+                    secureTextEntry={true}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    value={pass}
+                    onChangeText={setPass}
+                />
