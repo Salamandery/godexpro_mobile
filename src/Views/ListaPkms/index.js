@@ -6,6 +6,7 @@ import React, {
     useEffect 
 } from 'react';
 import {
+    StyleSheet,
     FlatList,
     View,
     Text,
@@ -13,7 +14,8 @@ import {
     Modal,
     TextInput,
     ProgressBarAndroid,
-    TouchableOpacity
+    TouchableOpacity,
+    Animated
 } from 'react-native';
 import { StyleTheme } from './style';
 import Loading from '../Loading';
@@ -30,6 +32,15 @@ const ListaPkms = ({navigation, theme, Ari}) => {
     const [modalState, setModal] = useState(false);
     const [modalItem, setModalItem] = useState([]);
     const [VisAri, setVisAri] = useState(false);
+    const [tpSearch, setTpSearch] = useState("default");
+    const [openedName, setOpenName] = useState(5);
+    const [openedGen, setOpenGen] = useState(5);
+    const [openedN, setOpenN] = useState(5);
+    const [openedTypes, setOpenTypes] = useState(5);
+    const [lbl, setLbl] = useState(0);
+    const [placeholderSearch, setPlaceholder] = useState("Searching for name...");
+    var animation = new Animated.Value(0);
+    
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {
@@ -56,20 +67,44 @@ const ListaPkms = ({navigation, theme, Ari}) => {
             navigation.navigate('Login');
         }, 2000);
     }
-    function searchText(e) {
-        let text = e.toLowerCase();
-        if (text === "momozinho") minimichelle();
-        let items = pkms;
-        let filteredName = items.filter((item) => {
-            return item.name.toLowerCase().match(text);
-        })
+    function typeSearch(type, text) {
+        const items = pkms;
+        switch(type) {
+           default: 
+                var filteredName = items.filter((item) => {
+                    return item.name.toLowerCase().match(text);
+                });
+            break;
+            case "types":
+                var filteredName = items.filter((item) => {
+                    return item.types.join().toLowerCase().match(text);
+                });
+            break;
+            case "n":
+                var filteredName = items.filter((item) => {
+                    return item.n.toLowerCase().match(text);
+                });
+            break;
+            case "gen":
+                var filteredName = items.filter((item) => {
+                    return item.gen.toLowerCase().match(text);
+                });
+            break;
+        }
+        
         if (!text || text === '') {
             setPkms(base);
         } else if (!Array.isArray(filteredName) && !filteredName.length) {
             setPkms(filteredName);
         } else if (Array.isArray(filteredName)) {
             setPkms(filteredName);
-        } 
+        }
+    }
+    function searchText(e) {
+        let text = e.toLowerCase();
+        if (text === "momozinho") minimichelle();
+        typeSearch(tpSearch, text);
+
     }
     function pkmHandler(pkm) {
         setModal(false);
@@ -96,6 +131,7 @@ const ListaPkms = ({navigation, theme, Ari}) => {
             })
         }
     }
+
     const ModalAri = ({Vis})=>{
         return(
         <Modal style={styles.modalAri} transparent={true} visible={Vis} onDismiss={closeAriHandler} onRequestClose={closeAriHandler}>
@@ -204,6 +240,57 @@ const ListaPkms = ({navigation, theme, Ari}) => {
             </TouchableOpacity>
         );
     }
+    function ToggleSearch(type) {
+        if (type === "types") setPlaceholder("Searching for type...");
+        else if (type === "n") setPlaceholder("Searching for Pokémon's number...");
+        else if (type === "name") setPlaceholder("Searching for name...");
+        else if (type === "gen") setPlaceholder("Searching for generation...");
+        setTpSearch(type);
+        ToggleOpen();
+    }
+    function ToggleOpen() {
+        var toValue = lbl ? 0 : 1;
+        Animated.timing(animation, {
+            toValue,
+            duration: 200
+        }).start();
+        setLbl(!lbl);
+        if (openedTypes === 5) {
+            setOpenTypes(250)
+        } else {
+            setOpenTypes(5);
+        }
+        
+        Animated.timing(animation, {
+            toValue,
+            duration: 200
+        }).start();
+        if (openedN === 5) {
+            setOpenN(190)
+        } else {
+            setOpenN(5);
+        }
+
+        Animated.timing(animation, {
+            toValue,
+            duration: 200
+        }).start();
+        if (openedGen === 5) {
+            setOpenGen(130)
+        } else {
+            setOpenGen(5);
+        }
+        
+        Animated.timing(animation, {
+            toValue,
+            duration: 200
+        }).start();
+        if (openedName === 5) {
+            setOpenName(70)
+        } else {
+            setOpenName(5);
+        }
+    }
     return(
         <View style={styles.container}>
             <HeaderBar navigation={navigation} theme={theme}/>
@@ -211,7 +298,7 @@ const ListaPkms = ({navigation, theme, Ari}) => {
                 <TextInput 
                     style={styles.searchInput}
                     placeholderTextColor={theme === 'false' ? "#333333" : "#cccccc"}
-                    placeholder="Search..."
+                    placeholder={placeholderSearch}
                     onChangeText={searchText}
                 />
             </View>
@@ -230,6 +317,24 @@ const ListaPkms = ({navigation, theme, Ari}) => {
             </View>
             <MyModal selectedItem={modalItem} Visibility={modalState} />
             <ModalAri Vis={VisAri} />
+            <View style={styles.floatingWrapper}>
+            <Animated.View style={[styles.bgFloating]}/>
+            <TouchableOpacity style={[styles.otherButton, {bottom: openedTypes}]} onPress={e=>{ToggleSearch("types")}}>
+                <Text style={styles.lblTxtName}>Type</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.otherButton, {bottom: openedN}]} onPress={e=>{ToggleSearch("n")}}>
+                <Text style={styles.lblTxtName}>#n</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.otherButton, {bottom: openedGen}]} onPress={e=>{ToggleSearch("gen")}}>
+                <Text style={styles.lblTxtName}>Gen</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.otherButton, {bottom: openedName}]} onPress={e=>{ToggleSearch("name")}}>
+                <Text style={styles.lblTxtName}>Name</Text>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={1} onPress={ToggleOpen} style={[styles.floatButton, styles.searchButton]}>
+                <Text style={styles.searchTitle}>Menu</Text>
+            </TouchableOpacity>
+            </View>
         </View>
     );
 }

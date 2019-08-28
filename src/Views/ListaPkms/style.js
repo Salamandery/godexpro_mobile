@@ -197,6 +197,61 @@ export function StyleTheme(theme, mode) {
                         color: "#cccccc",
                         fontSize: normalize(22)
                     },
+                    floatingWrapper: {
+                        position: "absolute",
+                        bottom: normalize(20),
+                        right: normalize(20),
+                        justifyContent: "center",
+                        alignItems: "center"
+                    },
+                    floatButton: {
+                        width: normalize(60),
+                        height: normalize(60),
+                        alignItems: "center",
+                        justifyContent: "center",
+                        shadowColor: "#000",
+                        shadowOpacity: .1,
+                        shadowOffset: {x: 2, y: 0},
+                        shadowRadius: 2,
+                        borderRadius: normalize(30),
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0
+                    }, 
+                    otherButton: {
+                        width: normalize(45),
+                        height: normalize(45),
+                        alignItems: "center",
+                        justifyContent: "center",
+                        shadowColor: "#000",
+                        shadowOpacity: .1,
+                        shadowOffset: {x: 2, y: 0},
+                        shadowRadius: 2,
+                        borderRadius: normalize(30),
+                        backgroundColor: "#fff",
+                        position: "absolute",
+                        bottom: normalize(5),
+                        right: normalize(8)
+                    },
+                    searchTitle: {
+                        color: "#fff",
+                    },
+                    searchButton: {
+                        backgroundColor: "#262626"
+                    },
+                    lblTxtName: {
+                        color: "#000",
+                        fontWeight: "bold",
+                    },
+                    bgFloating: {
+                        backgroundColor: "rgba(0,0,0, .2)",
+                        position: "absolute",
+                        bottom: normalize(2),
+                        right: normalize(2),
+                        width: normalize(60),
+                        height: normalize(60),
+                        borderRadius: normalize(30),
+                    }
                 })
             );
         } else {
@@ -392,6 +447,61 @@ export function StyleTheme(theme, mode) {
                         color: "#cccccc",
                         fontSize: normalize(22)
                     },
+                    floatingWrapper: {
+                        position: "absolute",
+                        bottom: normalize(20),
+                        right: normalize(20),
+                        justifyContent: "center",
+                        alignItems: "center"
+                    },
+                    floatButton: {
+                        width: normalize(60),
+                        height: normalize(60),
+                        alignItems: "center",
+                        justifyContent: "center",
+                        shadowColor: "#000",
+                        shadowOpacity: .1,
+                        shadowOffset: {x: 2, y: 0},
+                        shadowRadius: 2,
+                        borderRadius: normalize(30),
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0
+                    }, 
+                    otherButton: {
+                        width: normalize(45),
+                        height: normalize(45),
+                        alignItems: "center",
+                        justifyContent: "center",
+                        shadowColor: "#000",
+                        shadowOpacity: .1,
+                        shadowOffset: {x: 2, y: 0},
+                        shadowRadius: 2,
+                        borderRadius: normalize(30),
+                        backgroundColor: "#fff",
+                        position: "absolute",
+                        bottom: normalize(5),
+                        right: normalize(8)
+                    },
+                    searchTitle: {
+                        color: "#fff",
+                    },
+                    searchButton: {
+                        backgroundColor: "#262626"
+                    },
+                    lblTxtName: {
+                        color: "#000",
+                        fontWeight: "bold",
+                    },
+                    bgFloating: {
+                        backgroundColor: "rgba(0,0,0, .2)",
+                        position: "absolute",
+                        bottom: normalize(2),
+                        right: normalize(2),
+                        width: normalize(60),
+                        height: normalize(60),
+                        borderRadius: normalize(30),
+                    }
                 })
             ); 
         }
@@ -588,6 +698,61 @@ export function StyleTheme(theme, mode) {
                     color: "#cccccc",
                     fontSize: normalize(22)
                 },
+                floatingWrapper: {
+                    position: "absolute",
+                    bottom: normalize(20),
+                    right: normalize(20),
+                    justifyContent: "center",
+                    alignItems: "center"
+                },
+                floatButton: {
+                    width: normalize(60),
+                    height: normalize(60),
+                    alignItems: "center",
+                    justifyContent: "center",
+                    shadowColor: "#000",
+                    shadowOpacity: .1,
+                    shadowOffset: {x: 2, y: 0},
+                    shadowRadius: 2,
+                    borderRadius: normalize(30),
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0
+                }, 
+                otherButton: {
+                    width: normalize(45),
+                    height: normalize(45),
+                    alignItems: "center",
+                    justifyContent: "center",
+                    shadowColor: "#000",
+                    shadowOpacity: .1,
+                    shadowOffset: {x: 2, y: 0},
+                    shadowRadius: 2,
+                    borderRadius: normalize(30),
+                    backgroundColor: "#fff",
+                    position: "absolute",
+                    bottom: normalize(5),
+                    right: normalize(8)
+                },
+                searchTitle: {
+                    color: "#fff",
+                },
+                searchButton: {
+                    backgroundColor: "#262626"
+                },
+                lblTxtName: {
+                    color: "#000",
+                    fontWeight: "bold",
+                },
+                bgFloating: {
+                    backgroundColor: "rgba(0,0,0, .2)",
+                    position: "absolute",
+                    bottom: normalize(2),
+                    right: normalize(2),
+                    width: normalize(60),
+                    height: normalize(60),
+                    borderRadius: normalize(30),
+                }
             })
         );
     }
