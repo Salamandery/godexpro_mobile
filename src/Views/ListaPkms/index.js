@@ -18,57 +18,10 @@ import {
 } from 'react-native';
 import { StyleTheme } from './style';
 import Loading from '../Loading';
-import { percent } from '../../components/StringTrataments';
+import { percent, translate } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 
-var translation = {
-    en: {
-        placeholder: {
-            name: "Searching for name...",
-            gen: "Searching for generation...",
-            n: "Searching for Pokémon's number...",
-            type: "Searching for Pokémons's type...",
-        },
-        modal: {
-            title: "Enter in \"Momozinho\" mode?",
-            cancel: "Cancel",
-            reset: "Reset",
-            set: "Yes",
-            close: "Close",
-            readmore: "Read more..."
-        },
-        toggle: {
-            menu: "Menu",
-            type: "Type",
-            name: "Name",
-            gen: "Gen",
-            n: "Num"
-        }
-    },
-    pt: {
-        placeholder: {
-            name: "Pesquisando por nome...",
-            gen: "Pesquisando por geraçãp...",
-            n: "Pesquisando pelo N. do Pokémon...",
-            type: "Pesquisando pelo Tipo do Pokémon...",
-        },
-        modal: {
-            title: "Ativar modo \"Momozinho\"?",
-            cancel: "Cancelar",
-            reset: "Resetar",
-            set: "Sim",
-            close: "Fechar",
-            readmore: "Leia mais..."
-        },
-        toggle: {
-            menu: "Menu",
-            type: "Tipo",
-            name: "Nome",
-            gen: "Gen",
-            n: "Num"
-        }
-    }
-}
+var translation = translate("ListaPkms");
 
 const ListaPkms = ({navigation, theme, Ari, lang}) => {
     const [stAtk, setstAtk] = useState(0);

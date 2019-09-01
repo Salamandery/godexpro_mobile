@@ -5,8 +5,12 @@ import {
     Text
 } from 'react-native';
 import CheckWeather from './checkWeather';
+import { translate } from '../../components/StringTrataments';
 import { StyleTheme } from './style';
-const typeWeater = ({theme, Ari, pkm}) => {
+
+var translation = translate("PkmInfo");
+
+const typeWeater = ({theme, Ari, pkm, lang}) => {
     
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
@@ -17,7 +21,7 @@ const typeWeater = ({theme, Ari, pkm}) => {
     return (
         <View style={styles.groupWeather}>
             <View style={styles.weather}>
-                <Text style={styles.title}>Weather</Text>
+                <Text style={styles.title}>{translation[lang].weather.title}</Text>
                 <View style={styles.imgWrapper}>
                 {   
                     pkm.types.map((tp, index)=>(

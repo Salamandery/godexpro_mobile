@@ -17,11 +17,13 @@ import ma from '../../default/ma.png';
 import CheckType from '../../components/checkType';
 import WeakAndStrong from '../../components/WeakAndStrong';
 import { StyleTheme } from './style';
-import { FindString, percent } from '../../components/StringTrataments';
+import { FindString, percent, translate } from '../../components/StringTrataments';
 import WeatherforType from '../../components/typeWeather';
 import { connect } from 'react-redux';
 
-const PkmInfo = ({navigation, theme, Ari}) => {
+var translation = translate("PkmInfo");
+
+const PkmInfo = ({navigation, theme, Ari, lang}) => {
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
     const [stStm, setstStm] = useState(0);
@@ -88,7 +90,7 @@ const PkmInfo = ({navigation, theme, Ari}) => {
                             </View>
                         </View>
 
-                        <Text style={styles.description}>Description: {pkm.description_dex}</Text>
+                        <Text style={styles.description}>{translation[lang].pkm.description} {pkm.description_dex}</Text>
                     
                         <View style={styles.status}>
                             <View style={styles.grpStat}>
@@ -128,12 +130,12 @@ const PkmInfo = ({navigation, theme, Ari}) => {
                                 />
                             </View>
                         </View>
-                        <WeakAndStrong theme={theme} pkm={pkm} Ari={Ari} />
-                        <WeatherforType theme={theme} pkm={pkm} Ari={Ari} /> 
+                        <WeakAndStrong theme={theme} pkm={pkm} Ari={Ari} lang={lang} />
+                        <WeatherforType theme={theme} pkm={pkm} Ari={Ari} lang={lang} /> 
                 </View>
             </ScrollView>
         </View>
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari }))(PkmInfo);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(PkmInfo);

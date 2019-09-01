@@ -5,8 +5,12 @@ import {
 } from 'react-native';
 
 import CheckType from '../../components/checkType';
+import { translate } from '../../components/StringTrataments';
 import { StyleTheme } from './style';
-export default WeakAndStrong = ({theme, Ari, pkm}) => {
+
+var translation = translate("PkmInfo");
+
+export default WeakAndStrong = ({theme, Ari, pkm, lang}) => {
     
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
@@ -18,7 +22,7 @@ export default WeakAndStrong = ({theme, Ari, pkm}) => {
         <View style={styles.groupAgainst}>
             <View style={styles.weakness}>
                 <View style={styles.weakTitle}>
-                    <Text style={styles.txtWeak}>Weak against</Text>
+                    <Text style={styles.txtWeak}>{translation[lang].weak.title}</Text>
                 </View>
                 <View style={styles.weakItems}>
                     {
@@ -30,7 +34,7 @@ export default WeakAndStrong = ({theme, Ari, pkm}) => {
             </View>
             <View style={styles.strongest}>
                 <View style={styles.strongTitle}>
-                    <Text style={styles.txtStrong}>Strong against</Text>
+                    <Text style={styles.txtStrong}>{translation[lang].strong.title}</Text>
                 </View>
                 <View style={styles.strongItems}>
                     {

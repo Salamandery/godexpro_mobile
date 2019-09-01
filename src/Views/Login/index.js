@@ -19,10 +19,10 @@ import bg from './0.png';
 import { normalize } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 import ToggleTheme from '../../services/actions';
-const Login = ({navigation, dispatch}) => {
+
+const Login = ({navigation, dispatch, lang}) => {
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
-    const [lang, setLang] = useState('en');
 
     async function loginHandler() {
         await AsyncStorage.setItem('user', user);
@@ -47,7 +47,6 @@ const Login = ({navigation, dispatch}) => {
         const lan = await AsyncStorage.getItem('lang').then(id => {
             if (id) {
                 try {
-                    setLang(id);
                     return id;
                 } catch (err) {
                     console.log(err)

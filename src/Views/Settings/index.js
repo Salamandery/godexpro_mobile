@@ -1,6 +1,5 @@
 import React, { 
-    useState, 
-    useEffect 
+    useState
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage'; 
 import {
@@ -14,7 +13,9 @@ import HeaderBar from '../../components/Header';
 import Loading from '../Loading';
 import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
-import ToggleTheme from '../../services/actions';
+import { translate } from '../../components/StringTrataments';
+
+var translation = translate("Settings");
 
 const Settings = ({navigation, theme, Ari, lang}) => {
     const [ifLoad, setLoading] = useState(false);
@@ -57,8 +58,8 @@ const Settings = ({navigation, theme, Ari, lang}) => {
                         <ScrollView>
                             <View style={styles.SettingsItens}>
                                 <View style={styles.grpSetting}>
-                                    <Text style={styles.Title}>Dark Theme</Text> 
-                                    <Text style={styles.Des}>Set dark theme.</Text> 
+                                    <Text style={styles.Title}>{translation[lang].theme.title}</Text> 
+                                    <Text style={styles.Des}>{translation[lang].theme.desc}</Text> 
                                     <View style={styles.Opt}>
                                         <Switch 
                                             value={
@@ -72,8 +73,8 @@ const Settings = ({navigation, theme, Ari, lang}) => {
                                     </View> 
                                 </View>
                                 <View style={styles.grpSetting}>
-                                    <Text style={styles.Title}>Language Pt-br</Text> 
-                                    <Text style={styles.Des}>Set pt-br language.</Text> 
+                                    <Text style={styles.Title}>{translation[lang].lang.title}</Text> 
+                                    <Text style={styles.Des}>{translation[lang].lang.desc}</Text> 
                                     <View style={styles.Opt}>
                                         <Switch 
                                             value={lang === "pt" ? true : false}
@@ -85,8 +86,8 @@ const Settings = ({navigation, theme, Ari, lang}) => {
                                     </View> 
                                 </View>
                                 <View style={styles.grpSetting}>
-                                    <Text style={styles.Title}>Clear Data</Text> 
-                                    <Text style={styles.Des}>Clear all user data settings.</Text> 
+                                    <Text style={styles.Title}>{translation[lang].clear.title}</Text> 
+                                    <Text style={styles.Des}>{translation[lang].clear.desc}</Text> 
                                     <View style={styles.Opt}>
                                         <Button 
                                             value={lang}

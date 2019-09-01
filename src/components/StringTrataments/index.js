@@ -1,4 +1,5 @@
     import { Dimensions, Platform, PixelRatio } from 'react-native';
+import ListaPkms from '../../Views/ListaPkms';
 
     const {
     width: SCREEN_WIDTH,
@@ -43,6 +44,124 @@
             case 'stm': {
                 if (value <= 0) return 0;
                 return ((value)/MaxStm);
+            }
+        }
+    }
+    export function translate(view) {
+        switch(view) {
+            case "ListaPkms": {
+                return{
+                    en: {
+                        placeholder: {
+                            name: "Searching for name...",
+                            gen: "Searching for generation...",
+                            n: "Searching for Pokémon's number...",
+                            type: "Searching for Pokémons's type...",
+                        },
+                        modal: {
+                            title: "Enter in \"Momozinho\" mode?",
+                            cancel: "Cancel",
+                            reset: "Reset",
+                            set: "Yes",
+                            close: "Close",
+                            readmore: "Read more..."
+                        },
+                        toggle: {
+                            menu: "Menu",
+                            type: "Type",
+                            name: "Name",
+                            gen: "Gen",
+                            n: "Num"
+                        }
+                    },
+                    pt: {
+                        placeholder: {
+                            name: "Pesquisando por nome...",
+                            gen: "Pesquisando por geraçãp...",
+                            n: "Pesquisando pelo N. do Pokémon...",
+                            type: "Pesquisando pelo Tipo do Pokémon...",
+                        },
+                        modal: {
+                            title: "Ativar modo \"Momozinho\"?",
+                            cancel: "Cancelar",
+                            reset: "Resetar",
+                            set: "Sim",
+                            close: "Fechar",
+                            readmore: "Leia mais..."
+                        },
+                        toggle: {
+                            menu: "Menu",
+                            type: "Tipo",
+                            name: "Nome",
+                            gen: "Gen",
+                            n: "Num"
+                        }
+                    }
+                }
+            }
+            case "Settings": {
+                return{
+                    en: {
+                        theme: {
+                            title: "Dark Theme",
+                            desc: "Set dark theme."
+                        },
+                        lang: {
+                            title: "Language pt-br",
+                            desc: "Set pt-br language."
+                        },
+                        clear: {
+                            title: "Clear Data",
+                            desc: "Clear user data settings."
+                        }
+                    },
+                    pt: {
+                        theme: {
+                            title: "Tema escuro",
+                            desc: "Ativar tema escuro."
+                        },
+                        lang: {
+                            title: "Idioma pt-br",
+                            desc: "Ativar idioma em pt-br."
+                        },
+                        clear: {
+                            title: "Limpar dados",
+                            desc: "Limpar toda configuração do usuário."
+                        }
+                    },                    
+                }
+            }
+            case "PkmInfo": {
+                return {
+                    en: {
+                        pkm: {
+                            description: "Description:"
+                        },
+                        weak: {
+                            title: "Weak against"
+                        },
+                        strong: {
+                            title: "Strong against"
+                        },
+                        weather: {
+                            title: "Weather"
+                        }
+                    },
+                    pt: {
+                        pkm: {
+                            description: "Descrição:"
+                        },
+                        weak: {
+                            title: "Fraco contra"
+                        },
+                        strong: {
+                            title: "Forte contra"
+                        },
+                        weather: {
+                            title: "Clima"
+                        }
+                    },                                      
+                }
             }
         }
     }
