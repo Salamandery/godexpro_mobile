@@ -25,6 +25,7 @@ import Stardust from './img/buff/Stardust.png';
 import prempass from './img/passes/prempass.png';
 import Incense from './img/buff/Incense.png';
 import Camera from './img/others/Camera.png';
+import Gift from './img/others/Gift.png';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 const ItemList = ({theme, Ari, navigation}) => {
@@ -70,7 +71,17 @@ const ItemList = ({theme, Ari, navigation}) => {
         <View style={styles.container}>     
             <HeaderBar theme={theme} Headertitle={"Other Items"} navigation={navigation} />
             <ScrollView>
-            <View style={styles.ItemItens}>               
+            <View style={styles.ItemItens}>   
+                <TouchableOpacity style={styles.btn_item} onPress={()=>{
+                    setModal();
+                    setTitle("Gift");
+                    setDes("A box that you can send to a friend. Contains a variety of useful items.\n\nDetails: A Gift is an item that can be sent to another Trainer. Gifts contain items that are of higher value than what Trainers normally obtain from spinning PokéStops, supporting the feeling that your friends are really helping you make the best of your Pokémon GO journey.\n\nOnly one gift can be sent to each Friend per day and at most 20 Gifts that can be opened in a single day.\nTrainers may have up to ten Gifts in their bag at any given time and they do not take up any space in the bag.\nIn order to obtain 7-km Egg from the received gift, trainer needs space in their eggs collection, exactly like in case of obtaining eggs from Photo Discs.\n\n(Note):There must be enough room in the Item Bag, before opening the gift.");
+                    setItemimg(Gift);
+                    setModal();
+                }}>
+                    <Image style={styles.img} source={Gift}></Image>
+                    <Text style={styles.label}>{"Gift"}</Text>
+                </TouchableOpacity>            
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
                     setTitle("Incense");
