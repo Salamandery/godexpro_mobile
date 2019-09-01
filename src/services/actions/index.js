@@ -1,10 +1,9 @@
 
-export default function ToggleTheme(theme, Ari) {
-    console.log(theme);
-    console.log(Ari);
+export default function ToggleTheme(theme, Ari, lang) {
     return {
         type: 'TOGGLE_THEME',
         theme,
-        Ari
+        Ari,
+        lang
     }
 }

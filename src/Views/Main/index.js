@@ -16,6 +16,7 @@ const CustomContent = (props) => {
     const [Ari, setari] = useState("default");
     const [user, setUser] = useState('');
     const [lang, setLang] = useState('en');
+    
     if (Ari) {
         var styles = StyleTheme(theme, "ari");
         var bg = "#e699cc";
@@ -29,8 +30,7 @@ const CustomContent = (props) => {
         setari(props.navigation.state.params.Ari);
         setTheme(props.navigation.state.params.theme);
         setUser(props.navigation.state.params.username);
-        //setLang(props.navigation.state.params.lang);
-        alert(props.navigation.state.params.lang)
+        setLang(props.navigation.state.params.lang);
     }, []);
     function profileHandler() {
         return(
@@ -69,18 +69,23 @@ const CustomContent = (props) => {
     );
 }
 
-export default createAppContainer(
-    createDrawerNavigator({
-        Pokedex: { screen: PkmController },
-        News: { screen: News },
-        Itens: { screen: Itens },
-        Help: { screen: Help },
-        Contact: { screen: Contact },
-        Settings: { screen: Settings },
-    },
-    {
-        initialRouteName: "Pokedex",
-        drawerPosition: "left",
-        contentComponent: CustomContent,
-    })
-);
+
+const Drawer = createDrawerNavigator({
+    Pokedex: { 
+        screen: PkmController,
+    }, 
+    News: { screen: News },
+    Itens: { screen: Itens },
+    Help: { screen: Help },
+    Contact: { screen: Contact },
+    Settings: { screen: Settings },
+},
+{
+    initialRouteName: "Pokedex",
+    drawerPosition: "left",
+    contentComponent: CustomContent,
+});
+
+const Container = createAppContainer(Drawer);
+
+export default Container;

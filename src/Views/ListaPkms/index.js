@@ -6,7 +6,6 @@ import React, {
     useEffect 
 } from 'react';
 import {
-    StyleSheet,
     FlatList,
     View,
     Text,
@@ -21,8 +20,57 @@ import { StyleTheme } from './style';
 import Loading from '../Loading';
 import { percent } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
-    
-const ListaPkms = ({navigation, theme, Ari}) => {
+
+var translation = {
+    en: {
+        placeholder: {
+            name: "Searching for name...",
+            gen: "Searching for generation...",
+            n: "Searching for Pokémon's number...",
+            type: "Searching for Pokémons's type...",
+        },
+        modal: {
+            title: "Enter in \"Momozinho\" mode?",
+            cancel: "Cancel",
+            reset: "Reset",
+            set: "Yes",
+            close: "Close",
+            readmore: "Read more..."
+        },
+        toggle: {
+            menu: "Menu",
+            type: "Type",
+            name: "Name",
+            gen: "Gen",
+            n: "Num"
+        }
+    },
+    pt: {
+        placeholder: {
+            name: "Pesquisando por nome...",
+            gen: "Pesquisando por geraçãp...",
+            n: "Pesquisando pelo N. do Pokémon...",
+            type: "Pesquisando pelo Tipo do Pokémon...",
+        },
+        modal: {
+            title: "Ativar modo \"Momozinho\"?",
+            cancel: "Cancelar",
+            reset: "Resetar",
+            set: "Sim",
+            close: "Fechar",
+            readmore: "Leia mais..."
+        },
+        toggle: {
+            menu: "Menu",
+            type: "Tipo",
+            name: "Nome",
+            gen: "Gen",
+            n: "Num"
+        }
+    }
+}
+
+const ListaPkms = ({navigation, theme, Ari, lang}) => {
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
     const [stStm, setstStm] = useState(0);
@@ -38,9 +86,9 @@ const ListaPkms = ({navigation, theme, Ari}) => {
     const [openedN, setOpenN] = useState(5);
     const [openedTypes, setOpenTypes] = useState(5);
     const [lbl, setLbl] = useState(0);
-    const [placeholderSearch, setPlaceholder] = useState("Searching for name...");
+    const [placeholderSearch, setPlaceholder] = useState(translation[lang].placeholder.name);
     var animation = new Animated.Value(0);
-    
+
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {
@@ -71,16 +119,19 @@ const ListaPkms = ({navigation, theme, Ari}) => {
         const items = pkms;
         switch(type) {
            default: 
+                translation[lang].placeholder = placeholderSearch;
                 var filteredName = items.filter((item) => {
                     return item.name.toLowerCase().match(text);
                 });
             break;
             case "types":
+                translation[lang].placeholder = placeholderSearch;
                 var filteredName = items.filter((item) => {
                     return item.types.join().toLowerCase().match(text);
                 });
             break;
             case "n":
+                translation[lang].placeholder = placeholderSearch;
                 var filteredName = items.filter((item) => {
                     return item.n.toLowerCase().match(text);
                 });
@@ -137,16 +188,16 @@ const ListaPkms = ({navigation, theme, Ari}) => {
         <Modal style={styles.modalAri} transparent={true} visible={Vis} onDismiss={closeAriHandler} onRequestClose={closeAriHandler}>
             <View style={styles.modalAri}>
                 <View style={styles.ariContainer}>
-                    <Text style={styles.ariTitle}>Enter in "Momozinho" mode?</Text>
+                    <Text style={styles.ariTitle}>{translation[lang].modal.title}</Text>
                     <View style={styles.ModalAriClose}>
                         <TouchableOpacity onPress={closeAriHandler} activeOpacity={.3}>
-                                <Text style={styles.txtModalGo}>Cancel</Text>
+                                <Text style={styles.txtModalGo}>{translation[lang].modal.cancel}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={setAri} activeOpacity={.3}>
-                                <Text style={styles.txtModalGo}>Yes</Text>
+                                <Text style={styles.txtModalGo}>{translation[lang].modal.set}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={unsetAri} activeOpacity={.3}>
-                                <Text style={styles.txtModalGo}>Reset</Text>
+                                <Text style={styles.txtModalGo}>{translation[lang].modal.reset}</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -159,13 +210,13 @@ const ListaPkms = ({navigation, theme, Ari}) => {
             <Modal style={styles.modalContainer} animationType="slide" transparent={true} visible={Visibility} onDismiss={closeHandler} onRequestClose={closeHandler}>
                 <View style={styles.modalContainer}>
                     <TouchableOpacity style={styles.ModalClose} onPress={closeHandler} activeOpacity={.3}>
-                        <Text style={styles.txtModalClose}>Close</Text>
+                        <Text style={styles.txtModalClose}>{translation[lang].modal.close}</Text>
                     </TouchableOpacity>
                     <View style={styles.pkmModalInfo}>
                             <View style={styles.ModalImgWrapper}>
                                 <Image style={styles.ModalItemImg}source={{uri: selectedItem.img}}></Image>
                                 <TouchableOpacity style={styles.ModalNextInfo} onPress={()=>{pkmHandler(selectedItem);}} activeOpacity={.3}>
-                                    <Text style={styles.lblModalNext}>Read more..</Text>
+                                    <Text style={styles.lblModalNext}>{translation[lang].modal.readmore}</Text>
                                 </TouchableOpacity>
                             </View>
                             <Text style={styles.ModalTitle}>#{selectedItem.n} {selectedItem.name}</Text>
@@ -241,10 +292,10 @@ const ListaPkms = ({navigation, theme, Ari}) => {
         );
     }
     function ToggleSearch(type) {
-        if (type === "types") setPlaceholder("Searching for type...");
-        else if (type === "n") setPlaceholder("Searching for Pokémon's number...");
-        else if (type === "name") setPlaceholder("Searching for name...");
-        else if (type === "gen") setPlaceholder("Searching for generation...");
+        if (type === "types") setPlaceholder(translation[lang].placeholder.type);
+        else if (type === "n") setPlaceholder(translation[lang].placeholder.n);
+        else if (type === "name") setPlaceholder(translation[lang].placeholder.name);
+        else if (type === "gen") setPlaceholder(translation[lang].placeholder.gen);
         setTpSearch(type);
         ToggleOpen();
     }
@@ -320,23 +371,23 @@ const ListaPkms = ({navigation, theme, Ari}) => {
             <View style={styles.floatingWrapper}>
             <Animated.View style={[styles.bgFloating]}/>
             <TouchableOpacity style={[styles.otherButton, {bottom: openedTypes}]} onPress={e=>{ToggleSearch("types")}}>
-                <Text style={styles.lblTxtName}>Type</Text>
+                <Text style={styles.lblTxtName}>{translation[lang].toggle.type}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.otherButton, {bottom: openedN}]} onPress={e=>{ToggleSearch("n")}}>
-                <Text style={styles.lblTxtName}>#n</Text>
+                <Text style={styles.lblTxtName}>{translation[lang].toggle.n}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.otherButton, {bottom: openedGen}]} onPress={e=>{ToggleSearch("gen")}}>
-                <Text style={styles.lblTxtName}>Gen</Text>
+                <Text style={styles.lblTxtName}>{translation[lang].toggle.gen}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.otherButton, {bottom: openedName}]} onPress={e=>{ToggleSearch("name")}}>
-                <Text style={styles.lblTxtName}>Name</Text>
+                <Text style={styles.lblTxtName}>{translation[lang].toggle.name}</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={1} onPress={ToggleOpen} style={[styles.floatButton, styles.searchButton]}>
-                <Text style={styles.searchTitle}>Menu</Text>
+                <Text style={styles.searchTitle}>{translation[lang].toggle.menu}</Text>
             </TouchableOpacity>
             </View>
         </View>
     );
 }
 
-export default connect(state =>({ theme: state.themes.theme, Ari: state.themes.Ari }))(ListaPkms);
+export default connect(state =>({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(ListaPkms);

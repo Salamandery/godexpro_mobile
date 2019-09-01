@@ -26,17 +26,17 @@ const Login = ({navigation, dispatch}) => {
 
     async function loginHandler() {
         await AsyncStorage.setItem('user', user);
-
+        dispatch(ToggleTheme("false", "default", lang));
         navigation.navigate('Main', {username: user, theme: "false", lang});
     }
     async function getUser() {
-        await getLang();
+        const lan = await getLang();
         await AsyncStorage.getItem('user').then(id => {
             if (id) {
                 setLogged(true);
                 try {
                     setUser(id);
-                    getTheme(id);
+                    getTheme(id, lan);
                 } catch (err) {
                     console.log(err)
                 }
@@ -44,17 +44,19 @@ const Login = ({navigation, dispatch}) => {
         });
     }
     async function getLang() {
-        await AsyncStorage.getItem('lang').then(id => {
+        const lan = await AsyncStorage.getItem('lang').then(id => {
             if (id) {
                 try {
                     setLang(id);
+                    return id;
                 } catch (err) {
                     console.log(err)
                 }
             }
         });
+        return lan;
     }
-    async function getTheme(user) {
+    async function getTheme(user, lang) {
         await AsyncStorage.getItem('ari').then(th=>{
             if (th) {
                 dispatch(ToggleTheme("false", th, lang));

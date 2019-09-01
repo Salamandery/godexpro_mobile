@@ -14,9 +14,9 @@ import HeaderBar from '../../components/Header';
 import Loading from '../Loading';
 import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
+import ToggleTheme from '../../services/actions';
 
-const Settings = ({navigation, theme, Ari}) => {
-    const [lang, setLang] = useState(0);
+const Settings = ({navigation, theme, Ari, lang}) => {
     const [ifLoad, setLoading] = useState(false);
 
     if (Ari === "minimichelle") {
@@ -27,6 +27,13 @@ const Settings = ({navigation, theme, Ari}) => {
 
     function themeHandler(e) {
         AsyncStorage.setItem('theme', JSON.stringify(e));
+        setLoading(true);
+        setTimeout(()=>{
+            navigation.navigate('Login');
+        }, 2000);
+    }
+    function langHandler(e) {
+        AsyncStorage.setItem('lang', e ? "pt" : "en");
         setLoading(true);
         setTimeout(()=>{
             navigation.navigate('Login');
@@ -69,11 +76,11 @@ const Settings = ({navigation, theme, Ari}) => {
                                     <Text style={styles.Des}>Set pt-br language.</Text> 
                                     <View style={styles.Opt}>
                                         <Switch 
-                                            value={lang}
+                                            value={lang === "pt" ? true : false}
                                             thumbColor="#f2f2f2"
                                             trackColor="#246175"
                                             ios_backgroundColor="#246175"
-                                            onValueChange={setLang}
+                                            onValueChange={langHandler}
                                         />
                                     </View> 
                                 </View>
@@ -99,4 +106,4 @@ const Settings = ({navigation, theme, Ari}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari }))(Settings);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Settings);
