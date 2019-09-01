@@ -15,6 +15,7 @@ const CustomContent = (props) => {
     const [theme, setTheme] = useState("false");
     const [Ari, setari] = useState("default");
     const [user, setUser] = useState('');
+    const [lang, setLang] = useState('en');
     if (Ari) {
         var styles = StyleTheme(theme, "ari");
         var bg = "#e699cc";
@@ -28,6 +29,8 @@ const CustomContent = (props) => {
         setari(props.navigation.state.params.Ari);
         setTheme(props.navigation.state.params.theme);
         setUser(props.navigation.state.params.username);
+        //setLang(props.navigation.state.params.lang);
+        alert(props.navigation.state.params.lang)
     }, []);
     function profileHandler() {
         return(

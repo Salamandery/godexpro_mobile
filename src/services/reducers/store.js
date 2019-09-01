@@ -1,7 +1,8 @@
 
 const INITIAL_STATE = {
     theme: "false",
-    Ari: "default"
+    Ari: "default",
+    lang: "en"
 };
 
 export default function themes(state = INITIAL_STATE, action) {
@@ -9,7 +10,8 @@ export default function themes(state = INITIAL_STATE, action) {
         return { 
             ...state, 
             theme: action.theme, 
-            Ari: action.Ari 
+            Ari: action.Ari,
+            lang: action.lang 
         };
     }
     return state;

@@ -22,13 +22,15 @@ import ToggleTheme from '../../services/actions';
 const Login = ({navigation, dispatch}) => {
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
+    const [lang, setLang] = useState('en');
 
     async function loginHandler() {
         await AsyncStorage.setItem('user', user);
 
-        navigation.navigate('Main', {username: user});
+        navigation.navigate('Main', {username: user, theme: "false", lang});
     }
     async function getUser() {
+        await getLang();
         await AsyncStorage.getItem('user').then(id => {
             if (id) {
                 setLogged(true);
@@ -41,19 +43,30 @@ const Login = ({navigation, dispatch}) => {
             }
         });
     }
+    async function getLang() {
+        await AsyncStorage.getItem('lang').then(id => {
+            if (id) {
+                try {
+                    setLang(id);
+                } catch (err) {
+                    console.log(err)
+                }
+            }
+        });
+    }
     async function getTheme(user) {
         await AsyncStorage.getItem('ari').then(th=>{
             if (th) {
-                dispatch(ToggleTheme("false", th));
-                navigation.navigate('Main', {username: user, theme: "false", Ari: th});
+                dispatch(ToggleTheme("false", th, lang));
+                navigation.navigate('Main', {username: user, theme: "false", Ari: th, lang});
             } else {
                 AsyncStorage.getItem('theme').then(th=>{
                     if (th) {
-                        dispatch(ToggleTheme(th, "default"));
-                        navigation.navigate('Main', {username: user, theme: th});
+                        dispatch(ToggleTheme(th, "default", lang));
+                        navigation.navigate('Main', {username: user, theme: th, lang});
                     } else {
-                        dispatch(ToggleTheme("false", "default"));
-                        navigation.navigate('Main', {username: user, theme: "false"});
+                        dispatch(ToggleTheme("false", "default", lang));
+                        navigation.navigate('Main', {username: user, theme: "false", lang});
                     }
                 });
             }
@@ -151,4 +164,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari }))(Login);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Login);
