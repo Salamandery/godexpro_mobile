@@ -20,14 +20,16 @@ import { normalize } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 import ToggleTheme from '../../services/actions';
 
-const Login = ({navigation, dispatch, lang}) => {
+const Login = ({navigation, dispatch}) => {
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
 
     async function loginHandler() {
         await AsyncStorage.setItem('user', user);
-        dispatch(ToggleTheme("false", "default", lang));
-        navigation.navigate('Main', {username: user, theme: "false", lang});
+
+        dispatch(ToggleTheme("false", "default", "en"));
+
+        navigation.navigate('Main', {username: user, theme: "false", lang: "en"});
     }
     async function getUser() {
         const lan = await getLang();

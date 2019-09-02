@@ -5,13 +5,17 @@ import {
     ActivityIndicator
 } from 'react-native';
 import { StyleTheme } from './style';
+import { connect } from 'react-redux';
+import { translate } from '../../components/StringTrataments';
 
-const Loading = () => {
+var translation = translate("Loading");
+
+const Loading = ({lang}) => {
     var styles = StyleTheme();
     return(
 
         <View style={styles.loadInfo}>
-            <Text style={styles.text_load}>Carregando...</Text>
+            <Text style={styles.text_load}>{translation[lang].loading.title}</Text>
             <ActivityIndicator 
                 size="large" 
                 color="#cccccc"
@@ -21,4 +25,4 @@ const Loading = () => {
     );
 }
 
-export default Loading;
+export default connect(state => ({ lang: state.themes.lang }))(Loading);;

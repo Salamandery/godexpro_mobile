@@ -9,6 +9,8 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+import { translate } from '../../components/StringTrataments';
+
 import PokémonStorageUpgrade from './img/others/PokémonStorageUpgrade.png';
 import MagneticLureModule from './img/lure/MagneticLureModule.png';
 import LegendaryRaidPass from './img/passes/LegendaryRaidPass.png';
@@ -28,7 +30,10 @@ import Camera from './img/others/Camera.png';
 import Gift from './img/others/Gift.png';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
-const ItemList = ({theme, Ari, navigation}) => {
+
+var translation = translate("Itens");
+
+const ItemList = ({theme, Ari, navigation, lang}) => {
     const [ModalState, setModalState] = useState(false);
     const [Title, setTitle] = useState('');
     const [Des, setDes] = useState('');
@@ -52,7 +57,7 @@ const ItemList = ({theme, Ari, navigation}) => {
             <Modal style={styles.modalContainer} animationType={"slide"} visible={Visibility} transparent={true} onRequestClose={closeModal} onDismiss={closeModal}>
                 <View style={styles.modalContainer}>
                     <TouchableOpacity style={styles.closeModal} onPress={closeModal}>
-                        <Text style={styles.txtCloseModal}>Close</Text>
+                        <Text style={styles.txtCloseModal}>{translation[lang].modal.close}</Text>
                     </TouchableOpacity>
                     <View style={styles.MyitemModal}>
                         <View style={styles.imgWrapper}>
@@ -239,4 +244,4 @@ const ItemList = ({theme, Ari, navigation}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari }))(ItemList);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(ItemList);

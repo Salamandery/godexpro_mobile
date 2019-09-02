@@ -163,5 +163,47 @@ import ListaPkms from '../../Views/ListaPkms';
                     },                                      
                 }
             }
+            case "Loading": {
+                return {
+                    en: {
+                        loading: {
+                            title: "Loading..."
+                        }
+                    },
+                    pt: {
+                        loading: {
+                            title: "Carregando..."
+                        }
+                    }, 
+                }
+            }
+            case "Itens": {
+                return {
+                    en: {
+                        modal: {
+                            close: "Close"
+                        }
+                    },
+                    pt: {
+                        modal: {
+                            close: "Fechar"
+                        }
+                    }, 
+                }
+            }
+            case "News": {
+                return {
+                    en: {
+                        modal: {
+                            close: "Close"
+                        }
+                    },
+                    pt: {
+                        modal: {
+                            close: "Fechar"
+                        }
+                    },
+                }
+            }
         }
     }
