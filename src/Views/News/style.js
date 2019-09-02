@@ -62,6 +62,7 @@ export function StyleTheme(theme, mode) {
                     },
                     titleModal: {
                         fontSize: normalize(28),
+                        marginHorizontal: normalize(5),
                         textAlign: "center",
                         color: "#333333"
                     },
@@ -159,6 +160,7 @@ export function StyleTheme(theme, mode) {
                     },
                     titleModal: {
                         fontSize: normalize(28),
+                        marginHorizontal: normalize(5),
                         textAlign: "center",
                         color: "#cccccc",
                         fontWeight: "bold"
@@ -173,7 +175,6 @@ export function StyleTheme(theme, mode) {
                         fontSize: normalize(18),
                         textAlign: "center",
                         paddingHorizontal: normalize(10),
-                        paddingVertical: normalize(20),
                         color: "#cccccc"
                     },
                     desHint: {
@@ -252,6 +253,7 @@ export function StyleTheme(theme, mode) {
                 },
                 titleModal: {
                     fontSize: normalize(28),
+                    marginHorizontal: normalize(5),
                     textAlign: "center",
                     color: "#333333"
                 },
