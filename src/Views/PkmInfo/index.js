@@ -90,7 +90,7 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
                             </View>
                         </View>
 
-                        <Text style={styles.description}>{translation[lang].pkm.description} {pkm.description_dex}</Text>
+                        <Text style={styles.description}>{translation[lang].pkm.description} { lang === "pt" && pkm.description_pt !== undefined ? pkm.description_pt : pkm.description_dex }</Text>
                     
                         <View style={styles.status}>
                             <View style={styles.grpStat}>
