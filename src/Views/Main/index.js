@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 import { normalize } from '../../components/StringTrataments';
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
@@ -10,6 +11,7 @@ import News from '../News';
 import Help from '../Help';
 import { StyleTheme } from './style';
 import profile from '../Contact/logo.png';
+import { connect } from 'react-redux';
 
 const CustomContent = (props) => {
     const [theme, setTheme] = useState("false");
@@ -69,12 +71,19 @@ const CustomContent = (props) => {
     );
 }
 
+const PokeNavigation = ({navigation}) => {
+    console.log(navigation)
+    return {
+        title: "Pokédex"
+    }
+}
 
 const Drawer = createDrawerNavigator({
     Pokedex: { 
         screen: PkmController,
+        navigationOptions: PokeNavigation
     }, 
-    Updates: { screen: News },
+    News: { screen: News },
     Itens: { screen: Itens },
     Guide: { screen: Help },
     Contact: { screen: Contact },

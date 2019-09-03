@@ -202,7 +202,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                         modal: {
                             close: "Fechar"
                         },
-                        createdby: "Criado por"
+                        createdby: "Postado por"
                     },
                 }
             }

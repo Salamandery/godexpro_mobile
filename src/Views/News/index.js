@@ -13,7 +13,7 @@ import News from '../../components/NewsAndEvents/News';
 
 export default createAppContainer(
     createBottomTabNavigator({
-        News: { 
+        Updates: { 
             screen: News,
             navigationOptions: {
                 //tabBarIcon: ({ tintColor }) => <Image style={styles.img} source={capture}></Image>
@@ -31,7 +31,7 @@ export default createAppContainer(
             showLabel: true,
             swipeEnabled: true,
             animationEnabled: true
-        }
+        },
     })
 )
 
