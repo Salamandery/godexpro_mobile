@@ -196,12 +196,14 @@ import ListaPkms from '../../Views/ListaPkms';
                     en: {
                         modal: {
                             close: "Close"
-                        }
+                        },
+                        createdby: "Posted by"
                     },
                     pt: {
                         modal: {
                             close: "Fechar"
-                        }
+                        },
+                        createdby: "Criado por"
                     },
                 }
             }

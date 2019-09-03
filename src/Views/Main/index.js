@@ -74,9 +74,9 @@ const Drawer = createDrawerNavigator({
     Pokedex: { 
         screen: PkmController,
     }, 
-    News: { screen: News },
+    Updates: { screen: News },
     Itens: { screen: Itens },
-    Help: { screen: Help },
+    Guide: { screen: Help },
     Contact: { screen: Contact },
     Settings: { screen: Settings },
 },

@@ -86,6 +86,21 @@ export function StyleTheme(theme, mode) {
                         color: "#333333",
                         fontStyle: "italic"
                     },
+                    Posted: {
+                        textAlign: "center",
+                        color: "#333333",
+                        fontSize: normalize(14),
+                    },
+                    itemContainer: {
+                        alignSelf: "stretch",
+                        justifyContent: "flex-start",
+                        paddingVertical: normalize(10),
+                    },
+                    Item_list: {
+                        textAlign: "center",
+                        color: "#333333",
+                        fontWeight: "bold"
+                    },
                     imgWrapper: {
                         backgroundColor: "#d9d9d9",
                         alignItems: "center",
@@ -185,6 +200,21 @@ export function StyleTheme(theme, mode) {
                         color: "#cccccc",
                         fontStyle: "italic"
                     },
+                    Posted: {
+                        textAlign: "center",
+                        color: "#cccccc",
+                        fontSize: normalize(14),
+                    },
+                    itemContainer: {
+                        alignSelf: "stretch",
+                        justifyContent: "flex-start",
+                        paddingVertical: normalize(10),
+                    },
+                    Item_list: {
+                        textAlign: "center",
+                        color: "#cccccc",
+                        fontWeight: "bold"
+                    },
                     imgWrapper: {
                         backgroundColor: "#333",
                         alignItems: "center",
@@ -276,6 +306,21 @@ export function StyleTheme(theme, mode) {
                     paddingVertical: normalize(20),
                     color: "#333333",
                     fontStyle: "italic"
+                },
+                Posted: {
+                    textAlign: "center",
+                    color: "#333333",
+                    fontSize: normalize(14),
+                },
+                itemContainer: {
+                    alignSelf: "stretch",
+                    justifyContent: "flex-start",
+                    paddingVertical: normalize(10),
+                },
+                Item_list: {
+                    textAlign: "center",
+                    color: "#333333",
+                    fontWeight: "bold"
                 },
                 imgWrapper: {
                     backgroundColor: "#f5d6eb",
