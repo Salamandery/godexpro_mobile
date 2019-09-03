@@ -20,7 +20,7 @@ import { normalize } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 import ToggleTheme from '../../services/actions';
 
-const Login = ({navigation, dispatch}) => {
+const Login = ({navigation, dispatch, lang}) => {
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
 
@@ -55,7 +55,7 @@ const Login = ({navigation, dispatch}) => {
                 }
             }
         });
-        return lan;
+        return lan === undefined ? "en" : lan;
     }
     async function getTheme(user, lang) {
         await AsyncStorage.getItem('ari').then(th=>{

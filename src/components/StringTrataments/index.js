@@ -1,5 +1,4 @@
-    import { Dimensions, Platform, PixelRatio } from 'react-native';
-import ListaPkms from '../../Views/ListaPkms';
+import { Dimensions, Platform, PixelRatio } from 'react-native';
 
     const {
     width: SCREEN_WIDTH,

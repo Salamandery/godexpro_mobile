@@ -11,6 +11,13 @@ export function StyleTheme(theme, mode) {
                         flex: 1,
                         backgroundColor: "#e6e6e6"
                     },
+                    NewsItens: {
+                        flex: 1,
+                        alignSelf: "stretch",
+                    },
+                    new_list: {
+                        alignSelf: "stretch"
+                    },
                     NewItem: {
                         paddingVertical: normalize(10),
                         flexDirection: "row",
@@ -231,6 +238,13 @@ export function StyleTheme(theme, mode) {
                 container: {
                     flex: 1,
                     backgroundColor: "#e699cc"
+                },
+                NewsItens: {
+                    flex: 1,
+                    alignSelf: "stretch",
+                },
+                new_list: {
+                    alignSelf: "stretch"
                 },
                 NewItem: {
                     paddingVertical: normalize(10),

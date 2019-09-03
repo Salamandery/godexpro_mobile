@@ -62,6 +62,7 @@ const News = ({navigation, theme, Ari, lang}) => {
         setModalState(true);
     }
     function renderItem({item}) {
+        console.log(item)
         return(
             <TouchableOpacity key={item._id} onPress={()=>{
                 setModal();
@@ -69,7 +70,7 @@ const News = ({navigation, theme, Ari, lang}) => {
                 setModalTitle(item.title[lang]);
                 setModalDesc(item.description[lang]);
                 setModalHint(item.hint[lang]);
-                setItems(item.item_list[0][lang]);
+                setItems(item.item_list[lang]);
                 setPosted(item.user_create);
             }} activeOpacity={.5}>
                 <View style={styles.NewItem}>
