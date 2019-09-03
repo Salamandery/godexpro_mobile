@@ -20,6 +20,19 @@ import { normalize } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 import ToggleTheme from '../../services/actions';
 
+var translation = {
+    welcome: {
+        en: {
+            title: "Welcome to ",
+            placeholder: "Type your username"
+        },
+        pt: {
+            title: "Seja bem-vindo ao ",
+            placeholder: "Digite seu usuário"
+        }
+    },
+}
+
 const Login = ({navigation, dispatch, lang}) => {
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
@@ -87,14 +100,14 @@ const Login = ({navigation, dispatch, lang}) => {
              {
                  logged ? (
                     <View style={styles.info}>
-                        <Text style={styles.lblinfo}>Olá, {user}. Obrigado por utilizar{"\n"}
+                        <Text style={styles.lblinfo}>{translation.welcome[lang].title}{"\n"}
                             <Image style={styles.logo} source={logo}></Image>
                         </Text>
                     </View>
                  ) : (
                     <View style={styles.grpLogin}>
                         <TextInput 
-                            placeholder="Digite aqui seu usuário"
+                            placeholder={translation.welcome[lang].placeholder}
                             placeholderTextColor="#FFF"
                             style={styles.input_login}
                             autoCapitalize="none"
