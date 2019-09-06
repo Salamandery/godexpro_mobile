@@ -53,6 +53,19 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
     function backHandler() {
         navigation.navigate('ListaPkms');
     }
+    const Gender = () => {
+        return (
+            <Text style={styles.lblGender}>{ lang === "en" ? pkm.genders : (
+                pkm.genders === "Male" ? "Macho" : (
+                    pkm.genders === "Female" ? "Fêmea" : (
+                        pkm.genders === "Male / Female" ? "Macho / Fêmea" : (
+                            pkm.genders === "Unknown" ? "Sem gênero" : ""
+                        )
+                    )
+                )
+            )}</Text>
+        );
+    }
     return(
         <View style={styles.container}>
             <HeaderBar Headertitle={pkm.name} navigation={navigation} theme={theme}/>
@@ -77,7 +90,7 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
                                         <Image style={styles.img_sex} source={fem}></Image>
                                     ) : (null)
                                 }
-                                <Text style={styles.lblGender}>{pkm.genders}</Text>
+                                <Gender />
                             </View>
 
                             <Text style={styles.cp}>CP: {pkm.cp}</Text>

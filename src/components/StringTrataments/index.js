@@ -76,8 +76,8 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     pt: {
                         placeholder: {
                             name: "Pesquisando por nome...",
-                            gen: "Pesquisando por geraçãp...",
-                            n: "Pesquisando pelo N. do Pokémon...",
+                            gen: "Pesquisando por geração...",
+                            n: "Pesquisando pelo Núnero do Pokémon...",
                             type: "Pesquisando pelo Tipo do Pokémon...",
                         },
                         modal: {
