@@ -108,7 +108,7 @@ const News = ({navigation, theme, Ari, lang}) => {
     }
     return(
         <View style={styles.container}>
-            <HeaderBar Headertitle={"News"} navigation={navigation} theme={theme}/>
+            <HeaderBar Headertitle={translation[lang].header.news} navigation={navigation} theme={theme}/>
             <View style={styles.NewsItens}>
                 {
                     load ? <Loading /> : (

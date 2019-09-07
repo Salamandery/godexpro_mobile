@@ -67,7 +67,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     }
     return(
         <View style={styles.container}>     
-            <HeaderBar theme={theme} Headertitle={"Evolve Items"} navigation={navigation} />
+            <HeaderBar theme={theme} Headertitle={translation[lang].header.lvlup} navigation={navigation} />
             <View style={styles.ItemItens}>               
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();

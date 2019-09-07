@@ -49,7 +49,7 @@ const Settings = ({navigation, theme, Ari, lang}) => {
     }
     return(
         <View style={styles.container}>
-            <HeaderBar Headertitle={"Settings"} navigation={navigation} theme={theme}/>
+            <HeaderBar Headertitle={translation[lang].header} navigation={navigation} theme={theme}/>
             
                 {
                     ifLoad ? (

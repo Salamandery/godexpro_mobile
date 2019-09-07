@@ -52,8 +52,8 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                 return{
                     en: {
                         placeholder: {
-                            name: "Searching for name...",
-                            gen: "Searching for generation...",
+                            name: "Searching for Name...",
+                            gen: "Searching for Generation...",
                             n: "Searching for Pokémon's number...",
                             type: "Searching for Pokémons's type...",
                         },
@@ -75,8 +75,8 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     },
                     pt: {
                         placeholder: {
-                            name: "Pesquisando por nome...",
-                            gen: "Pesquisando por geração...",
+                            name: "Pesquisando por Nome...",
+                            gen: "Pesquisando por Geração...",
                             n: "Pesquisando pelo Núnero do Pokémon...",
                             type: "Pesquisando pelo Tipo do Pokémon...",
                         },
@@ -101,6 +101,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
             case "Settings": {
                 return{
                     en: {
+                        header: "Settings",
                         theme: {
                             title: "Dark Theme",
                             desc: "Set dark theme."
@@ -115,6 +116,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                         }
                     },
                     pt: {
+                        header: "Configurações",
                         theme: {
                             title: "Tema escuro",
                             desc: "Ativar tema escuro."
@@ -187,11 +189,25 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
             case "Itens": {
                 return {
                     en: {
+                        header: {
+                            capture: "Pokeball / Berry",
+                            potion: "Potions / Revives",
+                            egg: "Eggs / Incubators",
+                            lvlup: "Evolve Itens",
+                            other: "Other Itens"
+                        },
                         modal: {
                             close: "Close"
                         }
                     },
                     pt: {
+                        header: {
+                            capture: "Pokebolas / Frutas",
+                            potion: "Poção / Reviver",
+                            egg: "Ovos / Incubadoras",
+                            lvlup: "Itens de Evolução",
+                            other: "Outros Itens"
+                        },
                         modal: {
                             close: "Fechar"
                         }
@@ -201,17 +217,45 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
             case "News": {
                 return {
                     en: {
+                        header: {
+                            news: "News",
+                            event: "Events"
+                        },
                         modal: {
                             close: "Close"
                         },
                         createdby: "Posted by"
                     },
                     pt: {
+                        header: {
+                            news: "Notícias",
+                            event: "Eventos"
+                        },
                         modal: {
                             close: "Fechar"
                         },
                         createdby: "Postado por"
                     },
+                }
+            }
+            case "Contact": {
+                return {
+                    en: {
+                        header: "Contact"
+                    },
+                    pt: {
+                        header: "Contato"
+                    }
+                }
+            }
+            case "Help": {
+                return {
+                    en: {
+                        header: "Guide"
+                    },
+                    pt: {
+                        header: "Guia"
+                    }
                 }
             }
         }

@@ -74,7 +74,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     }
     return(
         <View style={styles.container}>     
-            <HeaderBar theme={theme} Headertitle={"Other Items"} navigation={navigation} />
+            <HeaderBar theme={theme} Headertitle={translation[lang].header.other} navigation={navigation} />
             <ScrollView>
             <View style={styles.ItemItens}>   
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{

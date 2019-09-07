@@ -11,7 +11,11 @@ import HeaderBar from '../../components/Header';
 import logo1 from './logo1.png';
 import logo2 from './logo2.png';
 import { StyleTheme } from './style';
-const Contact = ({navigation, theme, Ari}) => {
+import { translate } from '../../components/StringTrataments';
+
+var translation = translate("Contact");
+
+const Contact = ({navigation, theme, Ari, lang}) => {
 
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
@@ -21,7 +25,7 @@ const Contact = ({navigation, theme, Ari}) => {
     
     return(
         <View style={styles.container}>
-            <HeaderBar Headertitle={"Contact"} navigation={navigation} theme={theme}/>
+            <HeaderBar Headertitle={translation[lang].header} navigation={navigation} theme={theme}/>
             <View style={styles.ContactItens}>
                 <View style={styles.imgContact}>
                     <Image style={styles.logo} source={theme === "false" ? logo1 : logo2 }></Image>
@@ -38,4 +42,4 @@ const Contact = ({navigation, theme, Ari}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari }))(Contact);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Contact);
