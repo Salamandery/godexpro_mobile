@@ -134,7 +134,11 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                 return {
                     en: {
                         pkm: {
-                            description: "Description:"
+                            description: "Description:",
+                            height: "Height",
+                            weight: "Weight",
+                            gender: "Gender",
+                            type: "Type"
                         },
                         weak: {
                             title: "Weak against"
@@ -148,7 +152,11 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     },
                     pt: {
                         pkm: {
-                            description: "Descrição:"
+                            description: "Descrição:",
+                            height: "Altura",
+                            weight: "Peso",
+                            gender: "Gênero",
+                            type: "Tipo"
                         },
                         weak: {
                             title: "Fraco contra"

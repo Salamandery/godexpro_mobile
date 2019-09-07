@@ -20,7 +20,8 @@ export function StyleTheme(theme, mode) {
                         position: "absolute",
                         top: 0,
                         marginTop: normalize(15),
-                        marginHorizontal: normalize(10)
+                        marginHorizontal: normalize(10),
+                        zIndex: 2
                     },
                     infoPkm: {
                         alignSelf: "stretch",
@@ -31,6 +32,8 @@ export function StyleTheme(theme, mode) {
                         marginHorizontal: normalize(20),
                         borderTopWidth: 1,
                         borderTopColor: "#666666",
+                        flex: 1,
+                        flexWrap: "wrap"
                     },
                     InfoItens: {
                         flex: 1,
@@ -49,43 +52,74 @@ export function StyleTheme(theme, mode) {
                         height: normalize(290),
                         width: normalize(290),
                         borderRadius: normalize(70),
-                        alignSelf: "center"
+                        alignSelf: "center",
+                        marginTop: normalize(-50)
                     },
-                    cp: {
-                        marginTop: normalize(10),
-                        fontSize: normalize(26),
-                        borderLeftWidth: 1,
-                        borderRightWidth: 1,
-                        borderLeftColor: "#666666",
-                        borderRightColor: "#666666",
-                        paddingHorizontal: normalize(20),
+                    typeGroup: {
+                        justifyContent: "center",
+                        alignItems: "center",
+                        alignSelf: "stretch",
+                        zIndex: 1
+                    },
+                    txtType: {
                         color: "#cccccc",
+                        marginVertical: normalize(5)
                     },
                     type: {
-                        marginTop: normalize(10),
-                        marginHorizontal: normalize(10),
                         flexDirection: "row",
                         justifyContent: "center",
                         alignItems: "center",
                     },
+                    genderGroup: {
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%"
+                    },
+                    txtGender: {
+                        color: "#cccccc",
+                        marginBottom: normalize(5),
+                        textAlign: "center"
+                    },
                     gender: {
-                        marginTop: normalize(10),
-                        marginHorizontal: normalize(10),
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "center",
-                        flexWrap: "wrap",
-                        alignContent: "stretch",
-                        width: "25%"
                     },
                     lblGender: {
                         fontSize: normalize(12),
                         color: "#cccccc",
+                        textAlign: "center"
                     },
                     img_sex: {
                         marginHorizontal: normalize(5),
                         height: normalize(20),
                         width: normalize(20)
+                    },
+                    sizeAndHeight: {
+                        flexDirection: "row",
+                        justifyContent: "space-around",
+                        alignItems: "center",
+                        alignSelf: "stretch",
+                    },
+                    Height: {
+                        width: "50%",
+                        borderRightWidth: 1,
+                        borderRightColor: "#666666",
+                    },
+                    Weight: {
+                        width: "50%",
+                    },
+                    titlesizeAndHeight: {
+                        alignSelf: "stretch",
+                        fontSize: normalize(14),
+                        textAlign: "center",
+                        color: "#cccccc",
+                    },
+                    txtsizeAndHeight: {
+                        alignSelf: "stretch",
+                        fontSize: normalize(20),
+                        textAlign: "center",
+                        color: "#cccccc",
                     },
                     description: {
                         fontSize: normalize(26),
@@ -106,11 +140,11 @@ export function StyleTheme(theme, mode) {
                         borderTopColor: "#666666"
                     },
                     lblStatWrapper: {
-                        width: "35%",
+                        width: "37%",
                     },  
                     progress: {
                         transform: [{ scaleX: 1.0 }, { scaleY: 3 }],
-                        marginTop: normalize(3),
+                        marginTop: normalize(9),
                         width: "65%",
                         height: normalize(20)
                     },
@@ -119,18 +153,23 @@ export function StyleTheme(theme, mode) {
                         alignSelf: "stretch"
                     },
                     atk: {
-                        fontSize: normalize(20),
-                        marginHorizontal: normalize(20),
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
                         color: "#cccccc",
                     },
                     def: {
-                        fontSize: normalize(20),
-                        marginHorizontal: normalize(20),
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
                         color: "#cccccc",
                     },
                     stm: {
-                        fontSize: normalize(20),
-                        marginHorizontal: normalize(20),
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
+                        color: "#cccccc",
+                    },
+                    cp: {
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
                         color: "#cccccc",
                     },
                 })
@@ -146,7 +185,8 @@ export function StyleTheme(theme, mode) {
                         position: "absolute",
                         top: 0,
                         marginTop: normalize(15),
-                        marginHorizontal: normalize(10)
+                        marginHorizontal: normalize(10),
+                        zIndex: 2
                     },
                     container: {
                         flex: 1,
@@ -162,9 +202,13 @@ export function StyleTheme(theme, mode) {
                         marginHorizontal: normalize(20),
                         borderTopWidth: 1,
                         borderTopColor: "#bfbfbf",
+                        flex: 1,
+                        flexWrap: "wrap"
                     },
                     InfoItens: {
                         flex: 1,
+                        borderTopColor: "#bfbfbf",
+                        borderTopWidth: 1
                     },
                     imgWrap: {
                         backgroundColor: "lightblue",
@@ -178,43 +222,74 @@ export function StyleTheme(theme, mode) {
                         height: normalize(290),
                         width: normalize(290),
                         borderRadius: normalize(70),
-                        alignSelf: "center"
+                        alignSelf: "center",
+                        marginTop: normalize(-50)
                     },
-                    cp: {
-                        marginTop: normalize(10),
-                        fontSize: normalize(26),
-                        borderLeftWidth: 1,
-                        borderRightWidth: 1,
-                        borderLeftColor: "#bfbfbf",
-                        borderRightColor: "#bfbfbf",
-                        paddingHorizontal: normalize(20),
-                        color: "#333333"
+                    typeGroup: {
+                        justifyContent: "center",
+                        alignItems: "center",
+                        alignSelf: "stretch",
+                        zIndex: 1
+                    },
+                    txtType: {
+                        color: "#333333",
+                        marginVertical: normalize(5)
                     },
                     type: {
-                        marginTop: normalize(10),
-                        marginHorizontal: normalize(10),
                         flexDirection: "row",
                         justifyContent: "center",
-                        alignItems: "center"
+                        alignItems: "center",
+                    },
+                    genderGroup: {
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%"
+                    },
+                    txtGender: {
+                        color: "#333333",
+                        marginBottom: normalize(5),
+                        textAlign: "center"
                     },
                     gender: {
-                        marginTop: normalize(10),
-                        marginHorizontal: normalize(10),
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "center",
-                        flexWrap: "wrap",
-                        alignContent: "stretch",
-                        width: "25%"
                     },
                     lblGender: {
                         fontSize: normalize(12),
-                        color: "#333333"
+                        color: "#333333",
+                        textAlign: "center"
                     },
                     img_sex: {
                         marginHorizontal: normalize(5),
                         height: normalize(20),
                         width: normalize(20)
+                    },
+                    sizeAndHeight: {
+                        flexDirection: "row",
+                        justifyContent: "space-around",
+                        alignItems: "center",
+                        alignSelf: "stretch",
+                    },
+                    Height: {
+                        width: "50%",
+                        borderRightWidth: 1,
+                        borderRightColor: "#bfbfbf",
+                    },
+                    Weight: {
+                        width: "50%"
+                    },
+                    titlesizeAndHeight: {
+                        alignSelf: "stretch",
+                        fontSize: normalize(14),
+                        textAlign: "center",
+                        color: "#333333",
+                    },
+                    txtsizeAndHeight: {
+                        alignSelf: "stretch",
+                        fontSize: normalize(20),
+                        textAlign: "center",
+                        color: "#333333",
                     },
                     description: {
                         fontSize: normalize(26),
@@ -235,11 +310,11 @@ export function StyleTheme(theme, mode) {
                         borderTopColor: "#bfbfbf"
                     },
                     lblStatWrapper: {
-                        width: "35%"
+                        width: "37%"
                     },  
                     progress: {
                         transform: [{ scaleX: 1.0 }, { scaleY: 3 }],
-                        marginTop: normalize(3),
+                        marginTop: normalize(9),
                         width: "65%",
                         height: normalize(20)
                     },
@@ -248,19 +323,24 @@ export function StyleTheme(theme, mode) {
                         alignSelf: "stretch"
                     },
                     atk: {
-                        fontSize: normalize(20),
-                        marginHorizontal: normalize(20),
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
                         color: "#333333"
                     },
                     def: {
-                        fontSize: normalize(20),
-                        marginHorizontal: normalize(20),
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
                         color: "#333333"
                     },
                     stm: {
-                        fontSize: normalize(20),
-                        marginHorizontal: normalize(20),
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
                         color: "#333333"
+                    },
+                    cp: {
+                        fontSize: normalize(18),
+                        marginLeft: normalize(20),
+                        color: "#333333",
                     },
                 })
             ); 
@@ -276,7 +356,8 @@ export function StyleTheme(theme, mode) {
                     position: "absolute",
                     top: 0,
                     marginTop: normalize(15),
-                    marginHorizontal: normalize(10)
+                    marginHorizontal: normalize(10),
+                    zIndex: 2
                 },
                 container: {
                     flex: 1,
@@ -292,9 +373,13 @@ export function StyleTheme(theme, mode) {
                     marginHorizontal: normalize(20),
                     borderTopWidth: 1,
                     borderTopColor: "#7a1f5c",
+                    flex: 1,
+                    flexWrap: "wrap"
                 },
                 InfoItens: {
                     flex: 1,
+                    borderTopColor: "#7a1f5c",
+                    borderTopWidth: 1
                 },
                 imgWrap: {
                     backgroundColor: "#f5d6eb",
@@ -308,43 +393,74 @@ export function StyleTheme(theme, mode) {
                     height: normalize(290),
                     width: normalize(290),
                     borderRadius: normalize(70),
-                    alignSelf: "center"
+                    alignSelf: "center",
+                    marginTop: normalize(-50)
                 },
-                cp: {
-                    marginTop: normalize(10),
-                    fontSize: normalize(26),
-                    borderLeftWidth: 1,
-                    borderRightWidth: 1,
-                    borderLeftColor: "#7a1f5c",
-                    borderRightColor: "#7a1f5c",
-                    paddingHorizontal: normalize(20),
-                    color: "#333333"
+                typeGroup: {
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignSelf: "stretch",
+                    zIndex: 1
+                },
+                txtType: {
+                    color: "#333333",
+                    marginVertical: normalize(5)
                 },
                 type: {
-                    marginTop: normalize(10),
-                    marginHorizontal: normalize(10),
                     flexDirection: "row",
                     justifyContent: "center",
-                    alignItems: "center"
+                    alignItems: "center",
+                },
+                genderGroup: {
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100%"
+                },
+                txtGender: {
+                    color: "#333333",
+                    marginBottom: normalize(5),
+                    textAlign: "center"
                 },
                 gender: {
-                    marginTop: normalize(20),
-                    marginHorizontal: normalize(10),
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "center",
-                    flexWrap: "wrap",
-                    alignContent: "stretch",
-                    width: "25%"
                 },
                 lblGender: {
                     fontSize: normalize(12),
-                    color: "#333333"
+                    color: "#333333",
+                    textAlign: "center"
                 },
                 img_sex: {
                     marginHorizontal: normalize(5),
                     height: normalize(20),
                     width: normalize(20)
+                },
+                sizeAndHeight: {
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                    alignSelf: "stretch",
+                },
+                Height: {
+                    width: "50%",
+                    borderRightWidth: 1,
+                    borderRightColor: "#7a1f5c",
+                },
+                Weight: {
+                    width: "50%"
+                },
+                titlesizeAndHeight: {
+                    alignSelf: "stretch",
+                    fontSize: normalize(14),
+                    textAlign: "center",
+                    color: "#333333",
+                },
+                txtsizeAndHeight: {
+                    alignSelf: "stretch",
+                    fontSize: normalize(20),
+                    textAlign: "center",
+                    color: "#333333",
                 },
                 description: {
                     fontSize: normalize(26),
@@ -365,11 +481,11 @@ export function StyleTheme(theme, mode) {
                     borderTopColor: "#7a1f5c"
                 },
                 lblStatWrapper: {
-                    width: "35%"
+                    width: "37%"
                 },  
                 progress: {
                     transform: [{ scaleX: 1.0 }, { scaleY: 3 }],
-                    marginTop: normalize(3),
+                    marginTop: normalize(9),
                     width: "65%",
                     height: normalize(20)
                 },
@@ -378,19 +494,24 @@ export function StyleTheme(theme, mode) {
                     alignSelf: "stretch"
                 },
                 atk: {
-                    fontSize: normalize(20),
-                    marginHorizontal: normalize(20),
+                    fontSize: normalize(18),
+                    marginLeft: normalize(20),
                     color: "#333333"
                 },
                 def: {
-                    fontSize: normalize(20),
-                    marginHorizontal: normalize(20),
+                    fontSize: normalize(18),
+                    marginLeft: normalize(20),
                     color: "#333333"
                 },
                 stm: {
-                    fontSize: normalize(20),
-                    marginHorizontal: normalize(20),
+                    fontSize: normalize(18),
+                    marginLeft: normalize(20),
                     color: "#333333"
+                },
+                cp: {
+                    fontSize: normalize(18),
+                    marginLeft: normalize(20),
+                    color: "#333333",
                 },
             })
         );

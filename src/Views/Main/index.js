@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import { normalize } from '../../components/StringTrataments';
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
 import PkmController from '../PkmController';
 import Settings from '../Settings';
 import Contact from '../Contact';
@@ -10,7 +10,8 @@ import Itens from '../Itens';
 import News from '../News';
 import Help from '../Help';
 import { StyleTheme } from './style';
-import profile from '../Contact/logo.png';
+import profile1 from '../Contact/logo1.png';
+import profile2 from '../Contact/logo2.png';
 import { connect } from 'react-redux';
 
 const CustomContent = (props) => {
@@ -47,7 +48,7 @@ const CustomContent = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.imgWrapper}>
-                    <Image style={styles.img} source={profile}></Image>
+                    <Image style={styles.img} source={ theme === "false" ? profile1 : profile2 }></Image>
                 </View>
                 <View style={styles.profileInfo}>
                     <TouchableOpacity>
@@ -55,7 +56,7 @@ const CustomContent = (props) => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={styles.MenuItens}>
+            <ScrollView style={styles.MenuItens}>
                 <DrawerItems 
                     {...props}
                     activeTintColor={theme === 'false' ? "#333333" : "#cccccc"}
@@ -66,7 +67,7 @@ const CustomContent = (props) => {
                         fontSize: normalize(24)
                     }}
                 />
-            </View>
+            </ScrollView>
         </View>
     );
 }

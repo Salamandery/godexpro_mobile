@@ -99,7 +99,7 @@ export function StyleTheme(theme, mode) {
                 weather: {
                     alignSelf: "stretch",
                     paddingVertical: 1,
-                    backgroundColor: "#f2f2f2",
+                    backgroundColor: "#f5d6eb",
                     justifyContent: "center",
                     alignItems: "center",
                     flexDirection: "column",

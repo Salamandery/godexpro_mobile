@@ -165,7 +165,7 @@ export function StyleTheme(theme, mode) {
                     alignContent: "stretch"
                 },
                 weakTitle: {
-                    backgroundColor: "#f2f2f2",
+                    backgroundColor: "#f5d6eb",
                 },  
                 txtWeak: {
                     textAlign: "center",
@@ -176,7 +176,7 @@ export function StyleTheme(theme, mode) {
                     height: normalize(150),
                     borderTopColor: "#7a1f5c",
                     borderTopWidth: 1,
-                    backgroundColor: "#f2f2f2",
+                    backgroundColor: "#f5d6eb",
                     paddingVertical: normalize(10),
                     paddingHorizontal: normalize(5),
                     justifyContent: "center",
@@ -191,7 +191,7 @@ export function StyleTheme(theme, mode) {
                     alignContent: "stretch"
                 },
                 strongTitle: {
-                    backgroundColor: "#f2f2f2",
+                    backgroundColor: "#f5d6eb",
                 },
                 txtStrong: {
                     textAlign: "center",
@@ -202,7 +202,7 @@ export function StyleTheme(theme, mode) {
                     height: normalize(150),
                     borderTopColor: "#7a1f5c",
                     borderTopWidth: 1,
-                    backgroundColor: "#f2f2f2",
+                    backgroundColor: "#f5d6eb",
                     paddingVertical: normalize(10),
                     paddingHorizontal: normalize(5),
                     justifyContent: "center",

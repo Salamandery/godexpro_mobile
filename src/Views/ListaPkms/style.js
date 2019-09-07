@@ -114,7 +114,7 @@ export function StyleTheme(theme, mode) {
                         alignSelf: "stretch"
                     },  
                     progress: {
-                        transform: [{ scaleX: 1.0 }, { scaleY: 3 }],
+                        transform: [{ scaleX: 1.0 }, { scaleY: 2.5 }],
                         marginTop: normalize(3),
                         alignSelf: "stretch"
                     },
@@ -126,17 +126,17 @@ export function StyleTheme(theme, mode) {
                     },
                     atk: {
                         textAlign: "center",
-                        fontSize: normalize(20),
+                        fontSize: normalize(16),
                         color: "#333333",
                     },
                     def: {
                         textAlign: "center",
-                        fontSize: normalize(20),
+                        fontSize: normalize(16),
                         color: "#333333",
                     },
                     stm: {
                         textAlign: "center",
-                        fontSize: normalize(20),
+                        fontSize: normalize(16),
                         color: "#333333",
                     },
                     ModalNextInfo: {
@@ -153,15 +153,22 @@ export function StyleTheme(theme, mode) {
                         color: "#333333",
                     },
                     searchBox: {
-                        paddingVertical: normalize(2),
                         alignSelf: "stretch",
                         borderWidth: 1,
                         borderColor: "#bfbfbf",
-                        paddingHorizontal: normalize(10),
+                        elevation: 1,
+                        shadowColor: '#000',
+                        shadowOpacity: .02,
+                        shadowRadius: 2,
+                        shadowOffset: {
+                            width: 0,
+                            height: 10,
+                        },
                     },
                     searchInput: {
                         fontSize: normalize(20),
                         color: "#333333",
+                        paddingHorizontal: normalize(10),
                     },
                     modalAri: {
                         flex: 1,
@@ -209,26 +216,26 @@ export function StyleTheme(theme, mode) {
                         height: normalize(60),
                         alignItems: "center",
                         justifyContent: "center",
-                        shadowColor: "#000",
-                        shadowOpacity: .1,
-                        shadowOffset: {x: 2, y: 0},
-                        shadowRadius: 2,
+                        elevation: 2,
+                        shadowColor: '#000',
+                        shadowOpacity: 2,
+                        shadowRadius: 5,
                         borderRadius: normalize(30),
                         position: "absolute",
                         bottom: 0,
-                        right: 0
+                        right: 0,
                     }, 
                     otherButton: {
                         width: normalize(45),
                         height: normalize(45),
                         alignItems: "center",
                         justifyContent: "center",
-                        shadowColor: "#000",
-                        shadowOpacity: .1,
-                        shadowOffset: {x: 2, y: 0},
-                        shadowRadius: 2,
+                        elevation: 2,
+                        shadowColor: '#000',
+                        shadowOpacity: 2,
+                        shadowRadius: 5,
                         borderRadius: normalize(30),
-                        backgroundColor: "#fff",
+                        backgroundColor: "#f2f2f2",
                         position: "absolute",
                         bottom: normalize(5),
                         right: normalize(8)
@@ -237,7 +244,7 @@ export function StyleTheme(theme, mode) {
                         color: "#fff",
                     },
                     searchButton: {
-                        backgroundColor: "#262626"
+                        backgroundColor: "#222"
                     },
                     lblTxtName: {
                         color: "#000",
@@ -364,7 +371,7 @@ export function StyleTheme(theme, mode) {
                         alignSelf: "stretch"
                     },  
                     progress: {
-                        transform: [{ scaleX: 1.0 }, { scaleY: 3 }],
+                        transform: [{ scaleX: 1.0 }, { scaleY: 2.5 }],
                         marginTop: normalize(3),
                         alignSelf: "stretch"
                     },
@@ -376,17 +383,17 @@ export function StyleTheme(theme, mode) {
                     },
                     atk: {
                         textAlign: "center",
-                        fontSize: normalize(20),
+                        fontSize: normalize(16),
                         color: "#cccccc",
                     },
                     def: {
                         textAlign: "center",
-                        fontSize: normalize(20),
+                        fontSize: normalize(16),
                         color: "#cccccc",
                     },
                     stm: {
                         textAlign: "center",
-                        fontSize: normalize(20),
+                        fontSize: normalize(16),
                         color: "#cccccc",
                     },
                     ModalNextInfo: {
@@ -403,15 +410,22 @@ export function StyleTheme(theme, mode) {
                         color: "#cccccc",
                     },
                     searchBox: {
-                        paddingVertical: normalize(2),
                         alignSelf: "stretch",
                         borderWidth: 1,
                         borderColor: "#666666",
-                        paddingHorizontal: normalize(10),
+                        elevation: 1,
+                        shadowColor: '#000',
+                        shadowOpacity: .02,
+                        shadowRadius: 2,
+                        shadowOffset: {
+                            width: 0,
+                            height: 10,
+                        },
                     },
                     searchInput: {
                         fontSize: normalize(20),
                         color: "#cccccc",
+                        paddingHorizontal: normalize(10),
                     },
                     modalAri: {
                         flex: 1,
@@ -459,26 +473,26 @@ export function StyleTheme(theme, mode) {
                         height: normalize(60),
                         alignItems: "center",
                         justifyContent: "center",
-                        shadowColor: "#000",
-                        shadowOpacity: .1,
-                        shadowOffset: {x: 2, y: 0},
-                        shadowRadius: 2,
+                        elevation: 2,
+                        shadowColor: '#fff',
+                        shadowOpacity: 2,
+                        shadowRadius: 5,
                         borderRadius: normalize(30),
                         position: "absolute",
                         bottom: 0,
-                        right: 0
+                        right: 0,
                     }, 
                     otherButton: {
                         width: normalize(45),
                         height: normalize(45),
                         alignItems: "center",
                         justifyContent: "center",
-                        shadowColor: "#000",
-                        shadowOpacity: .1,
-                        shadowOffset: {x: 2, y: 0},
-                        shadowRadius: 2,
+                        elevation: 2,
+                        shadowColor: '#fff',
+                        shadowOpacity: 2,
+                        shadowRadius: 5,
                         borderRadius: normalize(30),
-                        backgroundColor: "#fff",
+                        backgroundColor: "#888",
                         position: "absolute",
                         bottom: normalize(5),
                         right: normalize(8)
@@ -487,7 +501,7 @@ export function StyleTheme(theme, mode) {
                         color: "#fff",
                     },
                     searchButton: {
-                        backgroundColor: "#262626"
+                        backgroundColor: "#444"
                     },
                     lblTxtName: {
                         color: "#000",
@@ -615,7 +629,7 @@ export function StyleTheme(theme, mode) {
                     alignSelf: "stretch"
                 },  
                 progress: {
-                    transform: [{ scaleX: 1.0 }, { scaleY: 3 }],
+                    transform: [{ scaleX: 1.0 }, { scaleY: 2.5 }],
                     marginTop: normalize(3),
                     alignSelf: "stretch"
                 },
@@ -627,17 +641,17 @@ export function StyleTheme(theme, mode) {
                 },
                 atk: {
                     textAlign: "center",
-                    fontSize: normalize(20),
+                    fontSize: normalize(16),
                     color: "#333333",
                 },
                 def: {
                     textAlign: "center",
-                    fontSize: normalize(20),
+                    fontSize: normalize(16),
                     color: "#333333",
                 },
                 stm: {
                     textAlign: "center",
-                    fontSize: normalize(20),
+                    fontSize: normalize(16),
                     color: "#333333",
                 },
                 ModalNextInfo: {
@@ -654,15 +668,22 @@ export function StyleTheme(theme, mode) {
                     color: "#333333",
                 },
                 searchBox: {
-                    paddingVertical: normalize(2),
                     alignSelf: "stretch",
                     borderWidth: 1,
                     borderColor: "#f5d6eb",
-                    paddingHorizontal: normalize(10),
+                    elevation: 1,
+                    shadowColor: '#000',
+                    shadowOpacity: .02,
+                    shadowRadius: 2,
+                    shadowOffset: {
+                        width: 0,
+                        height: 10,
+                    },
                 },
                 searchInput: {
                     fontSize: normalize(20),
                     color: "#333333",
+                    paddingHorizontal: normalize(10),
                 },
                 modalAri: {
                     flex: 1,
@@ -710,26 +731,26 @@ export function StyleTheme(theme, mode) {
                     height: normalize(60),
                     alignItems: "center",
                     justifyContent: "center",
-                    shadowColor: "#000",
-                    shadowOpacity: .1,
-                    shadowOffset: {x: 2, y: 0},
-                    shadowRadius: 2,
+                    elevation: 2,
+                    shadowColor: '#000',
+                    shadowOpacity: 2,
+                    shadowRadius: 5,
                     borderRadius: normalize(30),
                     position: "absolute",
                     bottom: 0,
-                    right: 0
+                    right: 0,
                 }, 
                 otherButton: {
                     width: normalize(45),
                     height: normalize(45),
                     alignItems: "center",
                     justifyContent: "center",
-                    shadowColor: "#000",
-                    shadowOpacity: .1,
-                    shadowOffset: {x: 2, y: 0},
-                    shadowRadius: 2,
+                    elevation: 2,
+                    shadowColor: '#000',
+                    shadowOpacity: 2,
+                    shadowRadius: 5,
                     borderRadius: normalize(30),
-                    backgroundColor: "#fff",
+                    backgroundColor: "#f0d0eb",
                     position: "absolute",
                     bottom: normalize(5),
                     right: normalize(8)
@@ -738,7 +759,7 @@ export function StyleTheme(theme, mode) {
                     color: "#fff",
                 },
                 searchButton: {
-                    backgroundColor: "#262626"
+                    backgroundColor: "#7a1f5c"
                 },
                 lblTxtName: {
                     color: "#000",

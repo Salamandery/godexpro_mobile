@@ -138,7 +138,7 @@ const ListaPkms = ({navigation, theme, Ari, lang}) => {
 
     const ModalAri = ({Vis})=>{
         return(
-        <Modal style={styles.modalAri} transparent={true} visible={Vis} onDismiss={closeAriHandler} onRequestClose={closeAriHandler}>
+        <Modal style={styles.modalAri} animationType="fade" transparent={true} visible={Vis} onDismiss={closeAriHandler} onRequestClose={closeAriHandler}>
             <View style={styles.modalAri}>
                 <View style={styles.ariContainer}>
                     <Text style={styles.ariTitle}>{translation[lang].modal.title}</Text>
@@ -176,6 +176,18 @@ const ListaPkms = ({navigation, theme, Ari, lang}) => {
                             <View style={styles.status}>
                                 <View style={styles.grpStat}>
                                     <View style={styles.lblStatWrapper}>
+                                        <Text style={styles.stm}>CP: {selectedItem.cp}</Text>
+                                    </View>
+                                    <ProgressBarAndroid
+                                        styleAttr="Horizontal"
+                                        color="#B8860B"
+                                        indeterminate={false}
+                                        style={styles.progress}
+                                        progress={percent(stStm, 'stm')}
+                                    />
+                                </View>
+                                <View style={styles.grpStat}>
+                                    <View style={styles.lblStatWrapper}>
                                         <Text style={styles.atk}>ATK: {selectedItem.atk}</Text>
                                     </View>
                                     <ProgressBarAndroid
@@ -204,7 +216,7 @@ const ListaPkms = ({navigation, theme, Ari, lang}) => {
                                     </View>
                                     <ProgressBarAndroid
                                         styleAttr="Horizontal"
-                                        color="#B8860B"
+                                        color="#6600cc"
                                         indeterminate={false}
                                         style={styles.progress}
                                         progress={percent(stStm, 'stm')}

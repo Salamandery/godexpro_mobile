@@ -72,40 +72,66 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
             <ScrollView style="flex: 1">
                 <View style={styles.InfoItens}>
                         <View style={styles.imgWrap}>
+                            <View style={styles.typeGroup}>
+                                <Text style={styles.txtType}>{translation[lang].pkm.type}</Text>
+                                <View style={styles.type}>
+                                    {   
+                                        pkm.types.map((type, index) =>(
+                                            <CheckType key={index} type={type}/> 
+                                        ))
+                                    }
+                                </View>
+                            </View>
                             <TouchableOpacity style={styles.back} onPress={backHandler} activeOpacity={1}>
                                 <Image source={btn_back}></Image>
                             </TouchableOpacity>
                             <Image style={styles.pkm_img} source={{uri: pkm.img}}></Image>
                         </View>
+                            <View style={styles.genderGroup}>
+                                <Text style={styles.txtGender}>{translation[lang].pkm.gender}</Text>
+                                <View style={styles.gender}>
+                                    {
+                                        checkGender(pkm.genders, "Male") > 0 ? (
+                                            <Image style={styles.img_sex} source={ma}></Image>
+                                        ) : (null)
+                                    }
+                                    {
+                                        checkGender(pkm.genders, "Female") > 0 ? (
+                                            <Image style={styles.img_sex} source={fem}></Image>
+                                        ) : (null)
+                                    }
 
-                        <View style={styles.infoPkm}>
-                            <View style={styles.gender}>
-                                {
-                                    checkGender(pkm.genders, "Male") > 0 ? (
-                                        <Image style={styles.img_sex} source={ma}></Image>
-                                    ) : (null)
-                                }
-                                {
-                                    checkGender(pkm.genders, "Female") > 0 ? (
-                                        <Image style={styles.img_sex} source={fem}></Image>
-                                    ) : (null)
-                                }
+                                </View>
                                 <Gender />
                             </View>
-
-                            <Text style={styles.cp}>CP: {pkm.cp}</Text>
-                            <View style={styles.type}>
-                                {   
-                                    pkm.types.map((type, index) =>(
-                                        <CheckType key={index} type={type}/> 
-                                    ))
-                                }
+                        <View style={styles.infoPkm}>
+                            <View style={styles.sizeAndHeight}>
+                                <View style={styles.Height}>
+                                    <Text style={styles.titlesizeAndHeight}>{translation[lang].pkm.height}</Text>
+                                    <Text style={styles.txtsizeAndHeight}>{pkm.height}</Text>
+                                </View>
+                                <View style={styles.Weight}>
+                                    <Text style={styles.titlesizeAndHeight}>{translation[lang].pkm.weight}</Text>
+                                    <Text style={styles.txtsizeAndHeight}>{pkm.weight}</Text>
+                                </View>
                             </View>
                         </View>
 
                         <Text style={styles.description}>{translation[lang].pkm.description} { lang === "pt" && pkm.description_pt !== undefined ? pkm.description_pt : pkm.description_dex }</Text>
                     
                         <View style={styles.status}>
+                            <View style={styles.grpStat}>
+                                <View style={styles.lblStatWrapper}>
+                                    <Text style={styles.cp}>CP: {pkm.cp}</Text>
+                                </View>
+                                <ProgressBarAndroid
+                                    styleAttr="Horizontal"
+                                    color="#B8860B"
+                                    indeterminate={false}
+                                    style={styles.progress}
+                                    progress={percent(stAtk, 'atk')}
+                                />
+                            </View>
                             <View style={styles.grpStat}>
                                 <View style={styles.lblStatWrapper}>
                                     <Text style={styles.atk}>ATK: {pkm.atk}</Text>
@@ -136,7 +162,7 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
                                 </View>
                                 <ProgressBarAndroid
                                     styleAttr="Horizontal"
-                                    color="#B8860B"
+                                    color="#6600cc"
                                     indeterminate={false}
                                     style={styles.progress}
                                     progress={percent(stStm, 'stm')}

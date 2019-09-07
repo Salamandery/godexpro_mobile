@@ -24,7 +24,8 @@ export function StyleTheme(theme, mode) {
                         borderColor: "#bfbfbf",
                         alignSelf: "center",
                         alignItems: "center",
-                        justifyContent: "center"
+                        justifyContent: "center",
+                        backgroundColor: "lightblue"
                     },
                     ContactItens: {
                         paddingVertical: normalize(10),
@@ -104,7 +105,8 @@ export function StyleTheme(theme, mode) {
                     borderColor: "#7a1f5c",
                     alignSelf: "center",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    backgroundColor: "#f5d6eb"
                 },
                 ContactItens: {
                     paddingVertical: normalize(10),
@@ -114,7 +116,7 @@ export function StyleTheme(theme, mode) {
                 },
                 DescriptionContainer: {
                     padding: normalize(20),
-                    backgroundColor: "#f2f2f2",
+                    backgroundColor: "#f5d6eb",
                     marginTop: normalize(20),
                 },
                 itens: {
