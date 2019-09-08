@@ -62,7 +62,7 @@ const News = ({navigation, theme, Ari, lang}) => {
         setModalState(true);
     }
     function renderItem({item}) {
-        console.log(item)
+        
         return(
             <TouchableOpacity key={item._id} onPress={()=>{
                 setModal();

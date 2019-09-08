@@ -1,5 +1,5 @@
 import React, {
-    
+    Component
 } from 'react';
 import {
     View,
@@ -12,11 +12,10 @@ import logo1 from './logo1.png';
 import logo2 from './logo2.png';
 import { StyleTheme } from './style';
 import { translate } from '../../components/StringTrataments';
-
 var translation = translate("Contact");
 
 const Contact = ({navigation, theme, Ari, lang}) => {
-
+    
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {

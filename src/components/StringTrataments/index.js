@@ -110,6 +110,10 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                             title: "Language pt-br",
                             desc: "Set pt-br language."
                         },
+                        menuSide: {
+                            title: "Menu bar to right",
+                            desc: "This settings will change the slide direction menu"
+                        },
                         clear: {
                             title: "Clear Data",
                             desc: "Clear user data settings."
@@ -124,6 +128,10 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                         lang: {
                             title: "Idioma pt-br",
                             desc: "Ativar idioma em pt-br."
+                        },
+                        menuSide: {
+                            title: "Menu para a direita",
+                            desc: "Essa configuração mudará a direção do menu"
                         },
                         clear: {
                             title: "Limpar dados",

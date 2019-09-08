@@ -19,7 +19,7 @@ var translation = translate("Settings");
 
 const Settings = ({navigation, theme, Ari, lang}) => {
     const [ifLoad, setLoading] = useState(false);
-
+    const [dir, setDir] = useState(false);
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {
@@ -35,6 +35,13 @@ const Settings = ({navigation, theme, Ari, lang}) => {
     }
     function langHandler(e) {
         AsyncStorage.setItem('lang', e ? "pt" : "en");
+        setLoading(true);
+        setTimeout(()=>{
+            navigation.navigate('Login');
+        }, 2000);
+    }
+    function dirHandler(e) {
+        AsyncStorage.setItem('dir', e ? "right" : "left");
         setLoading(true);
         setTimeout(()=>{
             navigation.navigate('Login');
@@ -95,6 +102,19 @@ const Settings = ({navigation, theme, Ari, lang}) => {
                                             thumbColor="#f2f2f2"
                                             color="#246175"
                                             onPress={clearHandler}
+                                        />
+                                    </View> 
+                                </View>
+                                <View style={styles.grpSetting}>
+                                    <Text style={styles.Title}>{translation[lang].menuSide.title}</Text> 
+                                    <Text style={styles.Des}>{translation[lang].menuSide.desc}</Text> 
+                                    <View style={styles.Opt}>
+                                        <Switch 
+                                            value={dir === "right" ? true : false}
+                                            thumbColor="#f2f2f2"
+                                            trackColor="#246175"
+                                            ios_backgroundColor="#246175"
+                                            onValueChange={dirHandler}
                                         />
                                     </View> 
                                 </View>

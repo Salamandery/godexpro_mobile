@@ -5,10 +5,16 @@ import Main from './Views/Main';
 export default createAppContainer(
     createSwitchNavigator({
         Login: {
-            screen: Login
+            screen: Login,
+            navigationOptions: {
+                header: null
+            }
         },
         Main:  {
             screen: Main,
+            navigationOptions: {
+                header: null
+            }
         },
     }, 
     {
