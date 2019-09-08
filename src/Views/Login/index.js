@@ -33,8 +33,7 @@ var translation = {
     },
 }
 
-const Login = ({navigation, dispatch, lang}) => {
-
+const Login = ({navigation, dispatch, lang = "en"}) => {
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
 
@@ -42,7 +41,6 @@ const Login = ({navigation, dispatch, lang}) => {
 
         await AsyncStorage.setItem('user', user);
         await AsyncStorage.setItem('theme', "false");
-        await AsyncStorage.setItem('ari', "default");
         await AsyncStorage.setItem('lang', "en");
         await AsyncStorage.setItem('dir', "left");
 
@@ -52,7 +50,7 @@ const Login = ({navigation, dispatch, lang}) => {
     }
     async function getUser() {
         const usr = await AsyncStorage.getItem('user');
-        return usr;
+        return usr === undefined ? " " : usr;
     }
     async function getLang() {
         const lan = await AsyncStorage.getItem('lang');
@@ -60,7 +58,7 @@ const Login = ({navigation, dispatch, lang}) => {
     }
     async function getDir() {
         const dr = await AsyncStorage.getItem('dir');
-        return dr;
+        return dr === undefined ? "left" : dr; 
     }
     async function getTheme(user, language = "en", dir = "left") {
         setLogged(true);
@@ -83,9 +81,11 @@ const Login = ({navigation, dispatch, lang}) => {
     }
     async function ifLogged() {
         const usr = await getUser();
-        const lan = await getLang();
-        const direction = await getDir();
-        await getTheme(usr, lan, direction);
+        if (usr) {
+            const lan = await getLang();
+            const direction = await getDir();
+            await getTheme(usr, lan, direction);
+        }
     }
     useEffect(()=>{
         ifLogged();

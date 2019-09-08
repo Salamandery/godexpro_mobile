@@ -27,7 +27,7 @@ const CustomContent = (props) => {
     const [user, setUser] = useState('');
     const [lang, setLang] = useState('en');
     
-    if (Ari) {
+    if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
         var bg = "#e699cc";
         var abg = "#f5d6eb";
