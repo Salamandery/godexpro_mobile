@@ -17,9 +17,8 @@ import { translate } from '../../components/StringTrataments';
 
 var translation = translate("Settings");
 
-const Settings = ({navigation, theme, Ari, lang}) => {
+const Settings = ({navigation, theme, Ari, lang, dir}) => {
     const [ifLoad, setLoading] = useState(false);
-    const [dir, setDir] = useState(false);
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {
@@ -127,4 +126,4 @@ const Settings = ({navigation, theme, Ari, lang}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Settings);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Settings);

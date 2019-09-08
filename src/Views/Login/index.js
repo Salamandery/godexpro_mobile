@@ -34,62 +34,61 @@ var translation = {
 }
 
 const Login = ({navigation, dispatch, lang}) => {
+
     const [user, setUser] = useState('');
     const [logged, setLogged] = useState(false);
 
     async function loginHandler() {
+
         await AsyncStorage.setItem('user', user);
+        await AsyncStorage.setItem('theme', "false");
+        await AsyncStorage.setItem('ari', "default");
+        await AsyncStorage.setItem('lang', "en");
+        await AsyncStorage.setItem('dir', "left");
 
-        dispatch(ToggleTheme("false", "default", "en"));
+        dispatch(ToggleTheme("false", "default", "en", "left"));
 
-        navigation.navigate('Main', {username: user, theme: "false", lang: "en"});
+        navigation.navigate('Main', {username: user, theme: "false", lang: "en", dir: "left"});
     }
     async function getUser() {
-        const lan = await getLang();
-        await AsyncStorage.getItem('user').then(id => {
-            if (id) {
-                setLogged(true);
-                try {
-                    setUser(id);
-                    getTheme(id, lan);
-                } catch (err) {
-                    console.log(err)
-                }
-            }
-        });
+        const usr = await AsyncStorage.getItem('user');
+        return usr;
     }
     async function getLang() {
-        const lan = await AsyncStorage.getItem('lang').then(id => {
-            if (id) {
-                try {
-                    return id;
-                } catch (err) {
-                    console.log(err)
-                }
-            }
-        });
+        const lan = await AsyncStorage.getItem('lang');
         return lan === undefined ? "en" : lan;
     }
-    async function getTheme(user, lang) {
+    async function getDir() {
+        const dr = await AsyncStorage.getItem('dir');
+        return dr;
+    }
+    async function getTheme(user, language = "en", dir = "left") {
+        setLogged(true);
         await AsyncStorage.getItem('ari').then(th=>{
             if (th) {
-                dispatch(ToggleTheme("false", th, lang));
-                navigation.navigate('Main', {username: user, theme: "false", Ari: th, lang});
+                dispatch(ToggleTheme("false", th, language, dir));
+                navigation.navigate('Main', {username: user, theme: "false", Ari: th, lang: language, dir});
             } else {
                 AsyncStorage.getItem('theme').then(th=>{
                     if (th) {
-                        dispatch(ToggleTheme(th, "default", lang));
-                        navigation.navigate('Main', {username: user, theme: th, lang});
+                        dispatch(ToggleTheme(th, "default", language, dir));
+                        navigation.navigate('Main', {username: user, theme: th, lang: language, dir});
                     } else {
-                        dispatch(ToggleTheme("false", "default", lang));
-                        navigation.navigate('Main', {username: user, theme: "false", lang});
+                        dispatch(ToggleTheme("false", "default", language, dir));
+                        navigation.navigate('Main', {username: user, theme: "false", lang: language, dir});
                     }
                 });
             }
         });
     }
+    async function ifLogged() {
+        const usr = await getUser();
+        const lan = await getLang();
+        const direction = await getDir();
+        await getTheme(usr, lan, direction);
+    }
     useEffect(()=>{
-        getUser();
+        ifLogged();
     },[]);
     return(
         <KeyboardAvoidingView style={styles.container}
@@ -180,4 +179,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Login);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Login);

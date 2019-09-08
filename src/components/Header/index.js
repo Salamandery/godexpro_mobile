@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import logo from '../../default/godexpro.png';
 import btn_menu from '../../default/menu.png';
+import { StatusBar } from 'react-native';
 import { StyleTheme } from './style';
 
 const HeaderBar = ({Headertitle, navigation, theme})=>{
@@ -30,6 +31,7 @@ const HeaderBar = ({Headertitle, navigation, theme})=>{
     }
     return (
         <View style={styles.header}>
+            <StatusBar barStyle="light-content" backgroundColor={ theme === "false" ? "#cc0000" :"#800000"} />
             <TouchableOpacity style={styles.menu} onPress={menuHangler} activeOpacity={1}>
                 <Image style={styles.btn_menu} source={btn_menu}></Image>
             </TouchableOpacity>

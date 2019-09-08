@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import storage from '@react-native-community/async-storage';
 import { normalize } from '../../components/StringTrataments';
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
@@ -11,9 +12,16 @@ import Help from '../Help';
 import { StyleTheme } from './style';
 import profile1 from '../Contact/logo1.png';
 import profile2 from '../Contact/logo2.png';
-import storage from '@react-native-community/async-storage';
 
 const CustomContent = (props) => {
+    
+    props.descriptors['Pokedex'].options.title = "Pokédex"; 
+    props.descriptors['News'].options.title = props.navigation.state.params.lang === "en" ? "News" : "Notícias"; 
+    props.descriptors['Itens'].options.title = props.navigation.state.params.lang === "en" ? "Item List" : "Lista de Itens";
+    props.descriptors['Guide'].options.title = props.navigation.state.params.lang === "en" ? "Guide" : "Guia"; 
+    props.descriptors['Contact'].options.title = props.navigation.state.params.lang === "en" ? "Contact" : "Contato"; 
+    props.descriptors['Settings'].options.title = props.navigation.state.params.lang === "en" ? "Settings" : "Configurações"; 
+    
     const [theme, setTheme] = useState("false");
     const [Ari, setari] = useState("default");
     const [user, setUser] = useState('');
@@ -33,8 +41,8 @@ const CustomContent = (props) => {
         setTheme(props.navigation.state.params.theme);
         setUser(props.navigation.state.params.username);
         setLang(props.navigation.state.params.lang);
-        props.navigation.setParams({lang});
     }, []);
+
     function profileHandler() {
         return(
             <View style={styles.OptUser}>
@@ -72,40 +80,34 @@ const CustomContent = (props) => {
     );
 }
 
-const PokeNavigation = () => {
-    const lang = storage.getItem('lang');
+const PokeNavigation = (props) => {
     return {
-        title:  lang === "en" ? "Pokédex" : "Pokémon"
+        title: props.navigationOptions.title
     }
 }
-const NewsNavigation = () => {
-    const lang = storage.getItem('lang');
+const NewsNavigation = (props) => {
     return {
-        title:  lang === "en" ? "News" : "Notícias"
+        title: props.navigationOptions.title
     }
 }
-const ItemsNavigation = () => {
-    const lang = storage.getItem('lang');
+const ItemsNavigation = (props) => {
     return {
-        title:  lang === "en" ? "Item List" : "Lista de Itens"
+        title: props.navigationOptions.title
     }
 }
-const GuideNavigation = () => {
-    const lang = storage.getItem('lang');
+const GuideNavigation = (props) => {
     return {
-        title:  lang === "en" ? "Guide" : "Guia"
+        title: props.navigationOptions.title
     }
 }
-const ContactNavigation = () => {
-    const lang = storage.getItem('lang');
+const ContactNavigation = (props) => {
     return {
-        title:  lang === "en" ? "Contact" : "Contato"
+        title: props.navigationOptions.title
     }
 }
-const SettingsNavigation = () => {
-    const lang = storage.getItem('lang');
+const SettingsNavigation = (props) => {
     return {
-        title:  lang === "en" ? "Settings" : "Configurações"
+        title: props.navigationOptions.title
     }
 }
 const Drawer = createDrawerNavigator({
@@ -136,7 +138,6 @@ const Drawer = createDrawerNavigator({
 },
 {
     initialRouteName: "Pokedex",
-    drawerPosition: "right",
     contentComponent: CustomContent,
 });
 

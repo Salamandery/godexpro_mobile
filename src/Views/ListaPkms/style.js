@@ -504,7 +504,7 @@ export function StyleTheme(theme, mode) {
                         backgroundColor: "#444"
                     },
                     lblTxtName: {
-                        color: "#000",
+                        color: "#fff",
                         fontWeight: "bold",
                     },
                     bgFloating: {

@@ -135,4 +135,5 @@ const News = ({navigation, theme, Ari, lang}) => {
         </View>
     );
 }
+
 export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(News);
