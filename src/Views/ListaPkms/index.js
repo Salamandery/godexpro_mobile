@@ -19,11 +19,12 @@ import {
 import { StyleTheme } from './style';
 import Loading from '../Loading';
 import { percent, translate } from '../../components/StringTrataments';
+import ToggleThme from '../../services/actions';
 import { connect } from 'react-redux';
 
 var translation = translate("ListaPkms");
 
-const ListaPkms = ({navigation, theme, Ari, lang}) => {
+const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
     const [stStm, setstStm] = useState(0);
@@ -56,6 +57,7 @@ const ListaPkms = ({navigation, theme, Ari, lang}) => {
     }
     function setAri() {
         AsyncStorage.setItem('ari', "minimichelle");
+        dispatch(ToggleThme(theme, "minimichelle", lang, dir));
         setLoad(true);
         setTimeout(()=>{
             navigation.navigate('Login');
@@ -63,6 +65,7 @@ const ListaPkms = ({navigation, theme, Ari, lang}) => {
     }
     function unsetAri() {
         AsyncStorage.removeItem('ari');
+        dispatch(ToggleThme(theme, "default", lang, dir));
         setLoad(true);
         setTimeout(()=>{
             navigation.navigate('Login');
@@ -355,4 +358,4 @@ const ListaPkms = ({navigation, theme, Ari, lang}) => {
     );
 }
 
-export default connect(state =>({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(ListaPkms);
+export default connect(state =>({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(ListaPkms);

@@ -14,10 +14,11 @@ import Loading from '../Loading';
 import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
+import ToggleTheme from '../../services/actions';
 
 var translation = translate("Settings");
 
-const Settings = ({navigation, theme, Ari, lang, dir}) => {
+const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
     const [ifLoad, setLoading] = useState(false);
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
@@ -29,6 +30,8 @@ const Settings = ({navigation, theme, Ari, lang, dir}) => {
         AsyncStorage.setItem('theme', JSON.stringify(e));
         setLoading(true);
         setTimeout(()=>{
+            setLoading(false);
+            dispatch(ToggleTheme(JSON.stringify(e), Ari, lang, dir));
             navigation.navigate('Login');
         }, 2000);
     }
@@ -36,6 +39,8 @@ const Settings = ({navigation, theme, Ari, lang, dir}) => {
         AsyncStorage.setItem('lang', e ? "pt" : "en");
         setLoading(true);
         setTimeout(()=>{
+            setLoading(false);
+            dispatch(ToggleTheme(theme, Ari, e ? "pt" : "en", dir));
             navigation.navigate('Login');
         }, 2000);
     }
@@ -43,6 +48,7 @@ const Settings = ({navigation, theme, Ari, lang, dir}) => {
         AsyncStorage.setItem('dir', e ? "right" : "left");
         setLoading(true);
         setTimeout(()=>{
+            dispatch(ToggleTheme(theme, Ari, lang, e ? "right" : "left"));
             navigation.navigate('Login');
         }, 2000);
     }

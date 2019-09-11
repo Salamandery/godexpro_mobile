@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import storage from '@react-native-community/async-storage';
 import { normalize } from '../../components/StringTrataments';
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
@@ -21,7 +20,7 @@ const CustomContent = (props) => {
     props.descriptors['Guide'].options.title = props.navigation.state.params.lang === "en" ? "Guide" : "Guia"; 
     props.descriptors['Contact'].options.title = props.navigation.state.params.lang === "en" ? "Contact" : "Contato"; 
     props.descriptors['Settings'].options.title = props.navigation.state.params.lang === "en" ? "Settings" : "Configurações"; 
-    
+
     const [theme, setTheme] = useState("false");
     const [Ari, setari] = useState("default");
     const [user, setUser] = useState('');
