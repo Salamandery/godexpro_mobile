@@ -40,7 +40,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     const [openedN, setOpenN] = useState(5);
     const [openedTypes, setOpenTypes] = useState(5);
     const [lbl, setLbl] = useState(0);
-    const [placeholderSearch, setPlaceholder] = useState(translation[lang].placeholder.name);
+    const [placeholderSearch, setPlaceholder] = useState('');
     var animation = new Animated.Value(0);
 
     if (Ari === "minimichelle") {
@@ -50,8 +50,9 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     }
 
     useEffect(()=>{
+        setPlaceholder(translation[lang].placeholder.name);
         loadPkm();
-    }, []);
+    }, [lang]);
     function minimichelle() {
         setVisAri(true);
     }
@@ -60,7 +61,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         dispatch(ToggleThme(theme, "minimichelle", lang, dir));
         setLoad(true);
         setTimeout(()=>{
-            navigation.navigate('Login');
+            navigation.navigate('Login', {lang});
         }, 2000);
     }
     function unsetAri() {
@@ -68,7 +69,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         dispatch(ToggleThme(theme, "default", lang, dir));
         setLoad(true);
         setTimeout(()=>{
-            navigation.navigate('Login');
+            navigation.navigate('Login', {lang});
         }, 2000);
     }
     function typeSearch(type, text) {

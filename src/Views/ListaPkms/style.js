@@ -11,7 +11,7 @@ export function StyleTheme(theme, mode) {
                         backgroundColor: "#e6e6e6"
                     },
                     list: {
-                        padding: normalize(5)
+                        padding: normalize(5),
                     },  
                     pkm_list: {
                         flex: 1,
@@ -22,8 +22,11 @@ export function StyleTheme(theme, mode) {
                         flexDirection: "row",
                         alignItems: "center",
                         alignSelf: "stretch",
-                        borderBottomWidth: 1,
-                        borderBottomColor: "#bfbfbf"
+                        borderWidth: 1,
+                        borderColor: "transparent",
+                        elevation: 2,
+                        marginHorizontal: normalize(1),
+                        marginVertical: normalize(3),
                     },
                     pkm_imgWrap: {
                         width: normalize(99),
@@ -249,6 +252,7 @@ export function StyleTheme(theme, mode) {
                     lblTxtName: {
                         color: "#000",
                         fontWeight: "bold",
+                        fontSize: normalize(14)
                     },
                     bgFloating: {
                         backgroundColor: "rgba(0,0,0, .2)",
@@ -265,7 +269,7 @@ export function StyleTheme(theme, mode) {
             return (StyleSheet.create({
                     container: {
                         flex: 1,
-                        backgroundColor: "#262626"
+                        backgroundColor: "#333333"
                     },
                     list: {
                         padding: normalize(5)
@@ -279,8 +283,12 @@ export function StyleTheme(theme, mode) {
                         flexDirection: "row",
                         alignItems: "center",
                         alignSelf: "stretch",
-                        borderBottomWidth: 1,
-                        borderBottomColor: "#666666"
+                        borderWidth: 1,
+                        borderColor: "transparent",
+                        elevation: 2,
+                        marginHorizontal: normalize(2),
+                        marginVertical: normalize(4),
+                        backgroundColor: "#262626"
                     },
                     pkm_imgWrap: {
                         width: normalize(99),
@@ -506,6 +514,7 @@ export function StyleTheme(theme, mode) {
                     lblTxtName: {
                         color: "#fff",
                         fontWeight: "bold",
+                        fontSize: normalize(14)
                     },
                     bgFloating: {
                         backgroundColor: "rgba(0,0,0, .2)",
@@ -523,7 +532,7 @@ export function StyleTheme(theme, mode) {
         return (StyleSheet.create({
                 container: {
                     flex: 1,
-                    backgroundColor: "#e699cc"
+                    backgroundColor: "#e7c4db"
                 },
                 list: {
                     padding: normalize(5)
@@ -537,8 +546,12 @@ export function StyleTheme(theme, mode) {
                     flexDirection: "row",
                     alignItems: "center",
                     alignSelf: "stretch",
-                    borderBottomWidth: 1,
-                    borderBottomColor: "#7a1f5c"
+                    borderWidth: 1,
+                    borderColor: "#eee",
+                    elevation: 2.9,
+                    marginHorizontal: normalize(3),
+                    marginVertical: normalize(5),
+                    backgroundColor: "#daa4c7"
                 },
                 pkm_imgWrap: {
                     width: normalize(99),
@@ -764,6 +777,7 @@ export function StyleTheme(theme, mode) {
                 lblTxtName: {
                     color: "#000",
                     fontWeight: "bold",
+                    fontSize: normalize(14)
                 },
                 bgFloating: {
                     backgroundColor: "rgba(0,0,0, .2)",
