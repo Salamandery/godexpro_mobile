@@ -1,7 +1,6 @@
 # OSX
 #
 .DS_Store
-__tests__
 # Xcode
 #
 build/
@@ -23,9 +22,6 @@ DerivedData
 project.xcworkspace
 
 # Android/IntelliJ
-#
-/android
-build/
 .idea
 .gradle
 local.properties
@@ -57,5 +53,3 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-/ios/Pods/
-/ios
