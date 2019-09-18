@@ -1,4 +1,4 @@
 <resources>
-	<string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">deployment-key-here</string>
+	<string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">nrV0dS8H5vQIs53bRPlfLGQQeTwiZNV3tJdk_</string>
     <string name="app_name">GoDex Pro</string>
 </resources>
