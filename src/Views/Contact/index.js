@@ -30,7 +30,7 @@ const Contact = ({navigation, theme, Ari, lang}) => {
                     <Image style={styles.logo} source={theme === "false" ? logo1 : logo2 }></Image>
                 </View>
                 <View style={styles.DescriptionContainer}>
-                    <Text style={styles.itens}>E-mail: godexpro@atomiccodes.org</Text>
+                    <Text style={styles.itens}>E-mai: godexpro@atomiccodes.org</Text>
                     <Text style={styles.itens}>Facebook: @facebook/GoDexPro</Text>
                     <Text style={styles.itens}>Twitter: @Twitter/GoDexPro</Text>
                     <Text style={styles.itens}>Instagram: @Instagram/GoDexPro</Text>
