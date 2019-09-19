@@ -16,10 +16,10 @@ import {
     TouchableOpacity,
     Animated
 } from 'react-native';
-import { StyleTheme } from './style';
 import Loading from '../Loading';
-import { percent, translate } from '../../components/StringTrataments';
 import ToggleThme from '../../services/actions';
+import { StyleTheme } from './style';
+import { percent, translate } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 
 var translation = translate("ListaPkms");

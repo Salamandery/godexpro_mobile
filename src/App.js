@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import store from './services/reducers';
 import Code from 'react-native-code-push';
 import OneSignal from 'react-native-onesignal';
+import AdSense from './components/AdSense';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +35,7 @@ class App extends React.Component {
         <Fragment>
           <Provider store={store} >
             <Router/>
+            <AdSense />
           </Provider>
         </Fragment>
     );
