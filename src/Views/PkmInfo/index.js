@@ -16,9 +16,9 @@ import fem from '../../default/fem.png';
 import ma from '../../default/ma.png';
 import CheckType from '../../components/checkType';
 import WeakAndStrong from '../../components/WeakAndStrong';
+import WeatherforType from '../../components/typeWeather';
 import { StyleTheme } from './style';
 import { FindString, percent, translate } from '../../components/StringTrataments';
-import WeatherforType from '../../components/typeWeather';
 import { connect } from 'react-redux';
 
 var translation = translate("PkmInfo");

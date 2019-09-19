@@ -126,8 +126,7 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
                             </View>
                         </ScrollView>
                     )
-                }
-                
+                } 
         </View>
     );
 }
