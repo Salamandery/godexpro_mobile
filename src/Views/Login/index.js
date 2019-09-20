@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import botao from './botao.png';
 import firebase from 'react-native-firebase';
+import AsyncStorage from '@react-native-community/async-storage';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
@@ -26,15 +27,14 @@ const Login = ({navigation, theme, Ari, lang, dir}) => {
     }
   
     async function loginHandler() {
-
-        await AsyncStorage.setItem('user', user);
-        await AsyncStorage.setItem('theme', "false");
-        await AsyncStorage.setItem('lang', "en");
-        await AsyncStorage.setItem('dir', "left");
-
         try {
             const mail = await firebase.auth().signInWithEmailAndPassword(user, pass);
             if (mail) {
+                await AsyncStorage.setItem('user', user);
+                await AsyncStorage.setItem('theme', "false");
+                await AsyncStorage.setItem('lang', "en");
+                await AsyncStorage.setItem('dir', "left");
+
                 dispatch(ToggleTheme("false", "default", "en", "left"));
     
                 navigation.navigate('Main', {username: user, theme: "false", lang: "en", dir: "left"});

@@ -13,6 +13,7 @@ import { translate } from '../../components/StringTrataments';
 
 import SilverPinap from './img/berry/SilverPinap.png';
 import GoldenRazz from './img/berry/GoldenRazz.png';
+import PremierBall from './img/ball/PremierBall.png';
 import UltraBall from './img/ball/UltraBall.png';
 import GreatBall from './img/ball/GreatBall.png';
 import HeaderBar from '../Header';
@@ -146,6 +147,16 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
                 }}>
                     <Image style={styles.img} source={UltraBall}></Image>
                     <Text style={styles.label}>{"Ultra ball"}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btn_item} onPress={()=>{
+                    setModal();
+                    setTitle("Premier ball");
+                    setDes("");
+                    setItemimg(PremierBall);
+                    setModal();
+                }}>
+                    <Image style={styles.img} source={PremierBall}></Image>
+                    <Text style={styles.label}>{"Premier ball"}</Text>
                 </TouchableOpacity>
             </View>
             <MyModa Visibility={ModalState} Title={Title} Des={Des} Itemimg={Itemimg}/>
