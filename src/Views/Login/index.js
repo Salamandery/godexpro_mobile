@@ -19,22 +19,26 @@ import bg from './0.png';
 import { normalize } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 import ToggleTheme from '../../services/actions';
+import firebase from 'react-native-firebase';
 
 var translation = {
     welcome: {
         en: {
             title: "Welcome to ",
-            placeholder: "Type your username"
+            placeholder: "Type your e-mail",
+            Passplaceholder: "Type your password",
         },
         pt: {
             title: "Seja bem-vindo ao ",
-            placeholder: "Digite seu usuário"
+            placeholder: "Digite seu e-mail",
+            Passplaceholder: "Digite sua senha",
         }
     },
 }
 
 const Login = ({navigation, dispatch, lang = "en"}) => {
     const [user, setUser] = useState('');
+    const [pass, setPass] = useState('');
     const [logged, setLogged] = useState(false);
 
     async function loginHandler() {
@@ -43,10 +47,15 @@ const Login = ({navigation, dispatch, lang = "en"}) => {
         await AsyncStorage.setItem('theme', "false");
         await AsyncStorage.setItem('lang', "en");
         await AsyncStorage.setItem('dir', "left");
+        try {
+            const mail = await firebase.auth().signInWithEmailAndPassword(user, pass);
+            console.log(mail)
+            dispatch(ToggleTheme("false", "default", "en", "left"));
 
-        dispatch(ToggleTheme("false", "default", "en", "left"));
-
-        navigation.navigate('Main', {username: user, theme: "false", lang: "en", dir: "left"});
+            navigation.navigate('Main', {username: user, theme: "false", lang: "en", dir: "left"});
+        } catch(err) {
+            console.log(err)
+        }
     }
     async function getUser() {
         const usr = await AsyncStorage.getItem('user');
@@ -114,6 +123,15 @@ const Login = ({navigation, dispatch, lang = "en"}) => {
                             value={user}
                             onChangeText={setUser}
                         />
+                        <TextInput 
+                            placeholder={translation.welcome[lang].Passplaceholder}
+                            placeholderTextColor="#FFF"
+                            style={styles.input_login}
+                            autoCapitalize="none"
+                            autoCorrect={false}
+                            value={pass}
+                            onChangeText={setPass}
+                        />
                         <TouchableOpacity  onPress={loginHandler}>
                             <Image style={styles.btn_login} source={botao}></Image>
                         </TouchableOpacity>
@@ -143,6 +161,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        flexWrap: "wrap",
         marginTop: normalize(150)
     },
     btn_login: {

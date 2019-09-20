@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "172016338271",
+    "firebase_url": "https://atomiccodesgodexpro.firebaseio.com",
+    "project_id": "atomiccodesgodexpro",
+    "storage_bucket": "atomiccodesgodexpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172016338271:android:6925c9ee38ab22b90be2ea",
+        "android_client_info": {
+          "package_name": "com.godexpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172016338271-djn2gp5het5ifc0bgrv6mi8bku7vu23p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7n-5hq6Uj1OW9-h_mL4WhsjdfEsjDBas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172016338271-djn2gp5het5ifc0bgrv6mi8bku7vu23p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

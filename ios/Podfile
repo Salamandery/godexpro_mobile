@@ -30,6 +30,8 @@ target 'godexpro' do
 
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
 
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+
   target 'godexproTests' do
     inherit! :search_paths
     # Pods for testing
