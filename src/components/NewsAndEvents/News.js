@@ -14,6 +14,7 @@ import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 import Loading from '../../Views/Loading';
 import { translate } from '../StringTrataments';
+import AdSense from '../AdSense';
 
 var translation = translate("News");
 
@@ -83,6 +84,7 @@ const News = ({navigation, theme, Ari, lang}) => {
     const MyModa = ({Visibility, Title, Desc, Dating, Hint, Items, Posted}) => {
         return(
             <Modal style={styles.modalContainer} animationType={"slide"} visible={Visibility} transparent={true} onRequestClose={closeModal} onDismiss={closeModal}>
+                <AdSense />
                 <View style={styles.modalContainer}>
                     <TouchableOpacity style={styles.closeModal} onPress={closeModal}>
                         <Text style={styles.txtCloseModal}>{translation[lang].modal.close}</Text>

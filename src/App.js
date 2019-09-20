@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import store from './services/reducers';
 import Code from 'react-native-code-push';
 import OneSignal from 'react-native-onesignal';
+import { YellowBox } from 'react-native';
+
+YellowBox.ignoreWarnings(['Require cycle:']);
 
 class App extends React.Component {
   constructor(props) {

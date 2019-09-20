@@ -23,6 +23,7 @@ import TMsChargedMoves from './img/tm/TMsChargedMoves.png';
 import TMsQuickFastMoves from './img/tm/TMsQuickFastMoves.png';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
+import AdSense from '../AdSense';
 
 var translation = translate("Itens");
 
@@ -68,6 +69,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     return(
         <View style={styles.container}>     
             <HeaderBar theme={theme} Headertitle={translation[lang].header.lvlup} navigation={navigation} />
+            <AdSense /> 
             <View style={styles.ItemItens}>               
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();

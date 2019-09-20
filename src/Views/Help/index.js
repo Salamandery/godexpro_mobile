@@ -6,6 +6,7 @@ import HeaderBar from '../../components/Header';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
+import AdSense from '../../components/AdSense';
 
 var translation = translate("Help");
 
@@ -20,6 +21,7 @@ const Help = ({navigation, theme, Ari, lang}) => {
     return(
         <View style={styles.container}>
             <HeaderBar Headertitle={translation[lang].header} navigation={navigation} theme={theme}/>
+            <AdSense />
             <View style={styles.AjudaItens}>
 
             </View>

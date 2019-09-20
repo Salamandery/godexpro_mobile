@@ -30,6 +30,7 @@ import Camera from './img/others/Camera.png';
 import Gift from './img/others/Gift.png';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
+import AdSense from '../AdSense';
 
 var translation = translate("Itens");
 
@@ -75,6 +76,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     return(
         <View style={styles.container}>     
             <HeaderBar theme={theme} Headertitle={translation[lang].header.other} navigation={navigation} />
+            <AdSense />
             <ScrollView>
             <View style={styles.ItemItens}>   
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{

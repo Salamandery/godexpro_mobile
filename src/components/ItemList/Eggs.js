@@ -19,6 +19,7 @@ import Egg10km from './img/egg/Egg10km.png';
 import Egg7km from './img/egg/Egg7km.png';
 import Egg2km from './img/egg/Egg2km.png';
 import Egg5km from './img/egg/Egg5km.png';
+import AdSense from '../AdSense';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 
@@ -65,6 +66,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     return(
         <View style={styles.container}>     
             <HeaderBar theme={theme} Headertitle={translation[lang].header.egg} navigation={navigation} />
+            <AdSense />
             <View style={styles.ItemItens}>               
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();

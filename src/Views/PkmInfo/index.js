@@ -20,6 +20,7 @@ import WeatherforType from '../../components/typeWeather';
 import { StyleTheme } from './style';
 import { FindString, percent, translate } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
+import AdSense from '../../components/AdSense';
 
 var translation = translate("PkmInfo");
 
@@ -69,6 +70,7 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
     return(
         <View style={styles.container}>
             <HeaderBar Headertitle={pkm.name} navigation={navigation} theme={theme}/>
+            <AdSense />
             <ScrollView style="flex: 1">
                 <View style={styles.InfoItens}>
                         <View style={styles.imgWrap}>

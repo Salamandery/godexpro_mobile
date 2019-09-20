@@ -23,6 +23,7 @@ import Pinap from './img/berry/Pinap.png';
 import Razz from './img/berry/Razz.png';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
+import AdSense from '../AdSense';
 
 var translation = translate("Itens");
 
@@ -67,6 +68,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     return(
         <View style={styles.container}>     
             <HeaderBar theme={theme} Headertitle={translation[lang].header.capture} navigation={navigation} />
+            <AdSense />
             <View style={styles.ItemItens}>       
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();

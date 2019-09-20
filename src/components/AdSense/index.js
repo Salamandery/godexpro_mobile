@@ -1,24 +1,38 @@
 import React from 'react';
 import {
     View,
-    StyleSheet
+    StyleSheet,
+    Platform
 } from 'react-native';
-import {
-    AdMobBanner,
-    AdMobInterstitial,
-    PublisherBanner,
-    AdMobRewarded,
-} from 'react-native-admob';
+import firebase from 'react-native-firebase'
 
 import { normalize } from '../StringTrataments';
 
+const Banner = firebase.admob.Banner;
+const AdRequest = firebase.admob.AdRequest;
+const request = new AdRequest();
+
+const unitId =
+Platform.OS === 'ios'
+    ? 'ios'
+    : 'ca-app-pub-5356914343536529/6894497090';
+const advert = firebase.admob().interstitial(unitId);
+
 const AdSense = () => {
+    advert.loadAd(request.build());
+    advert.on('onAdLoaded', () => {
+        console.log('Advert ready to show.');
+        advert.show();
+    });
     return (
         <View style={styles.containerAD}>
-            <AdMobBanner
-                adSize="smartBannerPortrait"
-                adUnitID="ca-app-pub-5356914343536529/6894497090"
-                onAdFailedToLoad={error => console.log(error)}
+            <Banner
+                unitId={unitId}
+                size={'SMART_BANNER'}
+                request={request.build()}
+                onAdLoaded={() => {
+                    console.log('Advert loaded');
+                }}
             />
         </View>
     );

@@ -209,7 +209,6 @@ android {
 
 dependencies {
     implementation project(':react-native-firebase')
-    implementation project(':react-native-admob')
     implementation project(':react-native-code-push')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -218,6 +217,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-base:16.1.0"
     implementation "com.google.firebase:firebase-core:16.0.9"
     implementation "com.google.firebase:firebase-auth:17.0.0"
+    implementation "com.google.firebase:firebase-ads:17.2.1"
     implementation 'com.android.support:multidex:1.0.3'
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";

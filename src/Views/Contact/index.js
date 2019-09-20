@@ -12,6 +12,7 @@ import logo1 from './logo1.png';
 import logo2 from './logo2.png';
 import { StyleTheme } from './style';
 import { translate } from '../../components/StringTrataments';
+import AdSense from '../../components/AdSense';
 var translation = translate("Contact");
 
 const Contact = ({navigation, theme, Ari, lang}) => {
@@ -25,6 +26,7 @@ const Contact = ({navigation, theme, Ari, lang}) => {
     return(
         <View style={styles.container}>
             <HeaderBar Headertitle={translation[lang].header} navigation={navigation} theme={theme}/>
+            <AdSense />
             <View style={styles.ContactItens}>
                 <View style={styles.imgContact}>
                     <Image style={styles.logo} source={theme === "false" ? logo1 : logo2 }></Image>

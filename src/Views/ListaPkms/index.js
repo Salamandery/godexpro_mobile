@@ -166,6 +166,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     const MyModal = ({selectedItem, Visibility = false}) => {
         return(
             <Modal style={styles.modalContainer} animationType="slide" transparent={true} visible={Visibility} onDismiss={closeHandler} onRequestClose={closeHandler}>
+                <AdSense />
                 <View style={styles.modalContainer}>
                     <TouchableOpacity style={styles.ModalClose} onPress={closeHandler} activeOpacity={.3}>
                         <Text style={styles.txtModalClose}>{translation[lang].modal.close}</Text>
