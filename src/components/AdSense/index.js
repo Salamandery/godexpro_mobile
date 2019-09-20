@@ -18,7 +18,6 @@ const AdSense = () => {
             <AdMobBanner
                 adSize="smartBannerPortrait"
                 adUnitID="ca-app-pub-5356914343536529/6894497090"
-                testDevices={[AdMobBanner.simulatorId]}
                 onAdFailedToLoad={error => console.log(error)}
             />
         </View>
