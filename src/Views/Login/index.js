@@ -1,201 +1,84 @@
-import React, { 
-    useState, 
-    useEffect 
-} from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
-import { 
-     ImageBackground,
-     Text, 
-     View,
-     Image,
-     TextInput,
-     StyleSheet, 
-     KeyboardAvoidingView, 
-     TouchableOpacity 
+import React, { useState, useEffect } from 'react';
+import {
+    View,
+    KeyboardAvoidingView,
+    TextInput,
+    Text, 
+    Image,
+    TouchableOpacity 
 } from 'react-native';
-import logo from './godexpro.png';
 import botao from './botao.png';
-import bg from './0.png';
-import { normalize } from '../../components/StringTrataments';
-import { connect } from 'react-redux';
-import ToggleTheme from '../../services/actions';
 import firebase from 'react-native-firebase';
+import { StyleTheme } from './style';
+import { connect } from 'react-redux';
+import { translate } from '../../components/StringTrataments';
 
-var translation = {
-    welcome: {
-        en: {
-            title: "Welcome to ",
-            placeholder: "Type your e-mail",
-            Passplaceholder: "Type your password",
-        },
-        pt: {
-            title: "Seja bem-vindo ao ",
-            placeholder: "Digite seu e-mail",
-            Passplaceholder: "Digite sua senha",
-        }
-    },
-}
+var translation = translate("Login");
 
-const Login = ({navigation, dispatch, lang = "en"}) => {
+const Login = ({navigation, theme, Ari, lang, dir}) => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
-    const [logged, setLogged] = useState(false);
 
+    if (Ari === "minimichelle") {
+        var styles = StyleTheme(theme, "ari");
+    } else {
+        var styles = StyleTheme(theme, "default");
+    }
+  
     async function loginHandler() {
 
         await AsyncStorage.setItem('user', user);
         await AsyncStorage.setItem('theme', "false");
         await AsyncStorage.setItem('lang', "en");
         await AsyncStorage.setItem('dir', "left");
+
         try {
             const mail = await firebase.auth().signInWithEmailAndPassword(user, pass);
-            console.log(mail)
-            dispatch(ToggleTheme("false", "default", "en", "left"));
-
-            navigation.navigate('Main', {username: user, theme: "false", lang: "en", dir: "left"});
-        } catch(err) {
-            console.log(err)
-        }
-    }
-    async function getUser() {
-        const usr = await AsyncStorage.getItem('user');
-        return usr === undefined ? " " : usr;
-    }
-    async function getLang() {
-        const lan = await AsyncStorage.getItem('lang');
-        return lan === undefined ? "en" : lan;
-    }
-    async function getDir() {
-        const dr = await AsyncStorage.getItem('dir');
-        return dr === undefined ? "left" : dr; 
-    }
-    async function getTheme(user, language = "en", dir = "left") {
-        setLogged(true);
-        await AsyncStorage.getItem('ari').then(th=>{
-            if (th) {
-                dispatch(ToggleTheme("false", th, language, dir));
-                navigation.navigate('Main', {username: user, theme: "false", Ari: th, lang: language, dir});
-            } else {
-                AsyncStorage.getItem('theme').then(th=>{
-                    if (th) {
-                        dispatch(ToggleTheme(th, "default", language, dir));
-                        navigation.navigate('Main', {username: user, theme: th, lang: language, dir});
-                    } else {
-                        dispatch(ToggleTheme("false", "default", language, dir));
-                        navigation.navigate('Main', {username: user, theme: "false", lang: language, dir});
-                    }
-                });
+            if (mail) {
+                dispatch(ToggleTheme("false", "default", "en", "left"));
+    
+                navigation.navigate('Main', {username: user, theme: "false", lang: "en", dir: "left"});
             }
-        });
-    }
-    async function ifLogged() {
-        const usr = await getUser();
-        if (usr) {
-            const lan = await getLang();
-            const direction = await getDir();
-            await getTheme(usr, lan, direction);
+        } catch(err) {
+            console.log(err);
         }
     }
-    useEffect(()=>{
-        ifLogged();
-    },[]);
     return(
         <KeyboardAvoidingView style={styles.container}
-                              enabled={Platform.OS === 'ios'}
-                              behavior="padding"
+                enabled={Platform.OS === 'ios'}
+                behavior="padding"
         >
-        <ImageBackground source={bg} style={styles.bg}>
-             {
-                 logged ? (
-                    <View style={styles.info}>
-                        <Text style={styles.lblinfo}>{translation.welcome[lang].title}{"\n"}
-                            <Image style={styles.logo} source={logo}></Image>
-                        </Text>
-                    </View>
-                 ) : (
-                    <View style={styles.grpLogin}>
-                        <TextInput 
-                            placeholder={translation.welcome[lang].placeholder}
-                            placeholderTextColor="#FFF"
-                            style={styles.input_login}
-                            autoCapitalize="none"
-                            autoCorrect={false}
-                            value={user}
-                            onChangeText={setUser}
-                        />
-                        <TextInput 
-                            placeholder={translation.welcome[lang].Passplaceholder}
-                            placeholderTextColor="#FFF"
-                            style={styles.input_login}
-                            autoCapitalize="none"
-                            autoCorrect={false}
-                            value={pass}
-                            onChangeText={setPass}
-                        />
-                        <TouchableOpacity  onPress={loginHandler}>
-                            <Image style={styles.btn_login} source={botao}></Image>
-                        </TouchableOpacity>
-                    </View>
-                 )
-             }
-
-        </ImageBackground>
+        <View style={styles.container}>
+            <Text style={styles.label}>{translation[lang].labelEmail}</Text>
+            <View style={styles.grpLogin}>
+                <TextInput 
+                    placeholder={translation[lang].placeholder}
+                    placeholderTextColor="#999"
+                    style={styles.input_login}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    value={user}
+                    onChangeText={setUser}
+                />
+                <TextInput 
+                    placeholder={translation[lang].Passplaceholder}
+                    placeholderTextColor="#999"
+                    style={styles.input_login}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    value={pass}
+                    secureTextEntry={true}
+                    onChangeText={setPass}
+                />
+                <Text style={styles.smlabel}>{translation[lang].labelForget}</Text>
+                <TouchableOpacity  onPress={loginHandler}>
+                    <Image style={styles.btn_login} source={botao}></Image>
+                </TouchableOpacity>
+            </View>
+            <Text style={styles.label}>Social</Text>
+        </View>
         </KeyboardAvoidingView>
     );
 }
-
-const styles = StyleSheet.create({
-    logo: {
-        height: normalize(60),
-        width: normalize(240)
-    },
-    bg: {
-        flex: 1,
-        alignSelf: "stretch",
-        justifyContent: "center"
-    },  
-    container: {
-        flex: 1,
-    },
-    grpLogin: {
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        flexWrap: "wrap",
-        marginTop: normalize(150)
-    },
-    btn_login: {
-        height: normalize(55),
-        width: normalize(64),
-        marginHorizontal: normalize(5)
-    },
-    btn_label: {
-        color: "#FFF",
-        fontSize: normalize(25)
-    },
-    input_login: {
-        borderColor: "#DDD",
-        borderWidth: 1,
-        borderRadius: normalize(4),
-        textAlign: "center",
-        width: '70%',
-        height: normalize(50),
-        fontSize: normalize(25),
-        color: "#FFF"
-    },
-    info: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "rgba(0, 0, 0, .8)"
-    },
-    lblinfo: {
-        color: "#FFF",
-        fontSize: normalize(42),
-        marginHorizontal: normalize(30),
-        textAlign: "center",
-        padding: normalize(20)
-    }
-})
 
 export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Login);

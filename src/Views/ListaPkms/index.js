@@ -18,6 +18,7 @@ import {
 } from 'react-native';
 import Loading from '../Loading';
 import ToggleThme from '../../services/actions';
+import AdSense from '../../components/AdSense';
 import { StyleTheme } from './style';
 import { percent, translate } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
@@ -355,6 +356,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
                 <Text style={styles.searchTitle}>{translation[lang].toggle.menu}</Text>
             </TouchableOpacity>
             </View>
+            <AdSense />
         </View>
     );
 }

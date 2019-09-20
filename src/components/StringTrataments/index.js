@@ -266,5 +266,21 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     }
                 }
             }
+            case "Login": {
+                return {
+                    en: {
+                        placeholder: "Type your e-mail",
+                        Passplaceholder: "**********",
+                        labelEmail: "E-mail",
+                        labelForget: "Forgot password?"
+                    },
+                    pt: {
+                        placeholder: "Digite seu e-mail",
+                        Passplaceholder: "**********",
+                        labelEmail: "E-mail",
+                        labelForget: "Esqueci minha senha?"
+                    }
+                }
+            }
         }
     }
