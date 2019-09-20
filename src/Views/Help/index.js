@@ -27,4 +27,4 @@ const Help = ({navigation, theme, Ari, lang}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Help);
+export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Help);

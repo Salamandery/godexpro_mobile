@@ -15,6 +15,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
 import ToggleTheme from '../../services/actions';
+import AdSense from '../../components/AdSense';
 
 var translation = translate("Settings");
 
@@ -126,7 +127,8 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
                             </View>
                         </ScrollView>
                     )
-                } 
+                }
+            <AdSense /> 
         </View>
     );
 }
