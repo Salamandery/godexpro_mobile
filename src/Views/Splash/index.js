@@ -1,8 +1,8 @@
+import AsyncStorage from '@react-native-community/async-storage';
 import React, { 
     useState, 
     useEffect 
 } from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
 import { 
      ImageBackground,
      Text, 
@@ -11,11 +11,15 @@ import {
      StyleSheet, 
      KeyboardAvoidingView,
 } from 'react-native';
+import { 
+    ToggleTheme, 
+    ToggleUserInfo
+} from '../../services/actions';
 import logo from './godexpro.png';
 import bg from './0.png';
+import api from '../../services/api';
 import { normalize } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
-import ToggleTheme from '../../services/actions';
 
 var translation = {
     welcome: {
@@ -28,7 +32,7 @@ var translation = {
     },
 }
 
-const Splash = ({navigation, dispatch, lang = "en"}) => {
+const Splash = ({navigation, dispatch, lang = "en", username, paid, photo}) => {
 
     const [logged, setLogged] = useState(false);
 
@@ -39,31 +43,43 @@ const Splash = ({navigation, dispatch, lang = "en"}) => {
     },[]);
     
     async function getUser() {
-        const usr = await AsyncStorage.getItem('user');
-        return usr === undefined ? " " : usr;
-    }
-    async function getLang() {
-        const lan = await AsyncStorage.getItem('lang');
-        return lan === undefined ? "en" : lan;
+        var usr = await AsyncStorage.getItem('user');
+
+        if (usr) {
+            const mail = JSON.parse(usr);
+            try {
+                const verify = await api.post('/userinfo', {
+                    email: mail.email
+                });
+                AsyncStorage.setItem('user', JSON.stringify(verify.data.user));
+                return verify.data.user;
+            } catch(err){
+                console.log(err);
+                return usr ? JSON.parse(usr) : undefined;
+            }
+        }
     }
     async function getDir() {
         const dr = await AsyncStorage.getItem('dir');
         return dr === undefined ? "left" : dr; 
     }
-    async function getTheme(user, language = "en", dir = "left") {
+    async function getTheme(user, dir = "left") {
         setLogged(true);
+
+        dispatch(ToggleUserInfo(user.name, user.paid, user.photo, user.email));
+        
         await AsyncStorage.getItem('ari').then(th=>{
             if (th) {
-                dispatch(ToggleTheme("false", th, language, dir));
-                navigation.navigate('Main', {user: JSON.parse(user), theme: "false", Ari: th, lang: language, dir});
+                dispatch(ToggleTheme("false", th, user.lang, dir));
+                navigation.navigate('Main', {user: user, theme: "false", Ari: th, lang: user.lang, dir});
             } else {
                 AsyncStorage.getItem('theme').then(th=>{
                     if (th) {
-                        dispatch(ToggleTheme(th, "default", language, dir));
-                        navigation.navigate('Main', {user: JSON.parse(user), theme: th, lang: language, dir});
+                        dispatch(ToggleTheme(th, "default", user.lang, dir));
+                        navigation.navigate('Main', {user: user, theme: th, lang: user.lang, dir});
                     } else {
-                        dispatch(ToggleTheme("false", "default", language, dir));
-                        navigation.navigate('Main', {user: JSON.parse(user), theme: "false", lang: language, dir});
+                        dispatch(ToggleTheme("false", "default", user.lang, dir));
+                        navigation.navigate('Main', {user: user, theme: "false", lang: user.lang, dir});
                     }
                 });
             }
@@ -71,10 +87,10 @@ const Splash = ({navigation, dispatch, lang = "en"}) => {
     }
     async function ifLogged() {
         const usr = await getUser();
+
         if (usr) {
-            const lan = await getLang();
             const direction = await getDir();
-            await getTheme(usr, lan, direction);
+            await getTheme(usr, direction);
         } else {
             navigation.navigate('Login');
         }
@@ -130,4 +146,13 @@ const styles = StyleSheet.create({
     }
 })
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Splash);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid,
+    email: state.userinfo.email 
+}))(Splash);

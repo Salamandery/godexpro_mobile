@@ -15,16 +15,17 @@ import botao from './botao.png';
 import logo from './godexpro.png';
 import firebase from 'react-native-firebase';
 import AsyncStorage from '@react-native-community/async-storage';
-import ToggleTheme from '../../services/actions';
+import { ToggleTheme, ToggleUserInfo } from '../../services/actions';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
+import api from '../../services/api';
 
 var translation = translate("Login");
 
 GoogleSignin.configure();
 
-const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
+const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
     const [user, setUser] = useState();
     const [pass, setPass] = useState('');
     const [profile, setProfile] = useState('');
@@ -49,12 +50,41 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         }
     }
     async function setUserConfig(user) {
-        dispatch(ToggleTheme("false", "default", "en", "left"));
-                
-        await AsyncStorage.setItem('user', user);
+        var lan = "en"
+        try {
+            const res = await api.post('/userinfo', { email: user.email, pass: user.id });
+            
+            if (!res.data.error) {
+                dispatch(ToggleTheme("false", "default", res.data.user.lang, "left"));
+                dispatch(ToggleUserInfo(user.name, res.data.user.paid, user.photo, user.email));
+                lan = res.data.user.lang;
+            } else {
+                const usering = await api.post('/userapp', { 
+                    name: user.name, 
+                    pass: user.id,
+                    firstname: user.givenName, 
+                    lastname: user.familyName, 
+                    email: user.email, 
+                    photo: user.photo,
+                    lang: "en", 
+                    paid: "false" 
+                });
+
+                dispatch(ToggleTheme("false", "default", "en", "left"));
+                dispatch(ToggleUserInfo(user.name, "false", user.photo, user.email));
+            }
+        } catch(err) {
+            console.log(err.code);
+        }
+        setLoad(false);
+
+        await AsyncStorage.setItem('user', JSON.stringify(user));
+        await AsyncStorage.setItem('paid', "false");
         await AsyncStorage.setItem('theme', "false");
         await AsyncStorage.setItem('lang', "en");
         await AsyncStorage.setItem('dir', "left");
+
+        navigation.navigate('Main', {user: user, theme: "false", lang: lan, dir: "left"});
     }
     async function _signIn(){
         setLoad(true);
@@ -66,11 +96,7 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
 
             setUserInfo(user);
 
-            setUserConfig(JSON.stringify(user));
-            
-            setLoad(false);
-
-            navigation.navigate('Main', {user: user, theme: "false", lang: "en", dir: "left"});
+            setUserConfig(user);
 
         } catch (error) {
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -133,4 +159,12 @@ onChangeText={setPass}
 </TouchableOpacity>
 </View>
 */
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Login);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+}))(Login);
