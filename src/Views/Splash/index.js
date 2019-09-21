@@ -50,15 +50,15 @@ const Splash = ({navigation, dispatch, lang = "en"}) => {
         await AsyncStorage.getItem('ari').then(th=>{
             if (th) {
                 dispatch(ToggleTheme("false", th, language, dir));
-                navigation.navigate('Main', {username: user, theme: "false", Ari: th, lang: language, dir});
+                navigation.navigate('Main', {user: JSON.parse(user), theme: "false", Ari: th, lang: language, dir});
             } else {
                 AsyncStorage.getItem('theme').then(th=>{
                     if (th) {
                         dispatch(ToggleTheme(th, "default", language, dir));
-                        navigation.navigate('Main', {username: user, theme: th, lang: language, dir});
+                        navigation.navigate('Main', {user: JSON.parse(user), theme: th, lang: language, dir});
                     } else {
                         dispatch(ToggleTheme("false", "default", language, dir));
-                        navigation.navigate('Main', {username: user, theme: "false", lang: language, dir});
+                        navigation.navigate('Main', {user: JSON.parse(user), theme: "false", lang: language, dir});
                     }
                 });
             }

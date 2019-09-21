@@ -18,7 +18,7 @@ export function StyleTheme(theme, mode) {
             justifyContent: "center",
             alignItems: "center",
             marginTop: normalize(10),
-            marginHorizontal: normalize(10),
+            paddingHorizontal: normalize(15),
             paddingVertical: normalize(30),
             borderRadius: normalize(5)
         },
@@ -55,5 +55,10 @@ export function StyleTheme(theme, mode) {
             color: "#666",
             marginVertical: normalize(5)
         },
+        logo: {
+            width: normalize(300),
+            height: normalize(80),
+            marginVertical: normalize(30)
+        }
     }));
 }

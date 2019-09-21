@@ -23,7 +23,7 @@ const CustomContent = (props) => {
 
     const [theme, setTheme] = useState("false");
     const [Ari, setari] = useState("default");
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState({});
     const [lang, setLang] = useState('en');
     
     if (Ari === "minimichelle") {
@@ -38,8 +38,9 @@ const CustomContent = (props) => {
     useEffect(()=>{
         setari(props.navigation.state.params.Ari);
         setTheme(props.navigation.state.params.theme);
-        setUser(props.navigation.state.params.username);
+        setUser(props.navigation.state.params.user);
         setLang(props.navigation.state.params.lang);
+        console.log(props.navigation.state.params.user)
     }, []);
 
     function profileHandler() {
@@ -55,11 +56,11 @@ const CustomContent = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.imgWrapper}>
-                    <Image style={styles.img} source={ theme === "false" ? profile1 : profile2 }></Image>
+                    <Image style={styles.img} source={{uri: user.photo }}></Image>
                 </View>
                 <View style={styles.profileInfo}>
                     <TouchableOpacity>
-                        <Text style={styles.username}>{user}</Text>
+                        <Text style={styles.username}>{user.name}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
