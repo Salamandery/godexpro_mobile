@@ -55,6 +55,17 @@ const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
             const res = await api.post('/userinfo', { email: user.email, pass: user.id });
             
             if (!res.data.error) {
+                const userupdate = await api.put('/userapp', { 
+                    name: user.name, 
+                    pass: user.id,
+                    firstname: user.givenName, 
+                    lastname: user.familyName, 
+                    email: user.email, 
+                    photo: user.photo,
+                    lang: res.data.user.lang, 
+                    paid: res.data.user.paid
+                });
+
                 dispatch(ToggleTheme("false", "default", res.data.user.lang, "left"));
                 dispatch(ToggleUserInfo(user.name, res.data.user.paid, user.photo, user.email));
                 lan = res.data.user.lang;
