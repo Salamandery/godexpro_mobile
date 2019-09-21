@@ -153,7 +153,7 @@ export function StyleTheme(theme, mode) {
                     marginHorizontal: normalize(30),
                     paddingHorizontal: normalize(20),
                     paddingVertical: normalize(5),
-                    backgroundColor: "#e699cc",
+                    backgroundColor: "#f5d6eb",
                     borderWidth: 1,
                     borderColor: "#7a1f5c",
                     borderRadius: normalize(7),

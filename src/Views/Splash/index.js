@@ -29,10 +29,15 @@ var translation = {
 }
 
 const Splash = ({navigation, dispatch, lang = "en"}) => {
+
     const [logged, setLogged] = useState(false);
+
     useEffect(()=>{
-        ifLogged();
+        setTimeout(()=>{
+            ifLogged();
+        }, 2000);
     },[]);
+    
     async function getUser() {
         const usr = await AsyncStorage.getItem('user');
         return usr === undefined ? " " : usr;
@@ -88,7 +93,7 @@ const Splash = ({navigation, dispatch, lang = "en"}) => {
                         </Text>
                     </View>
                  ) : (
-                    <View></View>
+                    null
                  )
              }
 

@@ -59,6 +59,15 @@ export function StyleTheme(theme, mode) {
             width: normalize(300),
             height: normalize(80),
             marginVertical: normalize(30)
+        },
+        error: {
+            padding: normalize(20),
+            margin: normalize(50),
+            borderWidth: 1.2,
+            borderColor: "#991f00",
+            color: "#991f00",
+            fontWeight: "bold",
+            backgroundColor: "#ffebe6"
         }
     }));
 }

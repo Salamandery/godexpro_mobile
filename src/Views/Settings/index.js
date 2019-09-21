@@ -20,7 +20,9 @@ import AdSense from '../../components/AdSense';
 var translation = translate("Settings");
 
 const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
+
     const [ifLoad, setLoading] = useState(false);
+    
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {
@@ -33,7 +35,7 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
         setTimeout(()=>{
             setLoading(false);
             dispatch(ToggleTheme(JSON.stringify(e), Ari, lang, dir));
-            navigation.navigate('Login');
+            navigation.navigate('Splash');
         }, 2000);
     }
     function langHandler(e) {
@@ -42,7 +44,7 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
         setTimeout(()=>{
             setLoading(false);
             dispatch(ToggleTheme(theme, Ari, e ? "pt" : "en", dir));
-            navigation.navigate('Login');
+            navigation.navigate('Splash');
         }, 2000);
     }
     function dirHandler(e) {
@@ -50,14 +52,14 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
         setLoading(true);
         setTimeout(()=>{
             dispatch(ToggleTheme(theme, Ari, lang, e ? "right" : "left"));
-            navigation.navigate('Login');
+            navigation.navigate('Splash');
         }, 2000);
     }
     function clearHandler() {
         setLoading(true);
         setTimeout(()=>{
             AsyncStorage.clear();
-            navigation.navigate('Login');
+            navigation.navigate('Splash');
         }, 3000);
     }
     return(

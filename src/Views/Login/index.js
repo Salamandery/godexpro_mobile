@@ -88,10 +88,7 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         }
     }
     return(
-        <KeyboardAvoidingView style={styles.container}
-                enabled={Platform.OS === 'ios'}
-                behavior="padding"
-        >
+        <KeyboardAvoidingView style={styles.container} enabled={Platform.OS === 'ios'} behavior="padding">
             <View style={styles.container}>
                 <Image style={styles.logo} source={logo} />
                 
@@ -103,8 +100,8 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
                     onPress={_signIn}
                     disabled={load} 
                 />
+            { error.code ? <Text style={styles.error}>{error.code}</Text> : null }
             </View>
-            { error ? <Text>{error.code}</Text> : null }
         </KeyboardAvoidingView>
     );
 }

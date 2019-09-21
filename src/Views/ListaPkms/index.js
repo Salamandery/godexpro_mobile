@@ -26,6 +26,7 @@ import { connect } from 'react-redux';
 var translation = translate("ListaPkms");
 
 const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
+
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
     const [stStm, setstStm] = useState(0);
@@ -54,6 +55,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         setPlaceholder(translation[lang].placeholder.name);
         loadPkm();
     }, [lang]);
+    
     function minimichelle() {
         setVisAri(true);
     }
@@ -62,16 +64,16 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         dispatch(ToggleThme(theme, "minimichelle", lang, dir));
         setLoad(true);
         setTimeout(()=>{
-            navigation.navigate('Login', {lang});
-        }, 2000);
+            navigation.navigate('Splash', {lang});
+        }, 1000);
     }
     function unsetAri() {
         AsyncStorage.removeItem('ari');
         dispatch(ToggleThme(theme, "default", lang, dir));
         setLoad(true);
         setTimeout(()=>{
-            navigation.navigate('Login', {lang});
-        }, 2000);
+            navigation.navigate('Splash', {lang});
+        }, 1000);
     }
     function typeSearch(type, text) {
         const items = pkms;
@@ -121,7 +123,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
         setTimeout(()=>{
             setLoad(false);
             navigation.navigate('PkmInfo', {Pkm: pkm, theme, Ari});
-        }, 100)
+        }, 50);
     }
     async function loadPkm() {
         try {
@@ -137,7 +139,7 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
                     setPkms(JSON.parse(Locallist));
                     setBase(JSON.parse(Locallist));
                 }
-            })
+            });
         }
     }
 
