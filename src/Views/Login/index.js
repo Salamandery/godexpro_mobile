@@ -120,7 +120,7 @@ const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
                 
                 <Text style={styles.label}>Social</Text>
                 <GoogleSigninButton
-                    style={{ width: 192, height: 48, marginTop: 10 }}
+                    style={styles.googleBtn}
                     size={GoogleSigninButton.Size.Wide}
                     color={GoogleSigninButton.Color.Dark}
                     onPress={_signIn}
