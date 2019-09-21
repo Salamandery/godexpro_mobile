@@ -1,7 +1,9 @@
 import React, { 
-    useState
+    useState,
+    useEffect
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage'; 
+import api from '../../services/api';
 import {
     View,
     Text,
@@ -14,21 +16,24 @@ import Loading from '../Loading';
 import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
-import ToggleTheme from '../../services/actions';
+import { ToggleTheme } from '../../services/actions';
 import AdSense from '../../components/AdSense';
 
 var translation = translate("Settings");
 
-const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
-
-    const [ifLoad, setLoading] = useState(false);
+const Settings = ({navigation, dispatch, theme, Ari, lang, dir, paid, email}) => {
     
+    const [ifLoad, setLoading] = useState(false);
+    const [dis, setDis] = useState(true);
+
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
     } else {
         var styles = StyleTheme(theme, "default");
     }
-
+    useEffect(()=> {
+       setDis(paid === "false" ? true : false);
+    }, []);
     function themeHandler(e) {
         AsyncStorage.setItem('theme', JSON.stringify(e));
         setLoading(true);
@@ -40,6 +45,7 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
     }
     function langHandler(e) {
         AsyncStorage.setItem('lang', e ? "pt" : "en");
+        api.put('/userapplang', {lang: e ? "pt" : "en", email})
         setLoading(true);
         setTimeout(()=>{
             setLoading(false);
@@ -72,21 +78,6 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
                     ) : (
                         <ScrollView>
                             <View style={styles.SettingsItens}>
-                                <View style={styles.grpSetting}>
-                                    <Text style={styles.Title}>{translation[lang].theme.title}</Text> 
-                                    <Text style={styles.Des}>{translation[lang].theme.desc}</Text> 
-                                    <View style={styles.Opt}>
-                                        <Switch 
-                                            value={
-                                                theme === "true" ? true : false
-                                            }
-                                            thumbColor="#f2f2f2"
-                                            trackColor="#246175"
-                                            ios_backgroundColor="#246175"
-                                            onValueChange={themeHandler}
-                                        />
-                                    </View> 
-                                </View>
                                 <View style={styles.grpSetting}>
                                     <Text style={styles.Title}>{translation[lang].lang.title}</Text> 
                                     <Text style={styles.Des}>{translation[lang].lang.desc}</Text> 
@@ -123,6 +114,21 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
                                             trackColor="#246175"
                                             ios_backgroundColor="#246175"
                                             onValueChange={dirHandler}
+                                            disabled={dis}
+                                        />
+                                    </View> 
+                                </View>
+                                <View style={styles.grpSetting}>
+                                    <Text style={styles.Title}>{translation[lang].theme.title}</Text> 
+                                    <Text style={styles.Des}>{translation[lang].theme.desc}</Text> 
+                                    <View style={styles.Opt}>
+                                        <Switch 
+                                            value={theme === "true" ? true : false}
+                                            thumbColor="#f2f2f2"
+                                            trackColor="#246175"
+                                            ios_backgroundColor="#246175"
+                                            onValueChange={themeHandler}
+                                            disabled={dis}
                                         />
                                     </View> 
                                 </View>
@@ -135,4 +141,13 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(Settings);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+    email: state.userinfo.email, 
+}))(Settings);

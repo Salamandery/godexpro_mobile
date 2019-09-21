@@ -179,4 +179,12 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(PkmInfo);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+}))(PkmInfo);

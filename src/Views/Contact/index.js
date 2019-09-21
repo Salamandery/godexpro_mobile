@@ -43,4 +43,12 @@ const Contact = ({navigation, theme, Ari, lang}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(Contact);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+}))(Contact);

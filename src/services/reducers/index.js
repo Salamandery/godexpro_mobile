@@ -1,8 +1,10 @@
 import { combineReducers, createStore } from 'redux';
 import themes from './store';
+import userinfo from './userInfo';
 
 const Reducers = combineReducers({
-    themes
+    themes,
+    userinfo
 });
 
 const store = createStore(Reducers);

@@ -17,8 +17,8 @@ import {
     Animated
 } from 'react-native';
 import Loading from '../Loading';
-import ToggleThme from '../../services/actions';
 import AdSense from '../../components/AdSense';
+import {ToggleThme} from '../../services/actions';
 import { StyleTheme } from './style';
 import { percent, translate } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
@@ -364,4 +364,12 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     );
 }
 
-export default connect(state =>({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang, dir: state.themes.dir }))(ListaPkms);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+}))(ListaPkms);
