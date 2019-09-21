@@ -60,6 +60,11 @@ export function StyleTheme(theme, mode) {
             height: normalize(80),
             marginVertical: normalize(30)
         },
+        googleBtn: { 
+            width: normalize(200), 
+            height: normalize(48), 
+            marginTop: 10 
+        },
         error: {
             padding: normalize(20),
             margin: normalize(50),
