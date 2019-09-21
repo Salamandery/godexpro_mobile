@@ -25,8 +25,8 @@ const AdSense = ({paid}) => {
         advert.show();
     });
     return (
-        <View style={paid === true ? styles.containerAD : null}>
-            { paid === true ? (<Banner
+        <View style={paid === false ? styles.containerAD : null}>
+            { paid === false ? (<Banner
                 unitId={unitId}
                 size={'SMART_BANNER'}
                 request={request.build()}
