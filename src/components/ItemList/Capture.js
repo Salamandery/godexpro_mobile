@@ -166,4 +166,12 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
     );
 }
 
-export default connect(state => ({ theme: state.themes.theme, Ari: state.themes.Ari, lang: state.themes.lang }))(ItemList);
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+}))(ItemList);

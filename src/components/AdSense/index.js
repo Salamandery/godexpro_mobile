@@ -5,6 +5,7 @@ import {
     Platform
 } from 'react-native';
 import firebase from 'react-native-firebase'
+import { connect } from 'react-redux';
 
 import { normalize } from '../StringTrataments';
 
@@ -19,14 +20,15 @@ Platform.OS === 'ios'
 const advert = firebase.admob().interstitial(unitId);
 
 const AdSense = ({paid}) => {
+
     advert.loadAd(request.build());
     advert.on('onAdLoaded', () => {
         console.log('Advert ready to show.');
         advert.show();
     });
     return (
-        <View style={paid === false ? styles.containerAD : null}>
-            { paid === false ? (<Banner
+        <View style={ paid === "false" ? styles.containerAD : null }>
+            { paid === "false" ? (<Banner
                 unitId={unitId}
                 size={'SMART_BANNER'}
                 request={request.build()}
@@ -45,4 +47,12 @@ const styles = StyleSheet.create({
     }
 })
 
-export default AdSense;
+export default connect(state => ({ 
+    theme: state.themes.theme, 
+    Ari: state.themes.Ari, 
+    lang: state.themes.lang, 
+    dir: state.themes.dir,
+    username: state.userinfo.username, 
+    photo: state.userinfo.photo, 
+    paid: state.userinfo.paid, 
+}))(AdSense);
