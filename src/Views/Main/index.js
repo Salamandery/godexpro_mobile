@@ -40,7 +40,6 @@ const CustomContent = (props) => {
         setTheme(props.navigation.state.params.theme);
         setUser(props.navigation.state.params.user);
         setLang(props.navigation.state.params.lang);
-        console.log(props.navigation.state.params.user)
     }, []);
 
     function profileHandler() {

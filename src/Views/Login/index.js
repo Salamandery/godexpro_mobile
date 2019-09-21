@@ -25,11 +25,12 @@ var translation = translate("Login");
 GoogleSignin.configure();
 
 const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState();
     const [pass, setPass] = useState('');
     const [profile, setProfile] = useState('');
-    const [userInfo, setUserInfo] = useState([]);
+    const [userInfo, setUserInfo] = useState({});
     const [load, setLoad] = useState(false);
+    const [error, setError] = useState({});
 
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
@@ -57,10 +58,12 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     }
     async function _signIn(){
         setLoad(true);
+
         try {
             await GoogleSignin.hasPlayServices();
+
             const { user } = await GoogleSignin.signIn();
-            console.log(user);
+
             setUserInfo(user);
 
             setUserConfig(JSON.stringify(user));
@@ -68,6 +71,7 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
             setLoad(false);
 
             navigation.navigate('Main', {user: user, theme: "false", lang: "en", dir: "left"});
+
         } catch (error) {
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
                 // user cancelled the login flow
@@ -86,17 +90,19 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
                 enabled={Platform.OS === 'ios'}
                 behavior="padding"
         >
-        <View style={styles.container}>
-            <Image style={styles.logo} source={logo} />
-            
-            <Text style={styles.label}>Social</Text>
-            <GoogleSigninButton
-                style={{ width: 192, height: 48, marginTop: 10 }}
-                size={GoogleSigninButton.Size.Wide}
-                color={GoogleSigninButton.Color.Dark}
-                onPress={_signIn}
-                disabled={load} />
+            <View style={styles.container}>
+                <Image style={styles.logo} source={logo} />
+                
+                <Text style={styles.label}>Social</Text>
+                <GoogleSigninButton
+                    style={{ width: 192, height: 48, marginTop: 10 }}
+                    size={GoogleSigninButton.Size.Wide}
+                    color={GoogleSigninButton.Color.Dark}
+                    onPress={_signIn}
+                    disabled={load} 
+                />
             </View>
+            { error ? <Text>{error}</Text> : null }
         </KeyboardAvoidingView>
     );
 }
