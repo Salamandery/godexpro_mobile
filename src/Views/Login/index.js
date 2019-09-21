@@ -82,6 +82,8 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
             } else {
                 // some other error happened
             }
+            console.log(error);
+            setError(error);
             setLoad(false);
         }
     }
@@ -102,7 +104,7 @@ const Login = ({navigation, theme, Ari, lang, dir, dispatch}) => {
                     disabled={load} 
                 />
             </View>
-            { error ? <Text>{error}</Text> : null }
+            { error ? <Text>{error.code}</Text> : null }
         </KeyboardAvoidingView>
     );
 }
