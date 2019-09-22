@@ -87,7 +87,8 @@ export function StyleTheme(theme, mode) {
                         fontSize: normalize(18),
                         textAlign: "center",
                         paddingHorizontal: normalize(10),
-                        color: "#333333"
+                        color: "#333333",
+                        paddingBottom: normalize(10)
                     },
                     imgWrapper: {
                         backgroundColor: "#d9d9d9",
@@ -181,7 +182,8 @@ export function StyleTheme(theme, mode) {
                         fontSize: normalize(18),
                         textAlign: "center",
                         paddingHorizontal: normalize(10),
-                        color: "#cccccc"
+                        color: "#cccccc",
+                        paddingBottom: normalize(10)
                     },
                     imgWrapper: {
                         backgroundColor: "#333",
@@ -275,6 +277,8 @@ export function StyleTheme(theme, mode) {
                     fontSize: normalize(18),
                     textAlign: "center",
                     paddingHorizontal: normalize(10),
+                    color: "#333333",
+                    paddingBottom: normalize(10)
                 },
                 imgWrapper: {
                     backgroundColor: "#f5d6eb",

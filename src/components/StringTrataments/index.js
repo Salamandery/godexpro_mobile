@@ -370,10 +370,94 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     },
                     lvlup: {
                         en: {
-                            
+                            RareCandy: {
+                                label: "Rare Candy",
+                                description: "A mysterious candy. When used on a Pokémon, it turns into the Pokémon's Candy.\n\nThe Rare Candy can transform into Candy for any Pokémon.\n\nFor example: when used on a Pikachu, one Rare Candy turns into one Pikachu Cand. \n\nObtaining: You can obtain Pokemon GO Rare Candy exclusively only from Raid Boss Battles."
+                            },
+                            DragonScale: {
+                                title: "Dragon Scale",
+                                label: "Dragon Scale",
+                                description: "A scale that can make certain species of Pokémon evolve. It is very tough and inflexible.\n\nPokémon: Seadra / Evolution: Kingdra"
+                            },
+                            KingsRock: {
+                                label: "King's Rock",
+                                description: "A rock that can make certain species of Pokémon evolve. It looks like a crown.\n\nPokémon: Poliwhirl / Evolution: Politoed \nPokémon: Slowpoke / Evolution: Slowking"
+                            },
+                            MetalCoat: {
+                                title: "Metal Coat",
+                                label: "Metal Coat",
+                                description: "A coating that can make certain species of Pokémon evolve. It is a special metallic film.\n\nPokémon: Onix / Evolution: Steelix \nPokémon: Scyther / Evolution: Scizor"
+                            },
+                            SinnohStone: {
+                                title: "Sinnoh Stone",
+                                label: "Sinnoh Stone",
+                                description: "A special stone originally found in the Sinnoh region that can make certain species of Pokémon evolve. It is very tough and has a beautiful sheen.\n\nPokémon: Electabuzz / Evolution:Electivire\nPokémon: Sneasel / Evolution: Weavile\nPokémon: Roselia / Evolution: Roserade\nPokémon: Rhydon / Evolution: Rhyperionr\nPokémon: Murkrow / Evolution: Honchkrow\nPokémon: Porygon2 / Evolution: PorygonZ\nPokémon: Togetic / Evolution: Togekiss\nPokémon: Magmar / Evolution: Magmortar\nPokémon: Misdreavus / Evolution: Mismagius\nPokémon: Gligar / Evolution: Gliscor\nPokémon: Dusclops / Evolution: Dusknoir\nPokémon: Swinub / Evolution: Mamoswine\nPokémon: Aipom / Evolution: Ambinpom\nPokémon: Yanma / Evolution: Yanmega\nPokémon: Tangela / Evolution: Tangrowth\nPokémon: Lickitung / Evolution: Lickilicky\nPokémon: Kirlia / Evolution: Gallade\nPokémon: Snorunt / Evolution: Froslass"
+                            },
+                            SunStone: {
+                                title: "Sun Stone",
+                                label: "Sun Stone",
+                                description: "A peculiar stone that can make certain species of Pokémon evolve. It burns as red as the evening sun.\n\nPokémon: Gloom / Evolution: Bellossom \nPokémon: Sunkern / Evolution: Sunflora"
+                            },
+                            Upgrade: {
+                                title: "Upgrade",
+                                label: "Upgrade",
+                                description: "A transparent device that make certain species of Pokémon evolve. It was produced by Silph Co.\n\nPokémon: Porygon / Evolution: Porygon2"
+                            },
+                            FastTm: {
+                                title: "Fast TM",
+                                label: "Fast TM",
+                                description: "This Technical Machine teaches the Pokémon a new Fast Attack.\n\nUnlocked at Level: 15.\n\nHow it Works: Teaches your Pokemon a New Random Fast Move.\n\nHow to Get: Drops in Raid Battles."
+                            },
+                            ChangedTm: {
+                                title: "Charged TM",
+                                label: "Charged TM",
+                                description: "This Technical Machine teaches the Pokémon a new Charged Attack.\n\nUnlocked at Level: 25.\n\nHow it Works: Teaches your Pokemon a New Random Charged Move.\n\nHow to Get: Drops in Raid Battles."
+                            }
                         },
                         pt: {
-
+                            RareCandy: {
+                                label: "Doce Raro",
+                                description: "Doces Misteriosos, quando usado em qualquer Pokémon, ele se transforma no doce do Pokémon.\n\nO Doce Raro pode se transformar em doce para qualquer Pokémon.\n\nPor exemplo: quando usado em um Pikachu, um Doce Raro se transforma em um doce de Pikachu.\n\nObtido: Como recompensa de Batalhas de Raide, Tarefas de Pesquisa e Batalha de Treinadores."
+                            },
+                            DragonScale: {
+                                title: "Esc. de Dragão",
+                                label: "Escama de Dragão",
+                                description: "Uma escama que pode fazer com que certas espécies de Pokémon evoluam. É muito resistente e inflexível.\n\nPokémon: Seadra / Evolução: Kingdra"
+                            },
+                            KingsRock: {
+                                label: "Pedra do Rei",
+                                description: "Uma rocha que pode fazer com que certas espécies de Pokémon evoluam. Parece uma coroa.\n\nPokémon: Poliwhirl / Evolução: Politoed \nPokémon: Slowpoke / Evolução: Slowking"
+                            },
+                            MetalCoat: {
+                                title: "R. Metálico",
+                                label: "Revestimento Metálico",
+                                description: "Um revestimento que pode fazer com que certas espécies de Pokémon evoluam. É um filme metálico especial.\n\nPokémon: Onix / Evolução: Steelix\nPokémon: Scyther / Evolução: Scizor"
+                            },
+                            SinnohStone: {
+                                title: "P. de Sinnoh",
+                                label: "Pedra de Sinnoh",
+                                description: "Uma pedra especial originalmente encontrada na região de Sinnoh que pode fazer com que certas espécies de Pokémon evoluam. É muito resistente e tem um brilho bonito.\n\nPokémon: Electabuzz / Evolução: Electivire\nPokémon: Sneasel / Evolução: Weavile\nPokémon: Roselia / Evolução: Roserade\nPokémon: Rhydon / Evolução: Rhyperionr\nPokémon: Murkrow / Evolução: Honchkrow\nPokémon: Porygon2 / Evolução: PorygonZ\nPokémon: Togetic / Evolução: Togekiss\nPokémon: Magmar / Evolução: Magmortar\nPokémon: Misdreavus / Evolução: Mismagius\nPokémon: Gligar / Evolução: Gliscor\nPokémon: Dusclops / Evolução: Dusknoir\nPokémon: Swinub / Evolução: Mamoswine\nPokémon: Aipom / Evolução: Ambinpom\nPokemon: Yanma / Evolução: Yanmega\nPokémon: Tangela / Evolução: Tangrowth\nPokémon: Lickitung / Evolução: Lickilicky\nPokémon: Kirlia / Evolução: Gallade\nPokémon: Snorunt / Evolução: Froslass"
+                            },
+                            SunStone: {
+                                title: "Pedra Solar",
+                                label: "Pedra Solar",
+                                description: "Uma pedra peculiar que pode fazer com que certas espécies de Pokémon evoluam. Queima tão vermelho quanto o sol da tarde.\n\nPokémon: Gloom / Evolução: Bellossom \nPokémon: Sunkern / Evolução: Sunflora"
+                            },
+                            Upgrade: {
+                                title: "Melhora",
+                                label: "Melhora",
+                                description: "Um dispositivo transparente que pode fazer com que certas espécies de Pokémon evoluam. Foi produzido pela Silph Co.\n\nPokémon: Porygon / Evolução: Porygon2"
+                            },
+                            FastTm: {
+                                title: "Atk.Ágil",
+                                label: "MT Ataque Ágil",
+                                description: "Essa Máquina de Técnica ensina um novo ataque ágil a um Pokémon.\n\nDesbloqueado no nível: 15.\n\nComo funciona: Ao utilizar em um Pokémon, ele aprenderá um novo ataque ágil aleatório.\n\nComo obter: Adquirido em batalhas de Raide."
+                            },
+                            ChangedTm: {
+                                title: "Atk.Carregado",
+                                label: "MT Ataque Carregado",
+                                description: "Esta Máquina de Técnica ensina um novo ataque carregado a um Pokémon.\n\nDesbloqueado no nível: 25.\n\nComo funciona: Ao utilizar em um Pokémon, ele aprenderá um novo ataque carregado aleatório.\n\nComo obter: Adquirido em batalhas de Raide."
+                            }
                         }
                     },
                     Potion: {

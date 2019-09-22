@@ -73,93 +73,93 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
             <View style={styles.ItemItens}>               
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Rare Candy");
-                    setDes("A mysterious candy. When used on a Pokémon, it turns into the Pokémon's Candy.\n\nThe Rare Candy can transform into Candy for any Pokémon.\n\nFor example: when used on a Pikachu, one Rare Candy turns into one Pikachu Cand. \n\nObtaining: You can obtain Pokemon GO Rare Candy exclusively only from Raid Boss Battles.");
+                    setTitle(translation.lvlup[lang].RareCandy.label);
+                    setDes(translation.lvlup[lang].RareCandy.description);
                     setItemimg(RareCandy);
                     setModal();
                 }}>
                     <Image style={styles.img} source={RareCandy}></Image>
-                    <Text style={styles.label}>{"Rare Candy"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].RareCandy.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Dragon Scale");
-                    setDes("A scale that can make certain species of Pokémon evolve. It is very tough and inflexible.\n\nPokémon: Seadra / Evolution: Kingdra");
+                    setTitle(translation.lvlup[lang].DragonScale.label);
+                    setDes(translation.lvlup[lang].DragonScale.description);
                     setItemimg(DragonScale);
                     setModal();
                 }}>
                     <Image style={styles.img} source={DragonScale}></Image>
-                    <Text style={styles.label}>{"Dragon Scale"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].DragonScale.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("King's Rock");
-                    setDes("A rock that can make certain species of Pokémon evolve. It looks like a crown.\n\nPokémon: Poliwhirl / Evolution: Politoed \nPokémon: Slowpoke/ Evolution: Slowking");
+                    setTitle(translation.lvlup[lang].KingsRock.label);
+                    setDes(translation.lvlup[lang].KingsRock.description);
                     setItemimg(KingsRock);
                     setModal();
                 }}>
                     <Image style={styles.img} source={KingsRock}></Image>
-                    <Text style={styles.label}>{"King's Rock"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].KingsRock.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Metal Coat");
-                    setDes("A coating that can make certain species of Pokémon evolve. It is a special metallic film.\n\nPokémon: Onix / Evolution: Steelix \nPokémon: Scyther/ Evolution: Scizor");
+                    setTitle(translation.lvlup[lang].MetalCoat.label);
+                    setDes(translation.lvlup[lang].MetalCoat.description);
                     setItemimg(MetalCoat);
                     setModal();
                 }}>
                     <Image style={styles.img} source={MetalCoat}></Image>
-                    <Text style={styles.label}>{"Metal Coat"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].MetalCoat.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Sinnoh Stone");
-                    setDes("A special stone originally found in the Sinnoh region that can make certain species of Pokémon evolve. It is very tough and has a beautiful sheen.\n\nPokémon: Electabuzz / Evolution:Electivire\nPokémon: Sneasel / Evolution: Weavile\nPokémon: Roselia / Evolution: Roserade\nPokémon: Rhydon / Evolution: Rhyperionr\nPokémon: Murkrow / Evolution: Honchkrow\nPokémon:Porygon2  / Evolution:Porygon - Z\nPokémon: Togetic / Evolution: Togekiss\nPokémon: Magmar / Evolution: Magmortar\nPokémon: Misdreavus / Evolution: Mismagius\nPokémon: Gligar / Evolution: Gliscor\nPokémon: Dusclops / Evolution: Dusknoir\nPokémon: Swinub / Evolution: Mamoswine\nPokémon: Aipom / Evolution: Ambinpom\nPokémon: Yanma / Evolution: Yanmega\nPokémon: Tangela / Evolution: Tangrowth\nPokémon: Lickitung / Evolution: Lickilicky\nPokémon: Kirlia / Evolution: Gallade\nPokémon: Snorunt / Evolution: Froslass");
+                    setTitle(translation.lvlup[lang].SinnohStone.label);
+                    setDes(translation.lvlup[lang].SinnohStone.description);
                     setItemimg(SinnohStone);
                     setModal();
                 }}>
                     <Image style={styles.img} source={SinnohStone}></Image>
-                    <Text style={styles.label}>{"Sinnoh Stone"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].SinnohStone.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Sun Stone");
-                    setDes("A peculiar stone that can make certain species of Pokémon evolve. It burns as red as the evening sun.\n\nPokémon: Gloom/ Evolution: Bellossom \nPokémon: Sunkern / Evolution: Sunflora");
+                    setTitle(translation.lvlup[lang].SunStone.label);
+                    setDes(translation.lvlup[lang].SunStone.description);
                     setItemimg(SunStone);
                     setModal();
                 }}>
                     <Image style={styles.img} source={SunStone}></Image>
-                    <Text style={styles.label}>{"Sun Stone"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].SunStone.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Upgrade");
-                    setDes("A transparent device that make certain species of Pokémon evolve. It was produced by Silph Co.\n\nPokémon: Porygon / Evolution: Porygon2");
+                    setTitle(translation.lvlup[lang].Upgrade.label);
+                    setDes(translation.lvlup[lang].Upgrade.description);
                     setItemimg(Upgrade);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Upgrade}></Image>
-                    <Text style={styles.label}>{"Upgrade"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].Upgrade.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Fast TM");
-                    setDes("This Technical Machine teaches the Pokémon a new Fast Attack.\n\nUnlocked at Level: 15. \nHow it Works: Teaches your Pokemon a New Random Fast Move. \nHow to Get: Drops in Raid Battles.");
+                    setTitle(translation.lvlup[lang].FastTm.label);
+                    setDes(translation.lvlup[lang].FastTm.description);
                     setItemimg(TMsQuickFastMoves);
                     setModal();
                 }}>
                     <Image style={styles.img} source={TMsQuickFastMoves}></Image>
-                    <Text style={styles.label}>{"Fast TM"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].FastTm.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Charged TM");
-                    setDes("This Technical Machine teaches the Pokémon a new Charged Attack.\n\nUnlocked at Level: 25. \nHow it Works: Teaches your Pokemon a New Random Fast Move. \nHow to Get: Drops in Raid Battles.");
+                    setTitle(translation.lvlup[lang].ChangedTm.label);
+                    setDes(translation.lvlup[lang].ChangedTm.description);
                     setItemimg(TMsChargedMoves);
                     setModal();
                 }}>
                     <Image style={styles.img} source={TMsChargedMoves}></Image>
-                    <Text style={styles.label}>{"Charged TM"}</Text>
+                    <Text style={styles.label}>{translation.lvlup[lang].ChangedTm.title}</Text>
                 </TouchableOpacity>
             </View>
             <MyModa Visibility={ModalState} Title={Title} Des={Des} Itemimg={Itemimg} />
