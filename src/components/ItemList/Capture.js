@@ -72,93 +72,93 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
             <View style={styles.ItemItens}>       
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Nanab");
-                    setDes("Feed this to a Pokémon to calm it down, making it less erratic.\n\nDetails: Nanab Berry is kind of berry that will slow a Pokémon's movement up to 95%, making it easier to capture on the Trainer's next attempt.\n\nUnlocked at Level: They can be obtained by trainer at Level 1 and higher.\n\nHow to Get: Just like two other kinds of berries, Nanab Berries can be obtained from spinning Photo Disc at PokéStops and Gyms and as reward for leveling up.\n\n(Note): It is particularly useful on hovering Pokémon that move around. There are several such move patterns: darting from one spot to another rapidly (Magnemite), moving about smoothly (Abra), or flying upwards and staying for some time (Pidgeotto, Golbat)");
+                    setTitle(translation.Capture[lang].Nanab.label);
+                    setDes(translation.Capture[lang].Nanab.description);
                     setItemimg(Nanab);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Nanab}></Image>
-                    <Text style={styles.label}>{"Nanab"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Nanab.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Pinap");
-                    setDes("Feed this to a Pókemon to receive more Candy when you catch it.\n\nDetails: Pinap Berry is kind of berry that when fed a Pokémon while trying to capture it, it will double the amount of Candy the Trainer will receive if their next capture attempt is successful.\n\nUnlocked at Level: They can be obtained by trainer at Level 18 and higher.\n\nHow to Get: Just like two other kinds of berries, Pinap Berries can be obtained from spinning Photo Disc at PokéStops and Gyms and as reward for leveling up.\n\n(Note): It is particularly useful on Pokémon that are the 2nd and 3rd stages of their evolution line, as they drop more candy (5 and 10 respectively) than their 1st stage form (only 3 candies). However, those Pokémon are also usually harder to catch, making it more likely to break out and waste the berry.");
+                    setTitle(translation.Capture[lang].Pinap.label);
+                    setDes(translation.Capture[lang].Pinap.description);
                     setItemimg(Pinap);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Pinap}></Image>
-                    <Text style={styles.label}>{"Pinap"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Pinap.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Razz");
-                    setDes("Feed this to a Pókemon to make it easier to catch.\n\nDetails: Razz Berry is kind of berry that when fed a Pokémon while trying to capture it increases the chance of success.\n\nUnlocked at Level: They can be obtained by trainer at Level 8 and higher.\n\nHow to Get: Just like two other kinds of berries, Razz Berries can be obtained from spinning Photo Disc at PokéStops and Gyms and as reward for leveling up.");
+                    setTitle(translation.Capture[lang].Razz.label);
+                    setDes(translation.Capture[lang].Razz.description);
                     setItemimg(Razz);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Razz}></Image>
-                    <Text style={styles.label}>{"Razz"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Razz.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Silver Pinap");
-                    setDes("Feed this to a Pókemon to receive more Candy when catch it and make it easier to catch.\n\nDetails: Silver Pinap Berries increases a Trainer's chance of catching an encountered Pokémon by 1.8 times and doubles the amount of Candy given when Pokémon is successfully caught.\n\nHow to Get: They can be obtained by completing certain Field Research tasks as well as being rewarded for progressing through the later stages of A Ripple in Time and A Spooky Message.");
+                    setTitle(translation.Capture[lang].SilverPinap.label);
+                    setDes(translation.Capture[lang].SilverPinap.description);
                     setItemimg(SilverPinap);
                     setModal();
                 }}>
                     <Image style={styles.img} source={SilverPinap}></Image>
-                    <Text style={styles.label}>{"Silver Pinap"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].SilverPinap.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Golden Razz");
-                    setDes("Feed this to a Pokémon to make it much easier to catch. Feed this to a Pokémon on a Gym to fully restore its motivation.\n\nDetails: Golden Razz Berries will greatly increase a Trainer's chances of catching a Pokémon they encounter in the wild and can also be given to a Pokémon assigned to a Gym to fully recover its motivation meter.\n\nHow to Get: This kind of berry can be only obtained as a reward from Raid Battle.");
+                    setTitle(translation.Capture[lang].GoldenRazz.label);
+                    setDes(translation.Capture[lang].GoldenRazz.description);
                     setItemimg(GoldenRazz);
                     setModal();
                 }}>
                     <Image style={styles.img} source={GoldenRazz}></Image>
-                    <Text style={styles.label}>{"Golden Razz"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].GoldenRazz.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Pokeball");
-                    setDes("A device for catching wild Pokémon. It's thrown like a ball, comfortably encapsulating its target.\n\nCoins: 100 - 20x\nCoins: 460 - 100x\nCoins: 800 - 200x\n\nThese are regular Pokeballs and can be purchased through the Pokemon Go Shop.");
+                    setTitle(translation.Capture[lang].Pokeball.label);
+                    setDes(translation.Capture[lang].Pokeball.description);
                     setItemimg(Pokeball);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Pokeball}></Image>
-                    <Text style={styles.label}>{"Pokeball"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Pokeball.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Great ball");
-                    setDes("A high-performance ball with a higher catch rate than a standard Pokéball.\n\nGreat Pokeballs cannot be purchased through shop. These Poke Balls have higher chance to capture Pokemon then regular ones.");
+                    setTitle(translation.Capture[lang].Greatball.label);
+                    setDes(translation.Capture[lang].Greatball.description);
                     setItemimg(GreatBall);
                     setModal();
                 }}>
                     <Image style={styles.img} source={GreatBall}></Image>
-                    <Text style={styles.label}>{"Great ball"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Greatball.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Ultra ball");
-                    setDes("An ultra-performance ball with a higher catch rate than a Great Ball.\n\nUltra Pokeballs are the best in Pokemon Go. Ultra Balls have the highest capture rate out of all the available balls.");
+                    setTitle(translation.Capture[lang].Ultraball.label);
+                    setDes(translation.Capture[lang].Ultraball.description);
                     setItemimg(UltraBall);
                     setModal();
                 }}>
                     <Image style={styles.img} source={UltraBall}></Image>
-                    <Text style={styles.label}>{"Ultra ball"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Ultraball.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Premier ball");
-                    setDes("");
+                    setTitle(translation.Capture[lang].Premierball.label);
+                    setDes(translation.Capture[lang].Premierball.description);
                     setItemimg(PremierBall);
                     setModal();
                 }}>
                     <Image style={styles.img} source={PremierBall}></Image>
-                    <Text style={styles.label}>{"Premier ball"}</Text>
+                    <Text style={styles.label}>{translation.Capture[lang].Premierball.label}</Text>
                 </TouchableOpacity>
             </View>
             <MyModa Visibility={ModalState} Title={Title} Des={Des} Itemimg={Itemimg}/>

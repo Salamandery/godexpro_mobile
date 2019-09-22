@@ -73,6 +73,11 @@ export function StyleTheme(theme, mode) {
             color: "#991f00",
             fontWeight: "bold",
             backgroundColor: "#ffebe6"
+        },
+        googleBtn: { 
+            width: 250, 
+            height: 64, 
+            marginTop: 10,
         }
     }));
 }

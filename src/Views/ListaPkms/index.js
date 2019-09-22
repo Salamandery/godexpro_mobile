@@ -18,14 +18,14 @@ import {
 } from 'react-native';
 import Loading from '../Loading';
 import AdSense from '../../components/AdSense';
-import {ToggleThme} from '../../services/actions';
+import { ToggleTheme } from '../../services/actions';
 import { StyleTheme } from './style';
 import { percent, translate } from '../../components/StringTrataments';
 import { connect } from 'react-redux';
 
 var translation = translate("ListaPkms");
 
-const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
+const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
 
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
@@ -61,18 +61,18 @@ const ListaPkms = ({navigation, theme, Ari, lang, dir, dispatch}) => {
     }
     function setAri() {
         AsyncStorage.setItem('ari', "minimichelle");
-        dispatch(ToggleThme(theme, "minimichelle", lang, dir));
+        dispatch(ToggleTheme(theme, "minimichelle", lang, dir));
         setLoad(true);
         setTimeout(()=>{
-            navigation.navigate('Splash', {lang});
+            navigation.navigate('Splash');
         }, 1000);
     }
     function unsetAri() {
         AsyncStorage.removeItem('ari');
-        dispatch(ToggleThme(theme, "default", lang, dir));
+        dispatch(ToggleTheme(theme, "default", lang, dir));
         setLoad(true);
         setTimeout(()=>{
-            navigation.navigate('Splash', {lang});
+            navigation.navigate('Splash');
         }, 1000);
     }
     function typeSearch(type, text) {

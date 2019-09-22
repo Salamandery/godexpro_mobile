@@ -70,63 +70,63 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
             <View style={styles.ItemItens}>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Potion");
-                    setDes("A spray-type medicine for treating wounds. It restores the HP of one Pokémon by 20 points.\n\nUnlocked at Level: 5.\n\nRestores: 20 HP.");
+                    setTitle(translation.Potion[lang].Potion.label);
+                    setDes(translation.Potion[lang].Potion.description);
                     setItemimg(Potion);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Potion}></Image>
-                    <Text style={styles.label}>{"Potion"}</Text>
+                    <Text style={styles.label}>{translation.Potion[lang].Potion.label}</Text>
                 </TouchableOpacity>    
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Super Potion");
-                    setDes("A spray-type medicine for treating wounds. It restores the HP of one Pokémon by 50 points.\n\nUnlocked at Level: 10.\n\nRestores: 50 HP.");
+                    setTitle(translation.Potion[lang].SuperPotion.label);
+                    setDes(translation.Potion[lang].SuperPotion.description);
                     setItemimg(SuperPotion);
                     setModal();
                 }}>
                     <Image style={styles.img} source={SuperPotion}></Image>
-                    <Text style={styles.label}>{"Super Potion"}</Text>
+                    <Text style={styles.label}>{translation.Potion[lang].SuperPotion.label}</Text>
                 </TouchableOpacity>           
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Hyper Potion");
-                    setDes("A spray-type medicine for treating wounds. It restores the HP of one Pokémon by 200 points.\n\nUnlocked at Level: 15.\n\nRestores: 200 HP.");
+                    setTitle(translation.Potion[lang].HyperPotion.label);
+                    setDes(translation.Potion[lang].HyoerPotion.description);
                     setItemimg(HyperPotion);
                     setModal();
                 }}>
                     <Image style={styles.img} source={HyperPotion}></Image>
-                    <Text style={styles.label}>{"Hyper Potion"}</Text>
+                    <Text style={styles.label}>{translation.Potion[lang].HyperPotion.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Max Potion");
-                    setDes("A spray-type medicine that completely restores all HP of a single Pokémon.\n\nCoins: 200 - 10x\n\nUnlocked at Level: 25.\n\nRestores: Completely restores the Max HP.");
+                    setTitle(translation.Potion[lang].MaxPotion.label);
+                    setDes(translation.Potion[lang].MaxPotion.description);
                     setItemimg(MaxPotion);
                     setModal();
                 }}>
                     <Image style={styles.img} source={MaxPotion}></Image>
-                    <Text style={styles.label}>{"Max Potion"}</Text>
+                    <Text style={styles.label}>{translation.Potion[lang].MaxPotion.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Revive");
-                    setDes("A medicine that can revive fainted Pokémon. It also restores half of a fainted Pokémon's maximum HP.\n\nUnlocked at Level: 5\n\nRestores: Revives Pokemon With Half of its Max HP.");
+                    setTitle(translation.Potion[lang].Reviver.label);
+                    setDes(translation.Potion[lang].Reviver.description);
                     setItemimg(Revive5lvl);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Revive5lvl}></Image>
-                    <Text style={styles.label}>{"Revive"}</Text>
+                    <Text style={styles.label}>{translation.Potion[lang].Reviver.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Max Revive");
-                    setDes("A medicine that can revive fainted Pokémon. It also fully restores a fainted Pokémon's maximum HP.\n\nCoins: 180 - 6x\n\nUnlocked at Level: 30\n\nRestores: Revives Pokemon With the full of its Max HP Restored.");
+                    setTitle(translation.Potion[lang].MaxReviver.label);
+                    setDes(translation.Potion[lang].MaxReviver.description);
                     setItemimg(Revivemax);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Revivemax}></Image>
-                    <Text style={styles.label}>{"Max Revive"}</Text>
+                    <Text style={styles.label}>{translation.Potion[lang].MaxReviver.label}</Text>
                 </TouchableOpacity>
             </View>
             <MyModa Visibility={ModalState} Title={Title} Des={Des} Itemimg={Itemimg} />
