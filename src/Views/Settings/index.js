@@ -114,7 +114,7 @@ const Settings = ({navigation, dispatch, theme, Ari, lang, dir, paid, email}) =>
                                             trackColor="#246175"
                                             ios_backgroundColor="#246175"
                                             onValueChange={dirHandler}
-                                            disabled={dis}
+                                            disabled={true}
                                         />
                                     </View> 
                                 </View>

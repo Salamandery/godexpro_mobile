@@ -236,7 +236,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                             },
                             Premierball: {
                                 label: "Premier Ball",
-                                description: "Underconstruction"
+                                description: "It is special type of Poké Ball for capturing a Raid Boss in Bonus Challenge after defeating it in Raid Battle.\n\nBased on which Trainers controlled the Gym, how much each Trainer contributed as a team during the Raid Battle, each Trainer will receive a variable number of Premier Balls.\n\nIt unlocks at level 5.\n\n These can be used to capture the Raid Boss, once it has been defeated. It is also used to capture Shadow Pokémon after their defeat.\n\n(Note): Unused Premier Balls are discarded after an encounter."
                             },
                             Nanab: {
                                 label: "Nanab",
@@ -255,6 +255,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                                 description: "Feed this to a Pókemon to receive more Candy when catch it and make it easier to catch.\n\nDetails: Silver Pinap Berries increases a Trainer's chance of catching an encountered Pokémon by 1.8 times and doubles the amount of Candy given when Pokémon is successfully caught.\n\nHow to Get: They can be obtained by completing certain Field Research tasks as well as being rewarded for progressing through the later stages of A Ripple in Time and A Spooky Message."
                             },
                             GoldenRazz: {
+                                title: "Golden Razz",
                                 label: "Golden Razz",
                                 description: "Feed this to a Pokémon to make it much easier to catch. Feed this to a Pokémon on a Gym to fully restore its motivation.\n\nDetails: Golden Razz Berries will greatly increase a Trainer's chances of catching a Pokémon they encounter in the wild and can also be given to a Pokémon assigned to a Gym to fully recover its motivation meter.\n\nHow to Get: This kind of berry can be only obtained as a reward from Raid Battle."
                             }
@@ -262,39 +263,40 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                         pt: {
                             Pokeball: {
                                 label: "Poké Bola",
-                                description: "Em contrução"
+                                description: "Um dispositivo para capturar Pokémon selvagens. É lançado como uma bola em um Pokémon, encapsulando confortavelmente seu alvo.\n\nMoedas: 100 - 20x\nMoedas: 460 - 100x\nMoedas: 800 - 200x\n\nA Poké Bola é a mais comum e também o dispositivo de nível mais baixo para capturar Pokémon selvagens, ela pode ser comprada na loja."
                             },
                             Greatball: {
                                 label: "Grande Bola",
-                                description: "Em contrução"
+                                description: "A Grande Bola é um dispositivo de alto desempenho que oferece uma taxa de captura mais alta que uma Poké Bola padrão.\n\nA Grande Bola não podem ser compradas na loja. Essa Poke Bola tem maior chance de capturar do que as normais"
                             },
                             Ultraball: {
                                 label: "Ultra Bola",
-                                description: "Em construção"
+                                description: "Uma Poké Bola de desempenho ultra alto que fornece uma taxa de captura de Pokémon mais alta que uma Grande Bola.\n\nA Ultra Bola é a melhor entre todas, além de ter a maior taxa de captura de todas as bolas disponíveis no jogo."
                             },
                             Premierball: {
                                 label: "Bola Prêmio",
-                                description: "Em construção"
+                                description: "É um tipo especial de Poké Bola para capturar Pokémon de Raide, depois de derrotá-lo na batalha.\n\nCom base em quais treinadores controlavam o ginasio, quanto cada treinador contribuiu como equipe durante a batalha, os treinadores receberão um número variável de Bola Prêmio.\n\nDesbloqueia no nível 5.\n\nElas podem ser usados para capturar o Pokémon de Raide, uma vez que for derrotado. Também é usado para capturar Pokémon das Sombras após sua derrota.\n\n(Nota): As Bolas Prêmio que não forem utilizadas são descartadas após um encontro."
                             },
                             Nanab: {
                                 label: "Anaba",
-                                description: "Em construção"
+                                description: "Dê esta fruta a um pokémon para acalmá-lo e torná-lo menos imprevisível.\n\nDetalhes: Anaba é um tipo de fruta que desacelera o movimento de um Pokémon em até 95%, facilitando a captura na próxima tentativa de pegá-lo.\n\nDesbloqueia no nível: eles podem ser obtidos pelo treinador no nível 1 e superior.\n\nComo obter: Assim como outros dois tipos de frutas, Anaba pode ser obtido rodando PokéStops e Ginásios e como recompensa por subir de nível.\n\n(Nota): É particularmente útil contra Pokémons que se movem muito. Existem vários padrões de movimento: ir de um ponto para outro rapidamente (Magnemite), mover-se suavemente (Abra) ou voar para cima e permanecer por algum tempo (Pidgeotto, Golbat)."
                             },
                             Pinap: {
                                 label: "Caxí",
-                                description: "Em construção"
+                                description: "Dê esta fruta a um pokémon para receber mais doces ao pegá-lo.\n\nDetalhes: Caxí é uma espécie de fruta que, quando um Pokémon é alimentado por ela enquanto tenta capturá-lo, dobrará a quantidade de doces que o treinador receberá se sua próxima tentativa de captura for bem-sucedida.\n\nDesbloqueado no nível: eles podem ser obtidos pelo treinador no nível 18 e superior.\n\nComo obter: Assim como outros dois tipos de frutas, a Caxí pode ser obtido rodando PokéStops e Ginásios e como recompensa por subir de nível."
                             },
                             Razz: {
                                 label: "Frambo",
-                                description: "Em construção"
+                                description: "Dê esta fruta a um pokémon para pegá-lo com mais facilidade.\n\nDetalhes: Frambo é uma espécie de fruta que, quando um Pokémon é alimentado por ela, aumenta a chance de sucesso na captura.\n\nDesbloqueado no nível: eles podem ser obtidos pelo treinador no nível 8 e superior.\n\nComo obter: Assim como outros dois tipos de frutas, a Frambo pode ser obtido rodando PokéStops e Ginásios e como recompensa por subir de nível."
                             },
                             SilverPinap: {
                                 label: "Caxí Prateada",
-                                description: "Em contrução"
+                                description: "Dê esta fruta a um pokémon para receber mais doces ao pegá-lo. Será mais fácil pegar Pokemon com ela.\n\nDetalhes: Caxí Prateada aumenta a chance do treinador de encontrar um Pokémon em 1,8x e dobra a quantidade de doces quando o Pokémon é capturado com sucesso.\n\nComo obter: Eles podem ser obtidos através da realização de determinadas tarefas de pesquisa de campo, além de serem recompensados por progredir nos estágios posteriores das Pesquisas Especiais: Uma oscilação no Tempo e Uma Mensagem Assustadora."
                             },
                             GoldenRazz: {
+                                title: "Frambo Dourada",
                                 label: "Fr. Dourada",
-                                description: "Em construção"
+                                description: "Dê isto a um Pokémon para pegá-lo com mais facilidade.\n\nDetalhes: Frambo Dourada aumentará muito as chances de um treinador pegar um Pokémon que encontrar na natureza e também pode ser dado a um Pokémon designado para um ginásio para recuperar completamente seu medidor de motivação.\n\nComo obter: Esse tipo de fruta só pode ser obtido como recompensa da Batalha de Raide."
                             }
                         }
                     },

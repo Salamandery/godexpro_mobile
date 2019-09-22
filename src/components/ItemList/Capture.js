@@ -112,7 +112,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle(translation.Capture[lang].GoldenRazz.label);
+                    setTitle(translation.Capture[lang].GoldenRazz.title);
                     setDes(translation.Capture[lang].GoldenRazz.description);
                     setItemimg(GoldenRazz);
                     setModal();
