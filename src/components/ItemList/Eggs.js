@@ -70,73 +70,73 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
             <View style={styles.ItemItens}>               
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Egg Incubator ∞");
-                    setDes("A device that incubates an Egg as you walk until it's ready to hatch Unlimited use!\n\nYou can use this as many times as you want. \n\nPokemon GO Hatching Strategy: Using your orange incubator on 2KM Eggs is better than wasting your blue limited uses.");
+                    setTitle(translation.Eggs[lang].EggIncubator1.label);
+                    setDes(translation.Eggs[lang].EggIncubator1.description);
                     setItemimg(EggIncubator);
                     setModal();
                 }}>
                     <Image style={styles.img} source={EggIncubator}></Image>
-                    <Text style={styles.label}>{"∞"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].EggIncubator1.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Egg Incubator");
-                    setDes("A device that incubates an Egg as you walk until it is ready to hatch. Break after 3 uses.\n\nCoins: 150 - 1x\n\nYou can only use this 3 times before it breaks.");
+                    setTitle(translation.Eggs[lang].EggIncubator2.label);
+                    setDes(translation.Eggs[lang].EggIncubator2.description);
                     setItemimg(EggIncubatorLimited);
                     setModal();
                 }}>
                     <Image style={styles.img} source={EggIncubatorLimited}></Image>
-                    <Text style={styles.label}>{"Egg Incubator"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].EggIncubator2.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Super Incubator");
-                    setDes("A more powerful Egg incubator that helps Eggs hatch quickly. Break after 3 uses.\n\nCoins: 200 - 1x\n\nIt has distance multiplayer of 0.6666, which will Hatch Eggs 1.5 Times Faster than Regular Egg Incubators.");
+                    setTitle(translation.Eggs[lang].SuperIncubator.label);
+                    setDes(translation.Eggs[lang].SuperIncubator.description);
                     setItemimg(EggIncubatorLimitedSuper);
                     setModal();
                 }}>
                     <Image style={styles.img} source={EggIncubatorLimitedSuper}></Image>
-                    <Text style={styles.label}>{"Super Incubator"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].SuperIncubator.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Egg 2km");
-                    setDes("Bulbasaur, Charmander Squirtle, Abra, Gastly, Magikarp, Shellder, Krabby, Chikorita, Cyndaquil, Totodile, Midsreveaus, Igglybuff, Mudkip, Treecko, Meditite, Spoink, Torchic, Luvdisc, Wailmer, Togepi, Poochyena,  Pichu, Cleffa, Swinub, Swablu, Makuhita,  Machop, Aron, Turtwig, Piplup, Chimchar, Kricketot, Bonsly, Barboach, Spheal, Kricketot, Starly, Bidoof.");
+                    setTitle(translation.Eggs[lang].Egg2.label);
+                    setDes(translation.Eggs[lang].Egg2.description);
                     setItemimg(Egg2km);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Egg2km}></Image>
-                    <Text style={styles.label}>{"Egg 2km"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].Egg2.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Egg 5km");
-                    setDes("Eevee, Lickitung, Sandshrew, Ponyta, Horsea, Psyduck, Cubone, Seel, Rhyhorn, Kabuto, Omanyte, Tangela, Gligar, Pineco, Yanma, Sneasel, Houndor, Mareep, Skarmory, Smoochum, MAgby, Cacnea, Anorith, Lileep, Lotad, Duskull, Trapinch, Shuppet, Wynaut, Clamperl, Buneary, Budew, Snover, Bronzor, Croagunk, Combee, Buizel, Skorupi, Finneon, Drifloon, Glameow, Cheubi, Hippopotas, Wynaut, Wingull, Tyrogue, Snorunt, Shuckle, Scyther, Pineco, Onix, Nosepass, Mudkip, Mantine, Girafarig, Elekid, Corphish, Baltoy, Azurill, Buneary.");
+                    setTitle(translation.Eggs[lang].Egg5.label);
+                    setDes(translation.Eggs[lang].Egg5.description);
                     setItemimg(Egg5km);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Egg5km}></Image>
-                    <Text style={styles.label}>{"Egg 5km"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].Egg5.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Egg 7km");
-                    setDes("Alola Diglett, Alola Geodude, Alola Grimer, Alola Meowth, Alola Sandshrew, Alola Vulpix, Pichu, Cleffa, Igglybuff, Togepi, Smoochum, Tyrogue , Elekid, Magby, Azurill, Wynaut, Bonsly, Budew, Chingling, Munchlax, Mantyke, Riolu, Happiny.");
+                    setTitle(translation.Eggs[lang].Egg7.label);
+                    setDes(translation.Eggs[lang].Egg7.description);
                     setItemimg(Egg7km);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Egg7km}></Image>
-                    <Text style={styles.label}>{"Egg 7km"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].Egg7.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Egg 10km");
-                    setDes("Aerodactyl, Lapras, Ralts, Slakoth, Mawile, Nincada, Sableye, Absol, Shieldon, Cranidos, Happiny, Munchlax, Chingling, Gible, Chansey,Porygon, Mareep, Beldum, Bagon, Lavitar, Feebas, Dratini, Shinx, Riolu.");
+                    setTitle(translation.Eggs[lang].Egg10.label);
+                    setDes(translation.Eggs[lang].Egg10.description);
                     setItemimg(Egg10km);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Egg10km}></Image>
-                    <Text style={styles.label}>{"Egg 10km"}</Text>
+                    <Text style={styles.label}>{translation.Eggs[lang].Egg10.label}</Text>
                 </TouchableOpacity>
             </View>
             <MyModa Visibility={ModalState} Title={Title} Des={Des} Itemimg={Itemimg} />

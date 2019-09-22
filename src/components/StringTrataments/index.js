@@ -210,7 +210,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     },
                     pt: {
                         header: {
-                            capture: "Pokebolas / Frutas",
+                            capture: "Poké Bolas / Frutas",
                             potion: "Poção / Reviver",
                             egg: "Ovos / Incubadoras",
                             lvlup: "Itens de Evolução",
@@ -220,6 +220,222 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                             close: "Fechar"
                         }
                     }, 
+                    Capture: {
+                        en: {
+                            Pokeball: {
+                                label: "Poke Ball",
+                                description: "A device for catching wild Pokémon. It's thrown like a ball, comfortably encapsulating its target.\n\nCoins: 100 - 20x\nCoins: 460 - 100x\nCoins: 800 - 200x\n\nThese are regular Pokeballs and can be purchased through the Pokemon Go Shop."
+                            },
+                            Greatball: {
+                                label: "Great Ball",
+                                description: "A high-performance ball with a higher catch rate than a standard Pokéball.\n\nGreat Pokeballs cannot be purchased through shop. These Poke Balls have higher chance to capture Pokemon then regular ones."
+                            },
+                            Ultraball: {
+                                label: "Ultra Ball",
+                                description: "An ultra-performance ball with a higher catch rate than a Great Ball.\n\nUltra Pokeballs are the best in Pokemon Go. Ultra Balls have the highest capture rate out of all the available balls."
+                            },
+                            Premierball: {
+                                label: "Premier Ball",
+                                description: "Underconstruction"
+                            },
+                            Nanab: {
+                                label: "Nanab",
+                                description: "Feed this to a Pokémon to calm it down, making it less erratic.\n\nDetails: Nanab Berry is kind of berry that will slow a Pokémon's movement up to 95%, making it easier to capture on the Trainer's next attempt.\n\nUnlocked at Level: They can be obtained by trainer at Level 1 and higher.\n\nHow to Get: Just like two other kinds of berries, Nanab Berries can be obtained from spinning Photo Disc at PokéStops and Gyms and as reward for leveling up.\n\n(Note): It is particularly useful on hovering Pokémon that move around. There are several such move patterns: darting from one spot to another rapidly (Magnemite), moving about smoothly (Abra), or flying upwards and staying for some time (Pidgeotto, Golbat)"
+                            },
+                            Pinap: {
+                                label: "Pinap",
+                                description: "Feed this to a Pókemon to receive more Candy when you catch it.\n\nDetails: Pinap Berry is kind of berry that when fed a Pokémon while trying to capture it, it will double the amount of Candy the Trainer will receive if their next capture attempt is successful.\n\nUnlocked at Level: They can be obtained by trainer at Level 18 and higher.\n\nHow to Get: Just like two other kinds of berries, Pinap Berries can be obtained from spinning Photo Disc at PokéStops and Gyms and as reward for leveling up.\n\n(Note): It is particularly useful on Pokémon that are the 2nd and 3rd stages of their evolution line, as they drop more candy (5 and 10 respectively) than their 1st stage form (only 3 candies). However, those Pokémon are also usually harder to catch, making it more likely to break out and waste the berry."
+                            },
+                            Razz: {
+                                label: "Razz",
+                                description: "Feed this to a Pókemon to make it easier to catch.\n\nDetails: Razz Berry is kind of berry that when fed a Pokémon while trying to capture it increases the chance of success.\n\nUnlocked at Level: They can be obtained by trainer at Level 8 and higher.\n\nHow to Get: Just like two other kinds of berries, Razz Berries can be obtained from spinning Photo Disc at PokéStops and Gyms and as reward for leveling up."
+                            },
+                            SilverPinap: {
+                                label: "Silver Pinap",
+                                description: "Feed this to a Pókemon to receive more Candy when catch it and make it easier to catch.\n\nDetails: Silver Pinap Berries increases a Trainer's chance of catching an encountered Pokémon by 1.8 times and doubles the amount of Candy given when Pokémon is successfully caught.\n\nHow to Get: They can be obtained by completing certain Field Research tasks as well as being rewarded for progressing through the later stages of A Ripple in Time and A Spooky Message."
+                            },
+                            GoldenRazz: {
+                                label: "Golden Razz",
+                                description: "Feed this to a Pokémon to make it much easier to catch. Feed this to a Pokémon on a Gym to fully restore its motivation.\n\nDetails: Golden Razz Berries will greatly increase a Trainer's chances of catching a Pokémon they encounter in the wild and can also be given to a Pokémon assigned to a Gym to fully recover its motivation meter.\n\nHow to Get: This kind of berry can be only obtained as a reward from Raid Battle."
+                            }
+                        },
+                        pt: {
+                            Pokeball: {
+                                label: "Poké Bola",
+                                description: "Em contrução"
+                            },
+                            Greatball: {
+                                label: "Grande Bola",
+                                description: "Em contrução"
+                            },
+                            Ultraball: {
+                                label: "Ultra Bola",
+                                description: "Em construção"
+                            },
+                            Premierball: {
+                                label: "Bola Prêmio",
+                                description: "Em construção"
+                            },
+                            Nanab: {
+                                label: "Anaba",
+                                description: "Em construção"
+                            },
+                            Pinap: {
+                                label: "Caxí",
+                                description: "Em construção"
+                            },
+                            Razz: {
+                                label: "Frambo",
+                                description: "Em construção"
+                            },
+                            SilverPinap: {
+                                label: "Caxí Prateada",
+                                description: "Em contrução"
+                            },
+                            GoldenRazz: {
+                                label: "Fr. Dourada",
+                                description: "Em construção"
+                            }
+                        }
+                    },
+                    Eggs: {
+                        en: {
+                            EggIncubator1: {
+                                title: "∞",
+                                label: "Egg Incubator ∞",
+                                description: "A device that incubates an Egg as you walk until it's ready to hatch Unlimited use!\n\nYou can use this as many times as you want. \n\nPokemon GO Hatching Strategy: Using your orange incubator on 2KM Eggs is better than wasting your blue limited uses."
+                            },
+                            EggIncubator2: {
+                                title: "Egg Incubator",
+                                label: "Egg Incubator",
+                                description: "A device that incubates an Egg as you walk until it is ready to hatch. Break after 3 uses.\n\nCoins: 150 - 1x\n\nYou can only use this 3 times before it breaks."
+                            },
+                            SuperIncubator: {
+                                title: "Super Incubator",
+                                label: "Super Incubator",
+                                description: "A more powerful Egg incubator that helps Eggs hatch quickly. Break after 3 uses.\n\nCoins: 200 - 1x\n\nIt has distance multiplayer of 0.6666, which will Hatch Eggs 1.5 Times Faster than Regular Egg Incubators."
+                            },
+                            Egg2: {
+                                label: "Egg 2km",
+                                description: "Bulbasaur, Charmander Squirtle, Abra, Gastly, Magikarp, Shellder, Krabby, Chikorita, Cyndaquil, Totodile, Midsreveaus, Igglybuff, Mudkip, Treecko, Meditite, Spoink, Torchic, Luvdisc, Wailmer, Togepi, Poochyena,  Pichu, Cleffa, Swinub, Swablu, Makuhita,  Machop, Aron, Turtwig, Piplup, Chimchar, Kricketot, Bonsly, Barboach, Spheal, Kricketot, Starly, Bidoof."
+                            },
+                            Egg5: {
+                                label: "Egg 5km",
+                                description: "Eevee, Lickitung, Sandshrew, Ponyta, Horsea, Psyduck, Cubone, Seel, Rhyhorn, Kabuto, Omanyte, Tangela, Gligar, Pineco, Yanma, Sneasel, Houndor, Mareep, Skarmory, Smoochum, MAgby, Cacnea, Anorith, Lileep, Lotad, Duskull, Trapinch, Shuppet, Wynaut, Clamperl, Buneary, Budew, Snover, Bronzor, Croagunk, Combee, Buizel, Skorupi, Finneon, Drifloon, Glameow, Cheubi, Hippopotas, Wynaut, Wingull, Tyrogue, Snorunt, Shuckle, Scyther, Pineco, Onix, Nosepass, Mudkip, Mantine, Girafarig, Elekid, Corphish, Baltoy, Azurill, Buneary."
+                            },
+                            Egg7: {
+                                label: "Egg 7km",
+                                description: "Alola Diglett, Alola Geodude, Alola Grimer, Alola Meowth, Alola Sandshrew, Alola Vulpix, Pichu, Cleffa, Igglybuff, Togepi, Smoochum, Tyrogue , Elekid, Magby, Azurill, Wynaut, Bonsly, Budew, Chingling, Munchlax, Mantyke, Riolu, Happiny."
+                            },
+                            Egg10: {
+                                label: "Egg 10km",
+                                description: "Aerodactyl, Lapras, Ralts, Slakoth, Mawile, Nincada, Sableye, Absol, Shieldon, Cranidos, Happiny, Munchlax, Chingling, Gible, Chansey,Porygon, Mareep, Beldum, Bagon, Lavitar, Feebas, Dratini, Shinx, Riolu."
+                            }
+                        },
+                        pt: {
+                            EggIncubator1: {
+                                title: "∞",
+                                label: "Incubadora de Ovo ∞",
+                                description: "Em construção"
+                            },
+                            EggIncubator2: {
+                                title: "Incubadora",
+                                label: "Incubadora de Ovo",
+                                description: "Em construção"
+                            },
+                            SuperIncubator: {
+                                title: "Sup.Incubadora",
+                                label: "Super Incubadora",
+                                description: "Em construção"
+                            },
+                            Egg2: {
+                                label: "Ovo de 2km",
+                                description: "Bulbasaur, Charmander Squirtle, Abra, Gastly, Magikarp, Shellder, Krabby, Chikorita, Cyndaquil, Totodile, Midsreveaus, Igglybuff, Mudkip, Treecko, Meditite, Spoink, Torchic, Luvdisc, Wailmer, Togepi, Poochyena,  Pichu, Cleffa, Swinub, Swablu, Makuhita,  Machop, Aron, Turtwig, Piplup, Chimchar, Kricketot, Bonsly, Barboach, Spheal, Kricketot, Starly, Bidoof."
+                            },
+                            Egg5: {
+                                label: "Ovo de 5km",
+                                description: "Eevee, Lickitung, Sandshrew, Ponyta, Horsea, Psyduck, Cubone, Seel, Rhyhorn, Kabuto, Omanyte, Tangela, Gligar, Pineco, Yanma, Sneasel, Houndor, Mareep, Skarmory, Smoochum, MAgby, Cacnea, Anorith, Lileep, Lotad, Duskull, Trapinch, Shuppet, Wynaut, Clamperl, Buneary, Budew, Snover, Bronzor, Croagunk, Combee, Buizel, Skorupi, Finneon, Drifloon, Glameow, Cheubi, Hippopotas, Wynaut, Wingull, Tyrogue, Snorunt, Shuckle, Scyther, Pineco, Onix, Nosepass, Mudkip, Mantine, Girafarig, Elekid, Corphish, Baltoy, Azurill, Buneary."
+                            },
+                            Egg7: {
+                                label: "Ovo de 7km",
+                                description: "Alola Diglett, Alola Geodude, Alola Grimer, Alola Meowth, Alola Sandshrew, Alola Vulpix, Pichu, Cleffa, Igglybuff, Togepi, Smoochum, Tyrogue , Elekid, Magby, Azurill, Wynaut, Bonsly, Budew, Chingling, Munchlax, Mantyke, Riolu, Happiny."
+                            },
+                            Egg10: {
+                                label: "Ovo de 10km",
+                                description: "Aerodactyl, Lapras, Ralts, Slakoth, Mawile, Nincada, Sableye, Absol, Shieldon, Cranidos, Happiny, Munchlax, Chingling, Gible, Chansey,Porygon, Mareep, Beldum, Bagon, Lavitar, Feebas, Dratini, Shinx, Riolu."
+                            }
+                        }
+                    },
+                    lvlup: {
+                        en: {
+                            
+                        },
+                        pt: {
+
+                        }
+                    },
+                    Potion: {
+                        en: {
+                            Potion: {
+                                label: "Potion",
+                                description: "A spray-type medicine for treating wounds. It restores the HP of one Pokémon by 20 points.\n\nUnlocked at Level: 5.\n\nRestores: 20 HP."
+                            },
+                            SuperPotion: {
+                                label: "Super Potion",
+                                description: "A spray-type medicine for treating wounds. It restores the HP of one Pokémon by 50 points.\n\nUnlocked at Level: 10.\n\nRestores: 50 HP."
+                            },
+                            HyperPotion: {
+                                label: "Hyper Potion",
+                                description: "A spray-type medicine for treating wounds. It restores the HP of one Pokémon by 200 points.\n\nUnlocked at Level: 15.\n\nRestores: 200 HP."
+                            },
+                            MaxPotion: {
+                                label: "Max Potion",
+                                description: "A spray-type medicine that completely restores all HP of a single Pokémon.\n\nCoins: 200 - 10x\n\nUnlocked at Level: 25.\n\nRestores: Completely restores the Max HP."
+                            },
+                            Reviver: {
+                                label: "Revive",
+                                description: "A medicine that can revive fainted Pokémon. It also restores half of a fainted Pokémon's maximum HP.\n\nUnlocked at Level: 5\n\nRestores: Revives Pokemon With Half of its Max HP."
+                            },
+                            MaxReviver: {
+                                label: "Max Revive",
+                                description: "A medicine that can revive fainted Pokémon. It also fully restores a fainted Pokémon's maximum HP.\n\nCoins: 180 - 6x\n\nUnlocked at Level: 30\n\nRestores: Revives Pokemon With the full of its Max HP Restored."
+                            },
+                        },
+                        pt: {
+                            Potion: {
+                                label: "Poção",
+                                description: "Em construção"
+                            },
+                            SuperPotion: {
+                                label: "Super Poção",
+                                description: "Em construção"
+                            },
+                            HyperPotion: {
+                                label: "Hiper Poção",
+                                description: "Em construção"
+                            },
+                            MaxPotion: {
+                                label: "Poção Máxima",
+                                description: "Em construção"
+                            },
+                            Reviver: {
+                                label: "Reviver",
+                                description: "Em construção"
+                            },
+                            MaxReviver: {
+                                label: "Máximo Rev.",
+                                description: "Em construção"
+                            },
+                        }  
+                    },
+                    Other: {
+                        en: {
+
+                        },
+                        pt: {
+
+                        }
+                    }
                 }
             }
             case "News": {
