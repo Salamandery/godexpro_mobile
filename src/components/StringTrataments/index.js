@@ -700,7 +700,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                                 title: "Módulo de Atrair Glacial",
                                 label: "Mod.Glacial",
                                 description: ""
-                            },,
+                            },
                             MossyModule: {
                                 title: "Módulo de Atrair Musgoso",
                                 label: "Mod.Musgoso",
