@@ -10,6 +10,7 @@ import {
      Image,
      StyleSheet, 
      KeyboardAvoidingView,
+     StatusBar
 } from 'react-native';
 import { 
     ToggleTheme, 
@@ -114,6 +115,7 @@ const Splash = ({navigation, dispatch, lang = "en", username, paid, photo}) => {
              }
 
         </ImageBackground>
+        <StatusBar barStyle="light-content" backgroundColor={"#cc0000"} />
         </KeyboardAvoidingView>
     );
 }

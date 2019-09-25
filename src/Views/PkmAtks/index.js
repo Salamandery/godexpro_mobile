@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { translate } from '../../components/StringTrataments';
 import AdSense from '../../components/AdSense';
 
-var translation = translate("Help");
+var translation = translate("PkmInfo");
 
 const Help = ({navigation, theme, Ari, lang}) => {
     
@@ -20,7 +20,7 @@ const Help = ({navigation, theme, Ari, lang}) => {
 
     return(
         <View style={styles.container}>
-            <HeaderBar Headertitle={translation[lang].header} navigation={navigation} theme={theme}/>
+            <HeaderBar Headertitle={translation[lang].pkmAtks} navigation={navigation} theme={theme}/>
             <AdSense />
             <View style={styles.AjudaItens}>
 

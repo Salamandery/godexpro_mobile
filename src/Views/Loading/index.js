@@ -13,7 +13,6 @@ var translation = translate("Loading");
 const Loading = ({lang}) => {
     var styles = StyleTheme();
     return(
-
         <View style={styles.loadInfo}>
             <Text style={styles.text_load}>{translation[lang].loading.title}</Text>
             <ActivityIndicator 

@@ -24,11 +24,11 @@ import AdSense from '../../components/AdSense';
 
 var translation = translate("PkmInfo");
 
-const PkmInfo = ({navigation, theme, Ari, lang}) => {
+const PkmInfo = ({screenProps, theme, Ari, lang}) => {
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
     const [stStm, setstStm] = useState(0);
-    const pkm = navigation.state.params.Pkm;
+    const pkm = screenProps.state.params.Pkm;
 
     if (Ari === "minimichelle") {
         var styles = StyleTheme(theme, "ari");
@@ -52,7 +52,7 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
         return str;
     }
     function backHandler() {
-        navigation.navigate('ListaPkms');
+        screenProps.navigate('ListaPkms');
     }
     const Gender = () => {
         return (
@@ -69,7 +69,7 @@ const PkmInfo = ({navigation, theme, Ari, lang}) => {
     }
     return(
         <View style={styles.container}>
-            <HeaderBar Headertitle={pkm.name} navigation={navigation} theme={theme}/>
+            <HeaderBar Headertitle={pkm.name} navigation={screenProps} theme={theme}/>
             <AdSense />
             <ScrollView style="flex: 1">
                 <View style={styles.InfoItens}>

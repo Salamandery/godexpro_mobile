@@ -25,7 +25,7 @@ import { connect } from 'react-redux';
 
 var translation = translate("ListaPkms");
 
-const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
+const ListaPkms = ({navigation, paid, theme, Ari, lang = "en", dir, dispatch}) => {
 
     const [stAtk, setstAtk] = useState(0);
     const [stDef, setstDef] = useState(0);
@@ -43,6 +43,7 @@ const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
     const [openedTypes, setOpenTypes] = useState(5);
     const [lbl, setLbl] = useState(0);
     const [placeholderSearch, setPlaceholder] = useState('');
+    const [noContent, setNoContent] = useState(false);
     var animation = new Animated.Value(0);
 
     if (Ari === "minimichelle") {
@@ -122,7 +123,7 @@ const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
         setLoad(true);
         setTimeout(()=>{
             setLoad(false);
-            navigation.navigate('PkmInfo', {Pkm: pkm, theme, Ari});
+            navigation.navigate('PkmInfoController', {Pkm: pkm, theme, Ari});
         }, 50);
     }
     async function loadPkm() {
@@ -133,13 +134,18 @@ const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
             await setBase(res.data);
             if (res.data.length > 0) setLoad(false);
         } catch (err) {
-            await AsyncStorage.getItem('pkms').then(Locallist => {
-                if (Locallist) {
-                    setLoad(false);
-                    setPkms(JSON.parse(Locallist));
-                    setBase(JSON.parse(Locallist));
-                }
-            });
+            if (paid === "false") {
+                await AsyncStorage.getItem('pkms').then(Locallist => {
+                    if (Locallist) {
+                        setLoad(false);
+                        setPkms(JSON.parse(Locallist));
+                        setBase(JSON.parse(Locallist));
+                    }
+                });
+            } else {
+                setLoad(false);
+                setNoContent(true);
+            }
         }
     }
 
@@ -330,6 +336,7 @@ const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
                 { load ? (
                     <Loading />
                 ) : (
+                    noContent ? <Text>Need to Paid</Text> : (
                     <FlatList
                         contentContainerStyle={styles.list}
                         data={pkms}
@@ -337,7 +344,7 @@ const ListaPkms = ({navigation, theme, Ari, lang = "en", dir, dispatch}) => {
                         renderItem={renderItem}
                         onEndReachedThreshold={.1}
                     />
-                )}
+                ))}
             </View>
             <MyModal selectedItem={modalItem} Visibility={modalState} />
             <ModalAri Vis={VisAri} />

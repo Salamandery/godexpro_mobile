@@ -1,5 +1,6 @@
 import { Dimensions, Platform, PixelRatio } from 'react-native';
-
+    const baseSuperEff = 1.6;
+    const baseNotVeryEff = 0.625;
     const {
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT,
@@ -46,6 +47,68 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
             }
         }
     }
+
+    export const damageMultis = {
+        se1x: baseSuperEff,
+        se2x: Math.pow(baseSuperEff, 2),
+        se3x: Math.pow(baseSuperEff, 3),
+        ne1x: baseNotVeryEff,
+        ne2x: Math.pow(baseNotVeryEff, 2),
+        ne3x: Math.pow(baseNotVeryEff, 3)
+    };
+    export const stab = 1.2;
+    export const weather = 1.2;
+    export const raidBossStamina = [
+        600,
+        1800,
+        3600,
+        9000,
+        15000
+    ];
+    export const raidBossLvl = [
+        20,
+        25,
+        30,
+        40,
+        40
+    ];
+    export const raidBossCpM = [
+        0.59740001,
+        0.667934,
+        0.7317,
+        0.7903,
+        0.7903
+    ];
+
+    export const cpmPerLevel = [0.0940000, 0.1351374, 0.1663979, 0.1926509, 0.2157325, 0.2365727, 0.2557201, 0.2735304, 0.2902499, 0.3060574, 0.3210876, 0.3354450, 0.3492127, 0.3624578, 0.3752356, 0.3875924, 0.3995673, 0.4111936, 0.4225000, 0.4335117, 0.4431076, 0.4530600, 0.4627984, 0.4723361, 0.4816850, 0.4908558, 0.4998584, 0.5087018, 0.5173940, 0.5259425, 0.5343543, 0.5426358, 0.5507927, 0.5588306, 0.5667545, 0.5745692, 0.5822789, 0.5898879, 0.5974000, 0.6048188, 0.6121573, 0.6194041, 0.6265671, 0.6336492, 0.6406530, 0.6475810, 0.6544356, 0.6612193, 0.6679340, 0.6745819, 0.6811649, 0.6876849, 0.6941437, 0.7005429, 0.7068842, 0.7131691, 0.7193991, 0.7255756, 0.7317000, 0.7347410, 0.7377695, 0.7407856, 0.7437894, 0.7467812, 0.7497610, 0.7527291, 0.7556855, 0.7586304, 0.7615638, 0.7644861, 0.7673972, 0.7702973, 0.7731865, 0.7760650, 0.7789328, 0.7817901, 0.7846370, 0.7874736, 0.79030001];
+
+    export function CalculateCombatPower(pokemon, level = 40, ivs = { atk: 15, def: 15, stm: 15}) {
+        var cpm = cpmPerLevel[2 * level - 2];
+        var Attack = Number(pokemon.atk) + ivs.atk;
+        var Defense = Number(pokemon.def) + ivs.def;
+        var Stamina = Number(pokemon.stm) + ivs.stm;
+        
+        console.log(Attack)
+        return Math.floor(
+            (Attack * Math.pow(Defense, 0.5) * Math.pow(Stamina, 0.5) * Math.pow(cpm, 2)) 
+        / 10);
+    }
+    
+    export function CalculateBossCombatPower(pokemon, tier = 1) {
+        var Attack  = (pokemon.atk + 15);
+        var Defense = (pokemon.def + 15);
+        var Stamina = raidBossStamina[tier];
+    
+        return Math.floor((Attack * Math.pow(Defense, 0.5) * Math.pow(Stamina, 0.5)) / 10);
+    }
+
+    export function CalculateHP(staminaStat, level = 30, staIV = 15) {
+        var CP_Multiplier = cpmPerLevel[2 * level - 2]; 
+        var Stamina = staminaStat + staIV;
+    
+        return Stamina * CP_Multiplier;
+    }
+
     export function translate(view) {
         switch(view) {
             case "ListaPkms": {
@@ -158,7 +221,9 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                         },
                         weather: {
                             title: "Weather"
-                        }
+                        },
+                        cpFor: "CP List",
+                        pkmAtks: "Atack list"
                     },
                     pt: {
                         pkm: {
@@ -176,7 +241,9 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                         },
                         weather: {
                             title: "Clima"
-                        }
+                        },
+                        cpFor: "Lista de CP",
+                        pkmAtks: "Lista de Ataques"
                     },                                      
                 }
             }
@@ -558,7 +625,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     }
                 }
             }
-            case "Help": {
+            case "Guide": {
                 return {
                     en: {
                         header: "Guide"

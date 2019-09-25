@@ -5,7 +5,8 @@ import {
     TextInput,
     Text, 
     Image,
-    TouchableOpacity 
+    TouchableOpacity,
+    StatusBar 
 } from 'react-native';
 import { 
     GoogleSignin, 
@@ -49,8 +50,14 @@ const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
             console.log(err);
         }
     }
+    async function setStorage(user) {
+        await AsyncStorage.setItem('user', JSON.stringify(user));
+        await AsyncStorage.setItem('paid', user.paid);
+        await AsyncStorage.setItem('theme', "false");
+        await AsyncStorage.setItem('lang', user.lang);
+        await AsyncStorage.setItem('dir', "left");
+    }
     async function setUserConfig(user) {
-        var lan = "en"
         try {
             const res = await api.post('/userinfo', { email: user.email, pass: user.id });
             
@@ -66,9 +73,13 @@ const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
                     paid: res.data.user.paid
                 });
 
+                setLoad(false);
+
+                setStorage(res.data.user);
+
                 dispatch(ToggleTheme("false", "default", res.data.user.lang, "left"));
                 dispatch(ToggleUserInfo(user.name, res.data.user.paid, user.photo, user.email));
-                lan = res.data.user.lang;
+                navigation.navigate('Main', {user: user, theme: "false", lang: res.data.user.lang, dir: "left"});
             } else {
                 const usering = await api.post('/userapp', { 
                     name: user.name, 
@@ -81,21 +92,26 @@ const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
                     paid: "false" 
                 });
 
+                setLoad(false);
+
+                setStorage({user: {
+                    name: user.name,
+                    pass: user.id,
+                    lang: "en", 
+                    paid: "false",                   
+                    firstname: user.givenName, 
+                    lastname: user.familyName, 
+                    email: user.email, 
+                    photo: user.photo,
+                }});
+
                 dispatch(ToggleTheme("false", "default", "en", "left"));
                 dispatch(ToggleUserInfo(user.name, "false", user.photo, user.email));
+                navigation.navigate('Main', {user: user, theme: "false", lang: "en", dir: "left"});
             }
         } catch(err) {
             console.log(err.code);
         }
-        setLoad(false);
-
-        await AsyncStorage.setItem('user', JSON.stringify(user));
-        await AsyncStorage.setItem('paid', "false");
-        await AsyncStorage.setItem('theme', "false");
-        await AsyncStorage.setItem('lang', "en");
-        await AsyncStorage.setItem('dir', "left");
-
-        navigation.navigate('Main', {user: user, theme: "false", lang: lan, dir: "left"});
     }
     async function _signIn(){
         setLoad(true);
@@ -126,6 +142,7 @@ const Login = ({navigation, theme, Ari, lang, dir, paid, dispatch}) => {
     }
     return(
         <KeyboardAvoidingView style={styles.container} enabled={Platform.OS === 'ios'} behavior="padding">
+            <StatusBar barStyle="light-content" backgroundColor={"#292929"} />
             <View style={styles.container}>
                 <Image style={styles.logo} source={logo} />
                 

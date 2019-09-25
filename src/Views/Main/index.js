@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { normalize } from '../../components/StringTrataments';
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import { View, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleTheme } from './style';
+import { normalize } from '../../components/StringTrataments';
 import PkmController from '../PkmController';
 import Settings from '../Settings';
 import Contact from '../Contact';
 import Itens from '../Itens';
+import Guide from '../Guide';
 import News from '../News';
-import Help from '../Help';
-import { StyleTheme } from './style';
 import profile1 from '../Contact/logo1.png';
 import profile2 from '../Contact/logo2.png';
 
@@ -123,7 +123,7 @@ const Drawer = createDrawerNavigator({
         navigationOptions: ItemsNavigation 
     },
     Guide: { 
-        screen: Help,
+        screen: Guide,
         navigationOptions: GuideNavigation 
     },
     Contact: { 
