@@ -4,10 +4,10 @@ import {
     View,
     Text
 } from 'react-native';
-import HeaderBar from '../../components/Header';
 import { StyleTheme } from './style';
 import { connect } from 'react-redux';
 import { translate, CalculateCombatPower } from '../../components/StringTrataments';
+import HeaderBar from '../../components/Header';
 import Loading from '../Loading';
 import AdSense from '../../components/AdSense';
 

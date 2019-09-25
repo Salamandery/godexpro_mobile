@@ -81,33 +81,33 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
             <View style={styles.ItemItens}>   
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Gift");
-                    setDes("A box that you can send to a friend. Contains a variety of useful items.\n\nDetails: A Gift is an item that can be sent to another Trainer. Gifts contain items that are of higher value than what Trainers normally obtain from spinning PokéStops, supporting the feeling that your friends are really helping you make the best of your Pokémon GO journey.\n\nOnly one gift can be sent to each Friend per day and at most 20 Gifts that can be opened in a single day.\nTrainers may have up to ten Gifts in their bag at any given time and they do not take up any space in the bag.\nIn order to obtain 7-km Egg from the received gift, trainer needs space in their eggs collection, exactly like in case of obtaining eggs from Photo Discs.\n\n(Note):There must be enough room in the Item Bag, before opening the gift.");
+                    setTitle(translation.Other[lang].Gift.title);
+                    setDes(translation.Other[lang].Gift.description);
                     setItemimg(Gift);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Gift}></Image>
-                    <Text style={styles.label}>{"Gift"}</Text>
+                    <Text style={styles.label}>{translation.Other[lang].Gift.label}</Text>
                 </TouchableOpacity>            
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Incense");
-                    setDes("Incense with a mysterious fragrance that lures wild Pokémon to your location for 30 minutes.\n\nCoins: 80 - 1x\nCoins: 500 - 8x\n\nUnlock more at Levels: 7 – 10 – 15 – 20 – 25 – 30 – 35 – 40 they receive one Incense.\nat level 20 two of them, at level 30 three and at level 40 four Incenses.\n\nDetails: Incense, when activated, shows a pinkish aura around the Trainer. The effect will follow a trainer if the trainer continues to travel, though part of the appeal is being able to keep catching while remaining in one place. Pokémon lured by the incense will also have a pink aura.\n\nSpawns are based on the local biome the player is in.\n\nThis item cannot be obtained from a PokéStop itself. However, it can be received by reaching certain levels, or by purchasing it from the Shop for PokeCoin 80. A bundle containing eight Incenses can be purchased for PokeCoin 500 as well. It can be also rewarded for completing set of Special Research tasks.\n\n(Note): The Pokémon spawned by the incense do not exist in the \"Nearby box\". It spawns new Pokémon for a trainer to catch. The incense will spawn 1 Pokémon every 5 minutes if the trainer is standing still, and 1 Pokémon every 1 minute or 200 meters (whichever happens first) while moving. Other trainers are not affected by this item.");
+                    setTitle(translation.Other[lang].Incense.title);
+                    setDes(translation.Other[lang].Incense.description);
                     setItemimg(Incense);
                     setModal();
                 }}>
                     <Image style={styles.img} source={Incense}></Image>
-                    <Text style={styles.label}>{"Incense"}</Text>
+                    <Text style={styles.label}>{translation.Other[lang].Incense.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle("Lucky Egg");
-                    setDes("A Lucky Egg that's filled with happiness! Earns double XP for 30 minutes.\n\nCoins: 80 - 1x\nCoins: 500 - 8x\n\nUnlock more at Levels: 9, 10, 15, 25 and 35 they receive one Lucky Egg.\nat level 20 two of them, at level 30 three and at level 40 four Lucky Eggs.\n\nDetails: A Lucky Egg is an item that doubles gained XP for 30 minutes. After activating a Lucky Egg, its effect lasts whether the player is online or offline.\n\nThis item cannot be obtained from a PokéStop itself. However, it can be received by reaching certain levels, or by purchasing it from the Shop for PokeCoin 80. A bundle containing eight Lucky Eggs can be purchased for PokeCoin 500 as well. It can be also rewarded for completing set of Special Research tasks.\n\n(Note):  During the events at which Experience Points are being doubled Lucky Eggs still works doubling already doubled XP which results in quadruple XP for a trainer.");
+                    setTitle(translation.Other[lang].LuckyEgg.title);
+                    setDes(translation.Other[lang].LuckyEgg.description);
                     setItemimg(LuckyEgg);
                     setModal();
                 }}>
                     <Image style={styles.img} source={LuckyEgg}></Image>
-                    <Text style={styles.label}>{"Lucky Egg"}</Text>
+                    <Text style={styles.label}>{translation.Other[lang].LuckyEgg.label}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();

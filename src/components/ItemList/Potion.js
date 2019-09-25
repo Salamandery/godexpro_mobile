@@ -120,7 +120,7 @@ const ItemList = ({theme, Ari, navigation, lang}) => {
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_item} onPress={()=>{
                     setModal();
-                    setTitle(translation.Potion[lang].MaxReviver.label);
+                    setTitle(translation.Potion[lang].MaxReviver.title);
                     setDes(translation.Potion[lang].MaxReviver.description);
                     setItemimg(Revivemax);
                     setModal();

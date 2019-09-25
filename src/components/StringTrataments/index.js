@@ -576,6 +576,7 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                                 description: "Em construção"
                             },
                             MaxReviver: {
+                                title: "Máximo Reviver",
                                 label: "Máximo Rev.",
                                 description: "Em construção"
                             },
@@ -583,10 +584,168 @@ import { Dimensions, Platform, PixelRatio } from 'react-native';
                     },
                     Other: {
                         en: {
-
+                            Gift: {
+                                title: "Gift",
+                                label: "Gift",
+                                description: "A box that you can send to a friend. Contains a variety of useful items.\n\nDetails: A Gift is an item that can be sent to another Trainer. Gifts contain items that are of higher value than what Trainers normally obtain from spinning PokéStops, supporting the feeling that your friends are really helping you make the best of your Pokémon GO journey.\n\nOnly one gift can be sent to each Friend per day and at most 20 Gifts that can be opened in a single day.\nTrainers may have up to ten Gifts in their bag at any given time and they do not take up any space in the bag.\nIn order to obtain 7-km Egg from the received gift, trainer needs space in their eggs collection, exactly like in case of obtaining eggs from Photo Discs.\n\n(Note):There must be enough room in the Item Bag, before opening the gift."
+                            },
+                            Incense: {
+                                title: "Gift",
+                                label: "Gift",
+                                description: "Incense with a mysterious fragrance that lures wild Pokémon to your location for 30 minutes.\n\nCoins: 80 - 1x\nCoins: 500 - 8x\n\nUnlock more at Levels: 7 – 10 – 15 – 20 – 25 – 30 – 35 – 40 they receive one Incense.\nat level 20 two of them, at level 30 three and at level 40 four Incenses.\n\nDetails: Incense, when activated, shows a pinkish aura around the Trainer. The effect will follow a trainer if the trainer continues to travel, though part of the appeal is being able to keep catching while remaining in one place. Pokémon lured by the incense will also have a pink aura.\n\nSpawns are based on the local biome the player is in.\n\nThis item cannot be obtained from a PokéStop itself. However, it can be received by reaching certain levels, or by purchasing it from the Shop for PokeCoin 80. A bundle containing eight Incenses can be purchased for PokeCoin 500 as well. It can be also rewarded for completing set of Special Research tasks.\n\n(Note): The Pokémon spawned by the incense do not exist in the \"Nearby box\". It spawns new Pokémon for a trainer to catch. The incense will spawn 1 Pokémon every 5 minutes if the trainer is standing still, and 1 Pokémon every 1 minute or 200 meters (whichever happens first) while moving. Other trainers are not affected by this item.",
+                            },
+                            LuckyEgg: {
+                                title: "Lucky Egg",
+                                label: "Lucky Egg",
+                                description: "A Lucky Egg that's filled with happiness! Earns double XP for 30 minutes.\n\nCoins: 80 - 1x\nCoins: 500 - 8x\n\nUnlock more at Levels: 9, 10, 15, 25 and 35 they receive one Lucky Egg.\nat level 20 two of them, at level 30 three and at level 40 four Lucky Eggs.\n\nDetails: A Lucky Egg is an item that doubles gained XP for 30 minutes. After activating a Lucky Egg, its effect lasts whether the player is online or offline.\n\nThis item cannot be obtained from a PokéStop itself. However, it can be received by reaching certain levels, or by purchasing it from the Shop for PokeCoin 80. A bundle containing eight Lucky Eggs can be purchased for PokeCoin 500 as well. It can be also rewarded for completing set of Special Research tasks.\n\n(Note):  During the events at which Experience Points are being doubled Lucky Eggs still works doubling already doubled XP which results in quadruple XP for a trainer."
+                            },
+                            StarPiece: {
+                                title: "Star Piece",
+                                label: "Star Piece",
+                                description: ""
+                            },
+                            LureModule: {
+                                title: "Lure Module",
+                                label: "Lure Module",
+                                description: ""
+                            },
+                            MagneticModule: {
+                                title: "Magnetic Lure Module",
+                                label: "Magnetic Lure",
+                                description: ""
+                            },
+                            GlacialModule: {
+                                title: "Glacial Lure Module",
+                                label: "Glacial Lure",
+                                description: ""
+                            },
+                            MossyModule: {
+                                title: "Mossy Lure Module",
+                                label: "Mossy Lure",
+                                description: ""
+                            },
+                            RaidPass: {
+                                title: "Raid Pass",
+                                label: "Raid Pass",
+                                description: ""
+                            },
+                            PremPass: {
+                                title: "Premium Raid Pass",
+                                label: "Premium Pass",
+                                description: ""
+                            },
+                            EXPass: {
+                                title: "EX Raid Pass",
+                                label: "EX Pass",
+                                description: ""
+                            },
+                            Camera: {
+                                title: "Camera",
+                                label: "Camera",
+                                description: ""
+                            },
+                            BagUpgrade: {
+                                title: "Bag Upgrade",
+                                label: "Bag Upgrade",
+                                description: ""
+                            },
+                            PkmUpgrade: {
+                                title: "Pokémon Storage Upgrade",
+                                label: "Storage Upgrade",
+                                description: ""
+                            },
+                            TeamMedallion: {
+                                title: "Team Medallion",
+                                label: "Medallion",
+                                description: ""
+                            },
+                            MysteryBox: {
+                                title: "Mystery Box",
+                                label: "Mystery Box",
+                                description: ""
+                            }
                         },
                         pt: {
-
+                            Gift: {
+                                title: "Presente",
+                                label: "Presente",
+                                description: ""
+                            },
+                            Incense: {
+                                title: "Incenso",
+                                label: "Incenso",
+                                description: ""
+                            },
+                            LuckyEgg: {
+                                title: "Ovo da Sorte",
+                                label: "Ovo da Sorte",
+                                description: ""
+                            },
+                            StarPiece: {
+                                title: "Pedaço de Estrela",
+                                label: "P. Estrela",
+                                description: ""
+                            },
+                            LureModule: {
+                                title: "Módulo de Atrair",
+                                label: "Mod.Atrair",
+                                description: ""
+                            },
+                            MagneticModule: {
+                                title: "Módulo de Atrair Magnético",
+                                label: "Mod.Magnético",
+                                description: ""
+                            },
+                            GlacialModule: {
+                                title: "Módulo de Atrair Glacial",
+                                label: "Mod.Glacial",
+                                description: ""
+                            },,
+                            MossyModule: {
+                                title: "Módulo de Atrair Musgoso",
+                                label: "Mod.Musgoso",
+                                description: ""
+                            },
+                            RaidPass: {
+                                title: "Passe de Raide",
+                                label: "P. de Raide",
+                                description: ""
+                            },
+                            PremPass: {
+                                title: "Passe de Raide Prêmio",
+                                label: "P. Prêmmio",
+                                description: ""
+                            },
+                            EXPass: {
+                                title: "Passe de Raide EX",
+                                label: "P. EX",
+                                description: ""
+                            },
+                            Camera: {
+                                title: "Câmera",
+                                label: "Câmera",
+                                description: ""
+                            },
+                            BagUpgrade: {
+                                title: "Bolsa",
+                                label: "Bolsa",
+                                description: ""
+                            },
+                            PkmUpgrade: {
+                                title: "Upgrade de Estoque de Pokémon",
+                                label: "Estoque Pkm.",
+                                description: ""
+                            },
+                            TeamMedallion: {
+                                title: "Medalhão de Equipe",
+                                label: "Medalhão",
+                                description: ""
+                            },
+                            MysteryBox: {
+                                title: "Caixa Misteriosa",
+                                label: "Caixa Misteriosa",
+                                description: ""
+                            }
                         }
                     }
                 }
