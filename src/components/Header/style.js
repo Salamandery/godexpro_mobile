@@ -11,7 +11,7 @@ export function StyleTheme(theme) {
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    paddingHorizontal: normalize(10),
+                    paddingHorizontal: normalize(5),
                     height: normalize(55)
                 },
                 Title: {
@@ -21,10 +21,10 @@ export function StyleTheme(theme) {
                     marginTop: normalize(3),
                 },
                 menu: {
-                    height: normalize(40),
-                    width: normalize(40),
+                    height: normalize(50),
+                    width: normalize(56),
                     justifyContent: "center",
-                    alignItems: "center"
+                    alignItems: "center",
                 },
                 logo: {
                     height: normalize(30),
@@ -48,7 +48,7 @@ export function StyleTheme(theme) {
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    paddingHorizontal: normalize(10),
+                    paddingHorizontal: normalize(5),
                     height: normalize(55)
                 },
                 Title: {
@@ -58,10 +58,10 @@ export function StyleTheme(theme) {
                     marginTop: normalize(3),
                 },
                 menu: {
-                    height: normalize(40),
-                    width: normalize(40),
+                    height: normalize(50),
+                    width: normalize(56),
                     justifyContent: "center",
-                    alignItems: "center"
+                    alignItems: "center",
                 },
                 logo: {
                     height: normalize(30),

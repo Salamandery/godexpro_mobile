@@ -97,6 +97,12 @@ export function StyleTheme(theme, mode) {
                         textAlign: "center",
                         color: "#333333",
                         fontSize: normalize(14),
+                        fontStyle: "italic"
+                    },
+                    createdAt: {
+                        textAlign: "center",
+                        color: "#333333",
+                        fontSize: normalize(12),
                     },
                     itemContainer: {
                         alignSelf: "stretch",
@@ -212,6 +218,12 @@ export function StyleTheme(theme, mode) {
                         color: "#cccccc",
                         fontSize: normalize(14),
                     },
+                    createdAt: {
+                        textAlign: "center",
+                        color: "#cccccc",
+                        fontSize: normalize(12),
+                        fontStyle: "italic"
+                    },
                     itemContainer: {
                         alignSelf: "stretch",
                         justifyContent: "flex-start",
@@ -325,6 +337,12 @@ export function StyleTheme(theme, mode) {
                     textAlign: "center",
                     color: "#333333",
                     fontSize: normalize(14),
+                },
+                createdAt: {
+                    textAlign: "center",
+                    color: "#333333",
+                    fontSize: normalize(12),
+                    fontStyle: "italic"
                 },
                 itemContainer: {
                     alignSelf: "stretch",

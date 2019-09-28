@@ -1,5 +1,14 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import axios from '../../services/api';
+
+import {
+    parseISO, 
+    formatDistance
+} from 'date-fns';
+
+import en_us from 'date-fns/locale/en-US';
+import pt_br from 'date-fns/locale/pt-BR';
+
 import HeaderBar from '../Header';
 import React, { useState, useEffect } from 'react';
 import {
@@ -25,6 +34,7 @@ const News = ({navigation, theme, Ari, lang}) => {
     const [modalTitle, setModalTitle] = useState('');
     const [modalDesc, setModalDesc] = useState('');
     const [modalDate, setModalDate] = useState('');
+    const [modalTime, setModalTime] = useState('');
     const [modalHint, setModalHint] = useState('');
     const [posted, setPosted] = useState('');
     const [items, setItems] = useState([]);
@@ -39,9 +49,17 @@ const News = ({navigation, theme, Ari, lang}) => {
     async function loadnews() {
         try {
             const res = await axios.get('/news');
-            await AsyncStorage.setItem('news', JSON.stringify(res.data));
-            await setNews(res.data);
-            await setBase(res.data);
+            const data = res.data.map(n =>({
+                ...n,
+                timeDistance: formatDistance(
+                    parseISO(n.createdAt),
+                    new Date(),
+                    { addSuffix: true, locale: lang === "en" ? en_us : pt_br }
+                )
+            }));
+            await AsyncStorage.setItem('news', JSON.stringify(data));
+            await setNews(data);
+            await setBase(data);
             if (res.data.length > 0) setLoad(false);
         } catch (err) {
             await AsyncStorage.getItem('news').then(Locallist => {
@@ -50,7 +68,7 @@ const News = ({navigation, theme, Ari, lang}) => {
                     setNews(JSON.parse(Locallist));
                     setBase(JSON.parse(Locallist));
                 }
-            })
+            });
         }
     }
     useEffect(()=> {
@@ -68,6 +86,7 @@ const News = ({navigation, theme, Ari, lang}) => {
             <TouchableOpacity key={item._id} onPress={()=>{
                 setModal();
                 setModalDate(item.date[lang]);
+                setModalTime(item.timeDistance);
                 setModalTitle(item.title[lang]);
                 setModalDesc(item.description[lang]);
                 setModalHint(item.hint[lang]);
@@ -81,7 +100,7 @@ const News = ({navigation, theme, Ari, lang}) => {
             </TouchableOpacity>
         );
     }
-    const MyModa = ({Visibility, Title, Desc, Dating, Hint, Items, Posted}) => {
+    const MyModa = ({Visibility, Title, Desc, Dating, time, Hint, Items, Posted}) => {
         return(
             <Modal style={styles.modalContainer} animationType={"slide"} visible={Visibility} transparent={true} onRequestClose={closeModal} onDismiss={closeModal}>
                 <AdSense />
@@ -93,6 +112,7 @@ const News = ({navigation, theme, Ari, lang}) => {
                         <View style={styles.imgWrapper}>
                             {/*<Image source={Itemimg} style={styles.img}></Image>*/}
                             <Text style={styles.titleDate}>{Dating}</Text>
+                            <Text style={styles.createdAt}>{time}</Text>
                         </View>
                         <ScrollView>
                             <Text style={styles.titleModal}>{Title}</Text>
@@ -126,6 +146,7 @@ const News = ({navigation, theme, Ari, lang}) => {
                                     Title={modalTitle} 
                                     Desc={modalDesc} 
                                     Dating={modalDate} 
+                                    time={modalTime}
                                     Hint={modalHint} 
                                     Items={items} 
                                     Posted={posted}
