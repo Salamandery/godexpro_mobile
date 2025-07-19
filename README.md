@@ -1,4 +1,4 @@
-# 📱 GoDex Pro
+# 📱 GoDex Pro Mobile
 
 <p align="center">
   <img src="https://img.shields.io/badge/React%20Native-0.60.5-61DAFB?style=for-the-badge&logo=react"/>
